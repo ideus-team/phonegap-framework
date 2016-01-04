@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval';">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="google" content="notranslate">
+  
+    <title>APPLICATION_TITLE</title>
+    
+    <!-- cordova css -->
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    
+    <!-- junior css -->
+    <link rel="stylesheet" type="text/css" href="css/junior.css">
+    
+    <!-- app css -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+  </head>
+  <body>
+    <div class="appContainer">
+    	<div id="app-container">
+    	  <div id="app-main"></div>
+    	</div>
+    </div>
+    
+    <!-- cordova js -->
+    <!-- <script src="cordova.js"></script> -->
+    
+    <!-- junior framework js -->
+    <script src="js/lib/modernizr.custom.js"></script>
+    <script src="js/lib/zepto.min.js"></script>
+    <script src="js/lib/zepto.flickable.min.js"></script>
+    <script src="js/lib/lodash.min.js"></script>
+    <script src="js/lib/backbone-min.js"></script>
+    <script src="js/lib/junior.js"></script>
+    
+    <!-- router -->
+    <script src="js/router/router.js"></script>
+    
+    <!-- views -->
+    <script src="js/views/homeView.js"></script>
+    
+    <!-- application js -->
+    <script src="js/app.js"></script>
+    
+    <script type="text/template" id="homeTemplate">
+      <div class="content">
+        <br/><br/>
+        <h1><%= text %></h1>
+        <center>Username: <%= name %></center>
+      </div>
+    </script>
+    
+  </body>
+</html>

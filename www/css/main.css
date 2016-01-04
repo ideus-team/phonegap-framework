@@ -1,0 +1,12 @@
+body {
+  text-transform:none;
+  background:none;
+}
+
+.content {
+  position:absolute;
+  left:0;
+  top:0;
+  right:0;
+  bottom:0;
+}

@@ -15,4 +15,8 @@ cordova create app com.example.hello HelloWorld
 
 ##3. Copy Phonegap Framework to app directory
 
+
 ##4. In config.xml rename all variable with your project settings
+
+
+##5. Add icons and splashes for iOS\Android platforms

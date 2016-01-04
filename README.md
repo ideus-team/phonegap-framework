@@ -1,40 +1,8 @@
-#How to install and run HTML Framework
-Our HTML Framework based on H5BP+Grunt+SASS.
+#How to install and run Phonegap Framework
+Our Phonegap Framework based on Cordova CLI.
 
-Instalation procedure is similar for Win/Mac/Linux.
+Instalation procedure is similar for [cordova.apache.org] (http://cordova.apache.org/docs/en/dev/guide/cli/index.html).
 
-##1. Install [Ruby](http://rubyinstaller.org/downloads/)
-Ruby __2.2.X__ x64 installer (needed for SASS (grunt-contrib-sass).
- - Select __„Add Ruby executables to your PATH“__.
-
-##2. Install SASS+Compass
-```
-gem install sass
-gem install compass
-```
-If you get SSL error — foolow [this steps](https://gist.github.com/luislavena/f064211759ee0f806c88#manual-solution-to-ssl-issue).
-
-##3. Install [Node.js](https://nodejs.org/en/download/)
-Stable (latest features), Windows Installer 64-bit (needed for Grunt).
-
-##4. Install Grunt
-```
-npm install grunt-cli -g
-```
-
-##5. Get Framework
+##1. Get Framework
 Git Clone:
-- URL: https://github.com/ideus-team/html-framework.git
-
-##6. Install
-Once run `dev\install.cmd` or execute in shell:
-```shell
-npm install --save-dev
-```
-
-##7. Run
-Start Grunt with `dev\start.cmd` or execute in shell:
-```shell
-grunt prod
-grunt watch
-```
+- URL: https://github.com/ideus-team/phonegap-framework.git

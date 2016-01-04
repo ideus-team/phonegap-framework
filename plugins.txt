@@ -10,9 +10,3 @@ cordova plugin add cordova-plugin-splashscreen
 cordova plugin add cordova-plugin-statusbar
 cordova plugin add cordova-plugin-whitelist
 cordova plugin add cordova-plugin-game-center
-
-Swipe
-http://labs.rampinteractive.co.uk/touchSwipe/demos/index.html
-
-Ratchet css and js
-http://goratchet.com/one.html

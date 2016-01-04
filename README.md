@@ -20,3 +20,5 @@ cordova create app com.example.hello HelloWorld
 
 
 ##5. Add icons and splashes for iOS\Android platforms
+
+##6. Install plugins for your application from plugins.txt

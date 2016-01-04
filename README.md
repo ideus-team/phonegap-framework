@@ -7,3 +7,9 @@ To install Cordova CLI visit [cordova.apache.org] (http://cordova.apache.org/doc
 ##1. Get Framework
 Git Clone:
 - URL: https://github.com/ideus-team/phonegap-framework.git
+
+##2. Create cordova hello world project in your directory
+Git Clone:
+```
+cordova create hello com.example.hello HelloWorld
+```

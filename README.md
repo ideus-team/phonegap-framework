@@ -18,7 +18,58 @@ cordova create app com.example.hello HelloWorld
 
 ##4. In config.xml rename all variable with your project settings
 
-
 ##5. Add icons and splashes for iOS\Android platforms
 
 ##6. Install plugins for your application from plugins.txt
+
+##7. How to build Android production release
+
+###1. Step 1:
+
+  Open console. Go to application diractory and do:
+  ```
+  cordova build --release android
+  ```
+###2. Step 2:
+
+  Key Generation:
+  
+  ```
+  keytool -genkey -v -keystore APPLICATION_TITLE.keystore -alias APPLICATION_TITLE -keyalg RSA -keysize 2048 -validity 10000
+  ```
+  
+  Then answer all question:
+  ```
+  keystore password? : xxxxxxx
+  What is your first and last name? :  xxxxxx
+  What is the name of your organizational unit? :  xxxxxxxx
+  What is the name of your organization? :  xxxxxxxxx
+  What is the name of your City or Locality? :  xxxxxxx
+  What is the name of your State or Province? :  xxxxx
+  What is the two-letter country code for this unit? :  xxx
+  ```
+  
+  Then the Key store has been generated with name as APPLICATION_TITLE.keystore.
+  
+###3. Step 3:
+
+  To sign the unsigned APK, run the jarsigner tool which is also included in the JDK:
+  
+  ```
+  jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore APPLICATION_TITLE.keystore android-release-unsigned.apk APPLICATION_TITLE
+  ```
+  
+###4. Step 4:
+
+  Finally, we need to run the zip align tool to optimize the APK:
+  
+  ```
+  zipalign -v 4 android-release-unsigned.apk APPLICATION_TITLE_FOR_RELEASE.apk
+  ```
+  
+  Now you have our final release binary called APPLICATION_TITLE_FOR_RELEASE.apk and you can release this on the Google Play Store.
+  
+  NOTE: If you have an errors in this step with zipalign try to follow this steps:
+   - go to PATH_TO_ANDROID_SDK\AndroidSDK\build-tools\LAST_VESTION\ and copy zipalign.exe;
+   - paste zipalign.exe to directory \platform-tools and \tools;
+   - then try to do step 4 from the beginning;

@@ -24,14 +24,16 @@ cordova create app com.example.hello HelloWorld
 
 ##7. How to build Android production release
 
-###1. Step 1:
+###Step 1:
 
   Open console. Go to application diractory and do:
   ```
   cordova build --release android
   ```
-###2. Step 2:
+###Step 2:
 
+  Go to YOUR_APP_PATH\platforms\android\build\outputs\apk\. There you can find android-release-unsigned.apk.
+  
   Key Generation:
   
   ```
@@ -51,7 +53,7 @@ cordova create app com.example.hello HelloWorld
   
   Then the Key store has been generated with name as APPLICATION_TITLE.keystore.
   
-###3. Step 3:
+###Step 3:
 
   To sign the unsigned APK, run the jarsigner tool which is also included in the JDK:
   
@@ -59,7 +61,7 @@ cordova create app com.example.hello HelloWorld
   jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore APPLICATION_TITLE.keystore android-release-unsigned.apk APPLICATION_TITLE
   ```
   
-###4. Step 4:
+###Step 4:
 
   Finally, we need to run the zip align tool to optimize the APK:
   

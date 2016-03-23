@@ -4,8 +4,8 @@ var AppRouter = Jr.Router.extend({
   },
 
   home: function(){
-    var homeView = new HomeView();
-    this.renderView(homeView);
+    app.homeView = new HomeView();
+    this.renderView(app.homeView);
   }
 
 });

@@ -3,21 +3,35 @@ var app = {
   initialize: function() {
     this.bindEvents();
   },
+  
+  loadTemplate: function(tpls, callback) {
+    $('body').addClass('g-loading');
+    var deferreds = [];
+    $.each(tpls, function(index, tpl) {
+      deferreds.push($.get('js/templates/' + tpl + '.html', function(data) { app.templates[tpl] = data; }));
+    });
+    $.when.apply(null, deferreds).done(callback);
+  },
+  
+  tpls: ['homeTemplate'],
+  templates: {},
+  
   // Bind any events that are required on startup. Common events are:
   // 'load', 'deviceready', 'offline', and 'online'.
   bindEvents: function() {
     //document.addEventListener('deviceready', this.onDeviceReady, false);
-    document.addEventListener('DOMContentLoaded', this.onDeviceReady, false);
+    document.addEventListener('DOMContentLoaded', app.loadTemplate(app.tpls, app.onDeviceReady), false);
     
     // document.addEventListener('offline', this.onDeviceOffline, false);
     // document.addEventListener('online', this.onDeviceOnline, false);
   },
+  
   onDeviceReady: function() {
     app.receivedEvent('deviceready');
-    
     var appRouter = new AppRouter();
     Backbone.history.start();
     app.changePage('home', true);
+    $('body').removeClass('g-loading');
   },
   
   changePage: function(page, trigger, dir){
@@ -40,7 +54,8 @@ var app = {
   },
   
   getTemplate: function(id){
-    return $('#'+id).html();
+    //return $('#'+id).html();
+    return app.templates[id];
   },
   
   onDeviceOffline: function(){

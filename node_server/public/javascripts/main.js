@@ -46,8 +46,8 @@ function Server(socket){
   this.on = function (eventName, cb){
     socket.on(eventName,function(){
       var args = [].slice.call(arguments);
-      if(callback){
-        callback.apply(socket, args);
+      if(cb){
+        cb.apply(socket, args);
       }
     });
   };
@@ -60,8 +60,8 @@ function Server(socket){
   this.once = function (eventName, cb){
     socket.once(eventName,function(){
       var args = [].slice.call(arguments);
-      if(callback){
-        callback.apply(socket, args);
+      if(cb){
+        cb.apply(socket, args);
       }
     });
   };

@@ -23,3 +23,12 @@ $.ajax('SERVER_URL', {
     console.log('Request error: ', JSON.stringify(error));
   }
 });
+
+Base64 decode
+File.prototype.convertToBase64 = function(callback){
+  var FR= new FileReader();
+  FR.onload = function(e) {
+    callback(e.target.result)
+  };       
+  FR.readAsDataURL(this);
+};

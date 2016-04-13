@@ -1,22 +1,30 @@
-var HomeView = Jr.View.extend({
-  
-  template: 'homeTemplate',
-  
-  render: function(){
-    var data = {
-      text: 'This text is example for load data from server',
-      name: 'Alex'
-    };
+define([
+  'jquery',
+  'underscore',
+  'Backbone',
+  'junior',
+  'utils',
+  'json!testdb/testdb.json',
+  'text!templates/homeTemplate.html'
+], function ($, _, Backbone, Jr, app, testdb, homeTemplate){
+  var HomeView = Jr.View.extend({
+
+    template: _.template(homeTemplate),
     
-    this.$el.html(_.template(app.getTemplate(this.template), data));
-    this.afterRender();
-    return this;
-  },
+    render: function(){
+      var $this = this;
+      $this.$el.html($this.template(testdb[0]));
+      $this.afterRender();
+      return $this;
+    },
 
-  afterRender: function() {
-    console.log(this.$el.find('.content'));
-  },
+    afterRender: function() {
+     $('body').removeClass('g-loading');
+    },
 
-  events: {}
+    events: {}
+    
+  });
   
+  return HomeView;
 });

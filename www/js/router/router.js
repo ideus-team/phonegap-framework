@@ -1,11 +1,24 @@
-var AppRouter = Jr.Router.extend({
-  routes: {
-    'home': 'home'
-  },
+define([
+  'jquery',
+  'underscore',
+  'Backbone',
+  'junior',
+  'utils',
+  '../views/homeView'
+], function ($, _, Backbone, Jr, app, HomeView) {
 
-  home: function(){
-    app.homeView = new HomeView();
-    this.renderView(app.homeView);
-  }
+  var Router = Jr.Router.extend({
+    routes: {
+      'home': 'home'
+    },
 
+    home: function(){
+      app.initialize();
+      app.homeView = new HomeView();
+      this.renderView(app.homeView);
+    }
+
+  });
+  
+  return Router;
 });

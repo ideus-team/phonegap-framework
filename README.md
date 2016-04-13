@@ -11,7 +11,7 @@ Git Clone:
 ##2. Copy Phonegap Framework to app directory
 
 ###Small note:
-Our phonegap package is based on requireJS with *json* and *text* plugins. You can load html templates and json objects in your code, just specify the path to your json\html file.
+Our phonegap package is based on [requireJS] (http://requirejs.org) with *json* and *text* plugins. You can load html templates and json objects in your code, just specify the path to your json\html file.
 Example:
 ```
 define([
@@ -47,7 +47,7 @@ define([
 
 ##5. Install plugins for your application from plugins.txt
 
-Now we use this list fo plugins:
+Now we use this list of plugins:
 - [cordova-plugin-device] (https://github.com/apache/cordova-plugin-device)
 - [cordova-plugin-console] (https://github.com/apache/cordova-plugin-console)
 - [cordova-plugin-device-orientation] (https://github.com/gbenvenuti/cordova-plugin-screen-orientation)

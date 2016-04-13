@@ -8,14 +8,10 @@ To install Cordova CLI visit [cordova.apache.org] (http://cordova.apache.org/doc
 Git Clone:
 - URL: https://github.com/ideus-team/phonegap-framework.git
 
-##2. Create cordova hello world project in your directory:
-```
-cordova create app com.example.hello HelloWorld
-```
+##2. Copy Phonegap Framework to app directory
 
-##3. Copy Phonegap Framework to app directory
-
-Our phonegap package is based on requireJS with json and text plugins. You can load html templates and json objects in your code, just specify the path to your json\html file.
+###Small note:
+Our phonegap package is based on requireJS with *json* and *text* plugins. You can load html templates and json objects in your code, just specify the path to your json\html file.
 Example:
 ```
 define([
@@ -45,13 +41,13 @@ define([
 });
 ```
 
-##4. In config.xml rename all variable with your project settings
+##3. In config.xml rename all variable with your project settings
 
-##5. Add icons and splashes for iOS\Android platforms
+##4. Add icons and splashes for iOS\Android platforms
 
-##6. Install plugins for your application from plugins.txt
+##5. Install plugins for your application from plugins.txt
 
-##7. How to build Android production release
+##6. How to build Android production release
 
 ###Step 1:
 

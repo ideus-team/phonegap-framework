@@ -47,6 +47,29 @@ define([
 
 ##5. Install plugins for your application from plugins.txt
 
+Now we use this list fo plugins:
+- [cordova-plugin-device] (https://github.com/apache/cordova-plugin-device)
+- [cordova-plugin-console] (https://github.com/apache/cordova-plugin-console)
+- [cordova-plugin-device-orientation] (https://github.com/gbenvenuti/cordova-plugin-screen-orientation)
+- [cordova-plugin-dialogs] (https://github.com/apache/cordova-plugin-dialogs)
+- [cordova-plugin-file] (https://github.com/apache/cordova-plugin-file)
+- [cordova-plugin-file-transfer] (https://github.com/apache/cordova-plugin-file-transfer)
+- [cordova-plugin-inappbrowser] (https://github.com/apache/cordova-plugin-inappbrowser)
+- [cordova-plugin-network-information] (https://github.com/apache/cordova-plugin-network-information)
+- [cordova-plugin-splashscreen] (https://github.com/apache/cordova-plugin-splashscreen)
+- [cordova-plugin-statusbar] (https://github.com/apache/cordova-plugin-statusbar)
+- [cordova-plugin-game-center] (https://github.com/leecrossley/cordova-plugin-game-center)
+
+For game center plugin we add some methods:
+
+ - getFriends (get all friends in game center)
+ - inviteFriends (send invite to friends)
+
+Files for this two methods you can download here:
+  - [GameCenter.h] (http://clients.ideus.biz/aliashenko/gamecenter/src/ios/GameCenter.h)
+  - [GameCenter.m] (http://clients.ideus.biz/aliashenko/gamecenter/src/ios/GameCenter.m)
+  - [gamecenter.js] (http://clients.ideus.biz/aliashenko/gamecenter/www/gamecenter.js)
+
 ##6. How to build Android production release
 
 ###Step 1:

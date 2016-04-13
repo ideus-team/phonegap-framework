@@ -15,6 +15,35 @@ cordova create app com.example.hello HelloWorld
 
 ##3. Copy Phonegap Framework to app directory
 
+Our phonegap package is based on requireJS with json and text plugins. You can load html templates and json objects in your code, just specify the path to your json\html file.
+Example:
+```
+define([
+  'jquery',
+  'underscore',
+  'Backbone',
+  'junior',
+  'utils',
+  'json!testdb/testdb.json',
+  'text!templates/homeTemplate.html'
+], function ($, _, Backbone, Jr, app, testdb, homeTemplate){
+  var HomeView = Jr.View.extend({
+
+    template: _.template(homeTemplate),
+    
+    render: function(){
+      var $this = this;
+      $this.$el.html($this.template(testdb[0]));
+      return $this;
+    },
+
+    events: {}
+    
+  });
+  
+  return HomeView;
+});
+```
 
 ##4. In config.xml rename all variable with your project settings
 

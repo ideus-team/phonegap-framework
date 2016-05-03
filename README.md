@@ -13,7 +13,7 @@ Git Clone:
 ###Small note:
 Our phonegap package is based on [requireJS] (http://requirejs.org) with *json* and *text* plugins. You can load html templates and json objects in your code, just specify the path to your json\html file.
 Example:
-```
+```js
 define([
   'jquery',
   'underscore',

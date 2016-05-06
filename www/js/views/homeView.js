@@ -4,9 +4,10 @@ define([
   'Backbone',
   'junior',
   'utils',
+  'models/exampleModel',
   'json!testdb/testdb.json',
   'text!templates/homeTemplate.html'
-], function ($, _, Backbone, Jr, app, testdb, homeTemplate){
+], function ($, _, Backbone, Jr, app, exampleModel, testdb, homeTemplate){
   var HomeView = Jr.View.extend({
 
     template: _.template(homeTemplate),

@@ -16,6 +16,9 @@ define([
     
     sqlServer: '',
     
+    // main element where will be render all app content
+    renderElem: '#app-main',
+    
     initialize: function() {
       app.bindEvents();
     },

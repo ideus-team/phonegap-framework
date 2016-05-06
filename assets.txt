@@ -32,3 +32,8 @@ File.prototype.convertToBase64 = function(callback){
   };       
   FR.readAsDataURL(this);
 };
+
+Mongodb
+mongod.exe --dbpath PATH_TO_YOUR_PROJECT\server\db\
+node bin/www
+mongo YOUR_DB_NAME

@@ -43,7 +43,7 @@ define(['jquery', 'modernizr', 'underscore', 'Backbone'], function($, Modernizr,
         this.history.push(opts);
         this.backButtonFlag = false;
         return Backbone.history.navigate(url, opts);
-      },
+      }, 
       renderView: function(mainEl, view) {
         var animation, newEl;
         animation = this.history.length > 0 ? this.history[this.history.length -1].animation : null;
@@ -104,8 +104,8 @@ define(['jquery', 'modernizr', 'underscore', 'Backbone'], function($, Modernizr,
     };
 
     Jr.Router = Backbone.Router.extend({
-      renderView: function(view) {
-        return Jr.Navigator.renderView($('#app-main'), view);
+      renderView: function(view, elem) {
+        return Jr.Navigator.renderView($(elem), view);
       }
     });
   })(Jr);

@@ -10,3 +10,7 @@ cordova plugin add cordova-plugin-splashscreen
 cordova plugin add cordova-plugin-statusbar
 cordova plugin add cordova-plugin-whitelist
 cordova plugin add cordova-plugin-game-center
+
+
+-------------------------------------------------
+Shifrovanie https://www.npmjs.com/package/crypto-js

@@ -16,6 +16,9 @@ requirejs.config({
     // templates
     templates: '../templates',
     
+    // models
+    models: '../models',
+    
     // router
     router: '../router/router',
     

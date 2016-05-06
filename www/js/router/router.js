@@ -15,7 +15,7 @@ define([
     home: function(){
       app.initialize();
       app.homeView = new HomeView();
-      this.renderView(app.homeView);
+      this.renderView(app.homeView, app.renderElem);
     }
 
   });

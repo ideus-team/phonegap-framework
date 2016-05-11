@@ -8,6 +8,7 @@ define([
   'json!testdb/testdb.json',
   'text!templates/homeTemplate.html'
 ], function ($, _, Backbone, Jr, app, exampleModel, testdb, homeTemplate){
+  
   var HomeView = Jr.View.extend({
 
     template: _.template(homeTemplate),
@@ -20,10 +21,10 @@ define([
     },
 
     afterRender: function() {
-     $('body').removeClass('g-loading');
+      $('body').removeClass('g-loading');
     },
 
-    events: {}
+    events: {},
     
   });
   

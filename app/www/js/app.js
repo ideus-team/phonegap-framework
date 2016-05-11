@@ -14,6 +14,9 @@ define([
     */
     debug: true,
     
+    // ios || android
+    developVersio: 'ios',
+    
     sqlServer: '',
     
     // main element where will be render all app content

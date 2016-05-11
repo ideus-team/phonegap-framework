@@ -12,6 +12,7 @@ requirejs.config({
     
     // js
     utils: '../app',
+    appSettings: '../settings',
     
     // templates
     templates: '../templates',

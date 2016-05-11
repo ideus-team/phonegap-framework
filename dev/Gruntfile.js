@@ -1,0 +1,68 @@
+module.exports = function(grunt) {
+
+  // Grunt config - declared in Load-Grunt-Config
+  grunt.initConfig({
+
+  });
+
+  require('time-grunt')(grunt);
+  require('load-grunt-config')(grunt, {
+    jitGrunt: true,
+
+    data: {
+      // Data passed into config.  Can use with <%= test %>
+
+      // Paths for Plugins settings:
+      gruntPluginsDir : 'grunt/config',
+
+      // Paths for Watch:
+      // Grunt
+      gruntSettings: [
+        /* Grunt config   */ 'Gruntfile.js',
+        /* Grunt modules  */ 'package.json',
+        /* Build settings */ 'grunt/aliases.yaml',
+        /* Grunt tasks    */ 'grunt/*.js',
+      ],
+      gruntPluginsSettings: [
+        '<%= csslint.options.csslintrc %>',
+        '<%= jshint.options.jshintrc %>',
+        '<%= jscs.options.config %>',
+      ],
+
+      // Compile:
+        // Source:
+          // CSS
+          sourceCSSDir    : 'src/sass',
+          sourceCSSFiles  : '<%= sourceCSSDir %>' + '/**/*.scss',
+          sourceCSSBase64 : '<%= sourceCSSDir %>' + '/_base64.scss',
+
+          // // JS
+          sourceJSPlugins : [],
+          sourceJSMy      : [],
+          sourceJSFiles   : [
+            '<%= sourceJSPlugins %>',
+            '<%= sourceJSMy %>',
+          ],
+
+          // IMG
+          sourceIMGDir      : 'src/img',
+          sourceIMGFiles    : '<%= sourceIMGDir %>' + '/**/*.{png,jpg,gif,svg}',
+          sourceBase64Files : '<%= sourceIMGDir %>' + '/base64/*.{png,jpg,gif,svg}',
+
+        // Destination:
+          // CSS
+          destCSSDir    : '../app/www/css', // generated css-files names taked from scss files in %sourceCSSDir
+          destCSSExt    : '.css',
+          destMinCSSExt : '.min.css',
+          destCSS       : '<%= destCSSDir %>' + '/main' + '<%= destCSSExt %>',
+          destMinCSS    : '<%= destCSSDir %>' + '/main' + '<%= destMinCSSExt %>',
+
+          // JS
+          destJSDir  : 'js/src',
+          destJS     : '<%= destJSDir %>'  + '/scripts.js',
+
+          // IMG
+          destIMGDir : '../app/www/img',
+    },
+  });
+};

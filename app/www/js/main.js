@@ -20,6 +20,9 @@ requirejs.config({
     // models
     models: '../models',
     
+    // collections
+    collections: '../collections',
+    
     // router
     router: '../router/router',
     

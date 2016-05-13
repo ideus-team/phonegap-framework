@@ -1,0 +1,42 @@
+/**
+* @section list block
+*/
+.b-listBlock{
+  font-size: 17px;
+  margin: 35px 0;
+
+  .b-popover &{
+    margin: 0;
+  }
+
+  &__list{
+    border-radius: 13px;
+    background: #fff none repeat scroll 0 0;
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+  &__item{
+    box-sizing: border-box;
+    position: relative;
+    border-bottom: 1px solid #c8c7cc;
+    &:last-child{
+      border-bottom: none;
+      border-radius: 0 0 13px 13px;
+    }
+    &:first-child{
+      border-radius: 13px 13px 0 0;
+    }
+  }
+
+  &__button{
+    text-decoration: none;
+    color: #007aff;
+    display: block;
+    line-height: 43px;
+    padding: 0 15px;
+    text-align: center;
+  }
+
+}

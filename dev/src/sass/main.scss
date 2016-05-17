@@ -25,6 +25,8 @@
 
 /* Framework Common Libraries */
 @import 'blocks/g-blocks';
+@import 'plugins/index';
+@import 'plugins/junior';
 
 /* Project only code */
 @import 'blocks/common';

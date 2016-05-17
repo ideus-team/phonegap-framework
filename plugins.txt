@@ -11,6 +11,9 @@ cordova plugin add cordova-plugin-statusbar
 cordova plugin add cordova-plugin-whitelist
 cordova plugin add cordova-plugin-game-center
 
+Simple Cordova plugin to see if other apps are installed and launch them.
+https://github.com/nchutchind/App-Launcher-Cordova-Plugin
+
 
 -------------------------------------------------
 Shifrovanie https://www.npmjs.com/package/crypto-js

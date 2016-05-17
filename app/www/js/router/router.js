@@ -5,7 +5,7 @@ define([
   'junior',
   'utils',
   '../views/homeView'
-], function ($, _, Backbone, Jr, app, HomeView, sView) {
+], function ($, _, Backbone, Jr, app, HomeView) {
 
   var Router = Jr.Router.extend({
     routes: {

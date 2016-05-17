@@ -1,0 +1,83 @@
+/**
+* @section navbar
+*/
+.b-navbar{
+  font-size: 17px;
+  left: 0;
+  top: 0;
+  background-color: #f7f7f8;
+  backface-visibility: hidden;
+  box-sizing: border-box;
+  font-size: 17px;
+  height: 44px;
+  margin: 0;
+  position: relative;
+  width: 100%;
+  z-index: 500;
+  font-size: 17px;
+
+  .b-view > &{
+    position: absolute;
+  }
+  &:after{
+    background-color: #c4c4c4;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 1px;
+    left: 0;
+    position: absolute;
+    right: auto;
+    top: auto;
+    transform-origin: 50% 100% 0;
+    width: 100%;
+    z-index: 15;
+    backface-visibility: hidden;
+  }
+
+  .b-views > &{
+    position: absolute;
+  }
+
+  &__left,
+  &__right{
+    align-items: center;
+    display: flex;
+    flex-shrink: 0;
+    justify-content: flex-start;
+    transform: translate3d(0px, 0px, 0px);
+  }
+  &__left{
+    margin-right: 10px;
+  }
+  &__right{
+    margin-left: 10px;
+  }
+  &__center{
+    align-items: center;
+    display: flex;
+    flex-shrink: 10;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 44px;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__inner{
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    left: 0;
+    padding: 0 8px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}

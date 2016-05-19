@@ -38,6 +38,10 @@ function Gate(socket, io){
         console.log('Test echo event', data);
       },
       
+      test: function(){
+        socket.emit('test', {});
+      },
+      
       /**
        * Создание комнаты и добавление в нее пользователя
        * @param res {object} - параметры
@@ -49,10 +53,10 @@ function Gate(socket, io){
        */
       create: function(res){
         socket.room = 'room_' + res.data.roomId;
-        socket.name = res.data.username;
+        socket.username = res.data.username;
         socket.join(socket.room);
         socket.emit(res.clientEvent, res.data);
-        console.log('User '+ socket.name +' added to room ' +socket.room);
+        console.log('User '+ socket.username +' added to room ' +socket.room);
       },
       
       /**
@@ -64,8 +68,8 @@ function Gate(socket, io){
        * @param data {object} - параметры
        */
       leaveroom: function(res){
-        socket.leave(socket.room);
         socket.broadcast.to(socket.room).emit(res.clientEvent, res.data);
+        socket.leave(socket.room);
       },
       
       /**
@@ -94,6 +98,8 @@ function Gate(socket, io){
 function ioConnect(server) {
   var io = require('socket.io').listen(server);
   io.sockets.on('connection', function (socket) {
+    console.log('Socket Connection');
+    socket.nameid = socket.id;
     var gate = new Gate(socket, io);
 
     socket.on('client', function(res){
@@ -101,8 +107,7 @@ function ioConnect(server) {
     });
     
     socket.on('disconnect', function(res){
-      console.log(res);
-      console.log('User '+ socket.name +' disconnected!');
+      console.log('User '+ socket.username || socket.nameid +' disconnected!');
     });
     
   });

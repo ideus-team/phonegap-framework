@@ -22,9 +22,25 @@ define([
 
     afterRender: function() {
       $('body').removeClass('g-loading');
+      app.initServer();
     },
 
-    events: {},
+    events: {
+      'click [data-event]' : 'socketSend',
+      'click [data-node-event]' : 'serverSend'
+    },
+    
+    socketSend: app.send,
+    
+    serverSend: function(){
+      var model = Backbone.Model.extend({
+        url: app.nodeServer+'/test'
+      });
+      model = new model();
+      app.sync('read', model, false, function(res){
+        console.log(res.data);
+      });
+    }
     
   });
   

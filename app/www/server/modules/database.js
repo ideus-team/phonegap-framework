@@ -3,11 +3,8 @@ var Server = mongo.Server;
 var Db = mongo.Db;
 var BSON = mongo.BSONPure;
 var ObjectID = mongo.ObjectID;
-//var cryptoKey = 'hh1wddsasd';
-var CryptoJS = require('crypto-js');
 var parseurl = require('parseurl');
-//var session = require('express-session');
-var connect = require('connect');
+// var connect = require('connect');
 
 
 var server = new Server('localhost', 27017, {auto_reconnect: true});
@@ -19,9 +16,18 @@ db.open(function(err, db) {
   }
 });
 
+function sendR(res, status, data, code){
+  var sendObj = {
+    status: status,
+    code: code,
+    data: data
+  }
+  return res.send(sendObj);
+}
+
 exports.sendHeaders = function(req, res, next){
   res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
   res.header('Access-Control-Allow-Headers', 'Content-Type');
   
   if ( err ){
@@ -32,6 +38,10 @@ exports.sendHeaders = function(req, res, next){
   } else {
     next();
   }
+};
+
+exports.test = function (req, res) {
+  sendR(res, 'Ok', 'Test node server succesful', 200);
 };
 
 /*

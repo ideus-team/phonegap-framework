@@ -7,6 +7,7 @@ requirejs.config({
     underscore: 'underscore-min',
     Backbone: 'backbone-min',
     junior: 'junior',
+    socket: 'socket',
     text: 'text',
     json: 'json',
     

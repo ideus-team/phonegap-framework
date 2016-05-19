@@ -1,9 +1,35 @@
-#app-container {
+body {
+  text-transform: none;
+  background: none;
+  font-family: Verdana;
+  
+  &.g-loading {
+    &:after {
+      content: '';
+      position: fixed;
+      width: 64px;
+      height: 64px;
+      background: rgba(0,0,0,0.6) url(../img/loader.gif) center center no-repeat;
+      background-size: 50px 50px;
+      border-radius: 10px;
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
+    }
+  }
+}
+
+#app-container,
+#app-main {
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+}
+
+#app-main {
+  
 }
 
 .animate-to-view {

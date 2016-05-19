@@ -1,6 +1,6 @@
 {
-  "name": "socket",
-  "version": "0.0.0",
+  "name": "Node server",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "node bin/www.js",
@@ -14,7 +14,6 @@
     "express": "~4.13.1",
     "mongodb": "^2.1.16",
     "morgan": "~1.6.1",
-    "serve-favicon": "~2.3.0",
     "socket.io": "^1.4.5"
   }
 }

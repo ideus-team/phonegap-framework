@@ -1,5 +1,5 @@
 {
-  "name": "ideus-html-framework",
+  "name": "Ideus-phonegap-framework",
   "version": "1.6.0",
   "description": "Our HTML5 boilerplate",
   "devDependencies": {
@@ -29,6 +29,6 @@
   "scripts": {},
   "author": {
     "name": "iDeus",
-    "url": "https://github.com/ideus-team/html-framework"
+    "url": "https://github.com/ideus-team/phonegap-framework/"
   }
 }

@@ -24,6 +24,11 @@ $.ajax('SERVER_URL', {
   }
 });
 
+Script include from website url need permissions in the /app/platforms/android/AndroidManifest.xml:
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.NETWORK_ACCESS" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
 Base64 decode
 File.prototype.convertToBase64 = function(callback){
   var FR= new FileReader();

@@ -114,12 +114,12 @@ define([
 Open config.xml file (app/config.xml). Change all variables by your project settings.
 
 Examples:
-`APPLICATION_ID: biz.ideus.mygamename`
-`APPLICATION_NAME: Mygame`
-`APPLICATION_DESCRIPTION: This game is for people with fast fingers!`
-`AUTHOR_EMAIL: info@ideus.biz`
-`AUTHOR_LINK: http://ideus.biz`
-`AUTHOR: iDeus company`
+``APPLICATION_ID: biz.ideus.mygamename``
+``APPLICATION_NAME: Mygame``
+``APPLICATION_DESCRIPTION: This game is for people with fast fingers!``
+``AUTHOR_EMAIL: info@ideus.biz``
+``AUTHOR_LINK: http://ideus.biz``
+``AUTHOR: iDeus company``
 
 ##4. Add icons and splashes for iOS\Android platforms
 

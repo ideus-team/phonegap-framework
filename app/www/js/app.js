@@ -158,7 +158,7 @@ define([
      * change page
      * @param page {string} - page name
      * @param trigger {boolean} - must be 'true'
-     * @param dir {string} - direction to slide page // left|right|top|bottom
+     * @param dir {string} - direction to slide page // left|right|up|down
      */
     changePage: function(page, trigger, dir){
       var anim = {

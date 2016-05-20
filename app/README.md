@@ -7,7 +7,7 @@ To install Cordova CLI visit [cordova.apache.org] (http://cordova.apache.org/doc
 ## Menu
 1. [Get Framework] (#1-get-framework)
 2. [Install phonegap framework] (#2-install-phonegap-framework)
-3. [Config.xml settings] (#3-in-configxml-rename-all-variable-with-your-project-settings)
+3. [Config.xml settings] (#3-configxml-settings)
 4. [Add icons and splashes] (#4-add-icons-and-splashes-for-iosandroid-platforms)
 5. [Install plugins] (#5-install-plugins-for-your-application-from-pluginstxt)
 6. [How to build Android production release] (#6-how-to-build-android-production-release)
@@ -22,7 +22,7 @@ Git Clone:
 
 ### Server
 
-*! If you don't need server at all, you must remove `server` directory from `app/www` !*
+**! If you don't need server at all, you must remove `server` directory from `app/www` !**
 
 Server based on Node.js, MongoDB and Sockets.io. To install and run server you must go to `app/www/server`, then open terminal and install packages
 
@@ -109,7 +109,17 @@ define([
 });
 ```
 
-##3. In config.xml rename all variable with your project settings
+##3. Config.xml settings
+
+Open config.xml file (app/config.xml). Change all variables by your project settings.
+
+Examples:
+`APPLICATION_ID: biz.ideus.mygamename`
+`APPLICATION_NAME: Mygame`
+`APPLICATION_DESCRIPTION: This game is for people with fast fingers!`
+`AUTHOR_EMAIL: info@ideus.biz`
+`AUTHOR_LINK: http://ideus.biz`
+`AUTHOR: iDeus company`
 
 ##4. Add icons and splashes for iOS\Android platforms
 

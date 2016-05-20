@@ -22,7 +22,7 @@ Git Clone:
 
 ### Server
 
-**! If you don't need server at all, you must remove `server` directory from `app/www` !**
+**! If you don't need server at all, you must remove `server` folder from `app/www` !**
 
 Server based on Node.js, MongoDB and Sockets.io. To install and run server you must go to `app/www/server`, then open terminal and install packages
 
@@ -73,8 +73,8 @@ npm install
 
 or run `install.cmd` file.
 
-Directory for stylesheets file: `dev/src/sass/`.
-For all images there is directory `dev/src/img/`.
+Folder for stylesheets file: `dev/src/sass/`.
+For all images there is folder `dev/src/img/`.
 
 After all this action run `start.cmd` file.
 
@@ -122,6 +122,13 @@ Examples:
 ```AUTHOR: iDeus company```
 
 ##4. Add icons and splashes for iOS\Android platforms
+
+### Icons
+
+To create icons for all devices you must have one icon with resolution 1024px X 1024px.
+Go to [makeappicon.com] (https://makeappicon.com), upload your icon and you receive needed resolution icons on your Email.
+
+### Splashes
 
 ##5. Install plugins for your application from plugins.txt
 
@@ -199,7 +206,7 @@ Files for this two methods you can download here:
   
   NOTE: If you have an errors in this step with zipalign try to follow this steps:
    - go to PATH_TO_ANDROID_SDK\AndroidSDK\build-tools\LAST_VESTION\ and copy zipalign.exe;
-   - paste zipalign.exe to directory \platform-tools and \tools;
+   - paste zipalign.exe to folder \platform-tools and \tools;
    - then try to do step 4 from the beginning;
 
 ##7. CSS Media Queries for iPads & iPhones

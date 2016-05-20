@@ -5,13 +5,13 @@ Our Phonegap Framework based on Cordova CLI with simple [Junior Framework] (http
 To install Cordova CLI visit [cordova.apache.org] (http://cordova.apache.org/docs/en/dev/guide/cli/index.html).
 
 ## Menu
-- [Get Framework] (#1-get-framework)
-- [Copy Phonegap Framework to app directory] (#2-copy-phonegap-framework-to-app-directory)
-- [Config.xml settings] (#3-in-configxml-rename-all-variable-with-your-project-settings)
-- [Add icons and splashes] (#4-add-icons-and-splashes-for-iosandroid-platforms)
-- [Install plugins] (#5-install-plugins-for-your-application-from-pluginstxt)
-- [How to build Android production release] (#6-how-to-build-android-production-release)
-- [CSS Media Queries for iPads & iPhones] (#7-css-media-queries-for-ipads--iphones)
+1. [Get Framework] (#1-get-framework)
+2. [Copy Phonegap Framework to app directory] (#2-copy-phonegap-framework-to-app-directory)
+3. [Config.xml settings] (#3-in-configxml-rename-all-variable-with-your-project-settings)
+4. [Add icons and splashes] (#4-add-icons-and-splashes-for-iosandroid-platforms)
+5. [Install plugins] (#5-install-plugins-for-your-application-from-pluginstxt)
+6. [How to build Android production release] (#6-how-to-build-android-production-release)
+7. [CSS Media Queries for iPads & iPhones] (#7-css-media-queries-for-ipads--iphones)
 
 
 ##1. Get Framework

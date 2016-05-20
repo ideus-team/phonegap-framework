@@ -6,7 +6,7 @@ To install Cordova CLI visit [cordova.apache.org] (http://cordova.apache.org/doc
 
 ## Menu
 1. [Get Framework] (#1-get-framework)
-2. [Copy Phonegap Framework to app directory] (#2-copy-phonegap-framework-to-app-directory)
+2. [Install phonegap framework] (#2-install-phonegap-framework)
 3. [Config.xml settings] (#3-in-configxml-rename-all-variable-with-your-project-settings)
 4. [Add icons and splashes] (#4-add-icons-and-splashes-for-iosandroid-platforms)
 5. [Install plugins] (#5-install-plugins-for-your-application-from-pluginstxt)
@@ -18,9 +18,67 @@ To install Cordova CLI visit [cordova.apache.org] (http://cordova.apache.org/doc
 Git Clone:
 - URL: https://github.com/ideus-team/phonegap-framework.git
 
-##2. Copy Phonegap Framework to app directory
+##2. Install phonegap framework
 
-###Small note:
+### Server
+
+*! If you don't need server at all, you must remove `server` directory from `app/www` !*
+
+Server based on Node.js, MongoDB and Sockets.io. To install and run server you must go to `app/www/server`, then open terminal and install packages
+
+```
+npm install
+```
+
+After that you must edit port for server `default: 8000`. Go to `app/www/server/bin/www.js`
+```
+var port = normalizePort(process.env.PORT || '8000');
+```
+
+Also you must add server url for client side. Go to `app/www/js/app.js`
+```
+var app = {
+  ...
+  sqlServer: '',
+  nodeServer: 'http://localhost:8000',
+  ...
+}
+```
+
+Open terminal and run server by command:
+```
+npm start
+```
+
+#####Note:
+If you need to run server forever, you must install foreverJS plugin for nodeJS:
+```
+npm install forever -g
+```
+
+Than run your server forever:
+```
+npm start forever
+```
+
+
+### Grunt package, stylesheet and images
+
+If you need to edit stylesheet for your views, you must install [Grunt package for Phonegap framework] (https://github.com/ideus-team/phonegap-framework/tree/master/dev).
+Go to `phonegap-framework/dev/`, open terminal and install packages:
+
+```
+npm install
+```
+
+or run `install.cmd` file.
+
+Directory for stylesheets file: `dev/src/sass/`.
+For all images there is directory `dev/src/img/`.
+
+After all this action run `start.cmd` file.
+
+#####Small note:
 Our phonegap package is based on [requireJS] (http://requirejs.org) with *json* and *text* plugins. You can load html templates and json objects in your code, just specify the path to your json\html file.
 Example:
 ```js

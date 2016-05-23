@@ -15,7 +15,19 @@ define([
     
     render: function(){
       var $this = this;
-      $this.$el.html($this.template(testdb[0]));
+      var viewData = {
+        settings: {
+          header: {
+            visible: true,
+            title: 'Main'
+          },
+          footer: {
+            visible: true
+          }
+        },
+        data: testdb[0]
+      };
+      $this.$el.html($this.template(viewData));
       $this.afterRender();
       return $this;
     },
@@ -40,7 +52,7 @@ define([
       app.sync('read', model, false, function(res){
         console.log(res.data);
       });
-    }
+    },
     
   });
   

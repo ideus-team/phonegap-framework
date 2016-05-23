@@ -7,7 +7,7 @@ define([
   'text!templates/errorTemplate.html'
 ], function ($, _, Backbone, Jr, app, errorTemplate){
   
-  var HomeView = Jr.View.extend({
+  var ErrorView = Jr.View.extend({
 
     template: _.template(errorTemplate),
     
@@ -26,5 +26,5 @@ define([
     
   });
   
-  return HomeView;
+  return ErrorView;
 });

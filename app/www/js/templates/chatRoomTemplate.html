@@ -1,0 +1,76 @@
+<div class="b-viewContent <%= settings.header.visible ? "-has_header" : "" %> <%= settings.footer.visible ? "-has_footer" : "" %>">
+
+  <% if ( settings.header.visible ) { %>
+  <div class="b-viewHeader">
+    <div class="b-backButton js-back">
+      <span class="fa fa-angle-left fa-4x"></span>
+    </div>
+    <h2 class="b-viewHeader__title"><%= settings.header.title %></h2>
+    <!-- footer content -->
+  </div>
+  <% } %>
+  
+  <div class="b-viewMain">
+    <!-- chat content -->
+    
+    <div class="b-messages js-messages">
+      <% if ( data.history.length ) { %>
+        <% _.each(data.history, function(message, index){ %>
+        <div class="b-messages__item <%= message.user.uid === data.user.uid ? '-type_owner' : '' %>" data-messageid="<%= data.id %>">
+          <div class="b-messages__userpic"><img src="img/userfiles/ava.png" alt=""></div>
+          <div class="b-messages__holder">
+            <div class="b-messages__holderInner">
+
+              <% if ( message.message.files.length ){ %>
+              <div class="b-messages__images js-imagesContainer">
+                <% _.each(message.message.files, function(file, index){ %>
+                <a href="#" data-image="<%= file.src %>"><img src="<%= file.src %>" alt=""></a>
+                <% }); %>
+              </div>
+              <% } %>
+
+              <% if ( message.message.text.length ){ %>
+              <div class="b-messages__text"><%= message.message.text %></div>
+              <% } %>
+              <div class="b-messages__time">
+                <%= message.date.hour < 10 ? '0'+message.date.hour : message.date.hour %>:<%=  message.date.minutes < 10 ? '0'+message.date.minutes : message.date.minutes %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% }); %>
+      <% } %>
+    </div>
+
+  </div>
+  
+  <% if ( settings.footer.visible ) { %>
+  <div class="b-viewFooter">
+    <form action="#" class="b-formMessage js-formMessage">
+      <div class="b-formMessage__files">
+        <input type="file" multiple="multiple" name="messagefile" id="messagefiles">
+        <span class="fa fa-paperclip fa-3x"></span>
+      </div>
+      <div class="b-formMessage__message">
+        <input type="text" name="message" id="message" placeholder="Type your message...">
+      </div>
+      <div class="b-formMessage__send">
+        <input type="submit" value="">
+        <span class="fa fa-angle-right fa-4x"></span>
+      </div>
+    </form>
+  </div>
+  <% } %>
+  
+  <div class="l-imageGallery js-imageGallery">
+    <span class="b-galleryClose js-galleryClose">x</span>
+    <ul class="b-imageGallery js-galleryList">
+      <!-- <li class="b-imageGallery__item"><img src="img/userfiles/photos/1.jpg" alt=""></li>
+      <li class="b-imageGallery__item"><img src="img/userfiles/photos/2.jpg" alt=""></li>
+      <li class="b-imageGallery__item"><img src="img/userfiles/photos/3.jpg" alt=""></li>
+      <li class="b-imageGallery__item"><img src="img/userfiles/photos/4.jpg" alt=""></li>
+      <li class="b-imageGallery__item"><img src="img/userfiles/photos/5.jpg" alt=""></li> -->
+    </ul>
+  </div>
+
+</div>

@@ -1,3 +1,34 @@
+var dir = {
+  uploadsDir: '../img/uploads',
+
+  userpicDir: function(){
+    return app.uploadsDir+'/userpic';
+  },
+
+  imagesDir: '../img/uploads/userimages',
+
+  filesDir: function(){
+    return app.uploadsDir+'/files';
+  },
+};
+
+var newLoader = function(socket, siofu){
+  socket.uploader = new siofu();
+  socket.uploader.dir = dir.imagesDir;
+  socket.uploader.listen(socket);
+
+  // server side
+  socket.uploader.on("saved", function(event){
+    event.file.clientDetail.stream = event.file.writeStream;
+    console.log('Image saved');
+  });
+
+  // Error handler:
+  socket.uploader.on("error", function(event){
+      console.log("Error from uploader", event);
+  });
+}
+
 /**
  *
  * @param socket
@@ -5,7 +36,7 @@
  * @returns {{emit: Function, call: {echo: Function, broadcast: Function}}}
  * @constructor
  */
-function Gate(socket, io){
+function Gate(socket, io, siofu, database){
   /**
    *
    * @param type {string} - навзвание евента
@@ -53,10 +84,61 @@ function Gate(socket, io){
        */
       create: function(res){
         socket.room = 'room_' + res.data.roomId;
-        socket.username = res.data.username;
+        socket.username = res.data.user.username;
         socket.join(socket.room);
         socket.emit(res.clientEvent, res.data);
+
+        var newUser = {
+            event: 'newUserConnect',
+            data: {
+              username: socket.username,
+              id: socket.id
+            }
+          };
+          
+        socket.broadcast.to(socket.room).emit(newUser.event, newUser.data);
         console.log('User '+ socket.username +' added to room ' +socket.room);
+      },
+
+      chatmessages: function(res){
+        var $data = res.data;
+        $data.room = socket.room;
+        var date = new Date();
+        $data.date = {
+          year: date.getFullYear(),
+          month: date.getMonth(),
+          hour: date.getHours(),
+          minutes: date.getMinutes(),
+          monthDay: date.getDate()
+        };
+
+        database.saveMessage(res.data, function(data){
+          io.sockets.in(socket.room).emit(res.clientEvent, data);
+          database.getRooms({}, function(_data){
+            io.sockets.emit('getRooms', _data);
+          });
+        });
+      },
+
+      newRoom: function (res) {
+        database.newRoom(res.data, function(data){
+          io.sockets.emit('getRooms', data);
+        });
+      },
+
+      getHistory: function(res){
+        database.getHistory(res.data, function(data){
+          socket.emit(res.clientEvent, data);
+          database.getRooms({}, function(_data){
+            io.sockets.emit('getRooms', _data);
+          });
+        });
+      },
+
+      getRooms: function(res){
+        database.getRooms(res.data, function(data){
+          socket.emit(res.clientEvent, data);
+        });
       },
       
       /**
@@ -68,8 +150,14 @@ function Gate(socket, io){
        * @param data {object} - параметры
        */
       leaveroom: function(res){
-        socket.broadcast.to(socket.room).emit(res.clientEvent, res.data);
-        socket.leave(socket.room);
+        database.leaveRoom(res.data, function(data){
+          res.data.roomData = data;
+          socket.broadcast.to(socket.room).emit(res.clientEvent, res.data);
+          socket.leave(socket.room);
+          database.getRooms({}, function(_data){
+            io.sockets.emit('getRooms', _data);
+          });
+        });
       },
       
       /**
@@ -97,10 +185,14 @@ function Gate(socket, io){
 
 function ioConnect(server) {
   var io = require('socket.io').listen(server);
+  var siofu = require('socketio-file-upload');
+  var database = require('../modules/database');
+
   io.sockets.on('connection', function (socket) {
     console.log('Socket Connection');
+    newLoader(socket, siofu);
     socket.nameid = socket.id;
-    var gate = new Gate(socket, io);
+    var gate = new Gate(socket, io, siofu, database);
 
     socket.on('client', function(res){
       gate.call[res.method](res.params);

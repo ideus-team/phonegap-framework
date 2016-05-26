@@ -1,8 +1,24 @@
-<div class="header-navBar"><div class="nav-bar"><h2>Главная</h2></div></div>
-<div class="main-content">
-  <h1><%= text %></h1>
-  <center>Username: <%= name %></center>
-  <br>
-  <button data-event="test">Test socket connection</button>
-  <button data-node-event="test">Test database connection</button>
+<div class="b-viewContent <%= settings.header.visible ? "-has_header" : "" %> <%= settings.footer.visible ? "-has_footer" : "" %>">
+
+  <% if ( settings.header.visible ) { %>
+  <div class="b-viewHeader">
+    <h2 class="b-viewHeader__title"><%= settings.header.title %></h2>
+    <!-- footer content -->
+  </div>
+  <% } %>
+  
+  <div class="b-viewMain">
+    <h1><%= data.text %></h1>
+    <center>Username: <%= data.name %></center>
+    <br>
+    <button data-event="test">Test socket connection</button>
+    <button data-node-event="test">Test database connection</button>
+  </div>
+  
+  <% if ( settings.footer.visible ) { %>
+  <div class="b-viewFooter">
+    <!-- footer content -->
+  </div>
+  <% } %>
+  
 </div>

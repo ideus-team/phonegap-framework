@@ -37,3 +37,46 @@ a {
   position: relative;
   display: block;
 }
+
+.b-viewContent {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  .b-viewHeader {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #000;
+
+    &__title {
+      text-align: center;
+    }
+  }
+
+  .b-viewMain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  &.-has_header {
+    .b-viewMain {
+      top: 50px;
+    }
+  }
+
+  &.-has_footer {
+    .b-viewMain {
+      bottom: 50px;
+    }
+  }
+}

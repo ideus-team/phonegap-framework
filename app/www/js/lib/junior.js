@@ -1,5 +1,9 @@
 var Jr = Jr || {};
 
+String.prototype.capitalizeFirstLetter = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1);
+}
+
 define(['jquery', 'modernizr', 'underscore', 'Backbone'], function($, Modernizr, _, Backbone){
   Jr.View = Backbone.View.extend({
     delegateEvents: function(events) {
@@ -47,7 +51,8 @@ define(['jquery', 'modernizr', 'underscore', 'Backbone'], function($, Modernizr,
       var animation, newEl;
       animation = this.history.length > 0 ? this.history[this.history.length -1].animation : null;
       if (animation) {
-        newEl = $('<div></div>');
+        var fragment = Backbone.history.getFragment();
+        newEl = $('<div class="b-viewHolder -view_'+fragment+'"></div>');
         this.resetContent(newEl, view);
         this.normalRenderView(newEl, view);
         this.animate(mainEl, newEl, animation.type, animation.direction);
@@ -61,6 +66,8 @@ define(['jquery', 'modernizr', 'underscore', 'Backbone'], function($, Modernizr,
       return mainEl.append(view.render().el);
     },
     resetContent: function(mainEl) {
+      var fragment = Backbone.history.getFragment();
+      $(mainEl).addClass('b-viewHolder -view_'+fragment+'');
       return mainEl.html('');
     },
     afterAnimation: function() {

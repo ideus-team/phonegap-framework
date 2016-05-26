@@ -5,7 +5,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var database = require('./modules/database');
 
-
 var routes = require('./routes/index');
 
 var app = express();
@@ -19,7 +18,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.use('/', routes);
+//app.use('/', routes);
+
 
 app.use(database.sendHeaders);
 app.get('/test', database.test);

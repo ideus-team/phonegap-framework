@@ -34,12 +34,12 @@ define([
 
     afterRender: function() {
       $('body').removeClass('g-loading');
-      app.initServer();
     },
 
     events: {
       'click [data-event]' : 'socketSend',
-      'click [data-node-event]' : 'serverSend'
+      'click [data-node-event]' : 'serverSend',
+      'click .js-second' : 'second'
     },
     
     socketSend: app.send,
@@ -53,6 +53,10 @@ define([
         console.log(res.data);
       });
     },
+    
+    second: function(){
+      app.changePage('chat', true, 'left');
+    }
     
   });
   

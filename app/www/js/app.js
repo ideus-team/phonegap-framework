@@ -3,8 +3,9 @@ define([
   'underscore',
   'Backbone',
   'socket',
-  'junior'
-], function($, _, Backbone, io, Jr){
+  'junior',
+  'text!templates/chatMessage.html'
+], function($, _, Backbone, io, Jr, chatMessage){
 
   var app = {
     
@@ -14,15 +15,34 @@ define([
      * in all places where with cordova plugin method call
     */
     debug: true,
+
+    monthsName: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+
+    monthsNum: [01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12],
+
+    uploadsDir: 'img/uploads',
+
+    userpicDir: function(){
+      return app.uploadsDir+'/userpic';
+    },
+
+    imagesDir: function(){
+      return app.uploadsDir+'/user-images';
+    },
     
     // ios || android
-    developVersio: 'ios',
+    developVersion: 'ios',
     
     sqlServer: '',
-    nodeServer: 'http://localhost:8000',
+    nodeServer: 'http://test-nodecmsnode.aliashenko.dev.ideus.biz',
     
     // main element where will be render all app content
     renderElem: '#app-main',
+
+    userdata: {
+      username: 'Alex',
+      uid: '2sd23'
+    },
     
     initialize: function() {
       app.bindEvents();
@@ -32,7 +52,6 @@ define([
       app.onDeviceReady();
       //var domEvent = app.debug ? 'DOMContentLoaded' : 'deviceready';
       //d.addEventListener(domEvent, this.onDeviceReady, false);
-      
       if ( !app.debug ){
         document.addEventListener('offline', app.onDeviceOffline, false);
         document.addEventListener('online', app.onDeviceOnline, false);
@@ -53,6 +72,16 @@ define([
           app.server.on(event, app.methodFn[event]);
           app.start = true;
         }
+      }
+    },
+
+    destroyUploader: function (uploader) {
+      if ( uploader ){
+        uploader.removeEventListener('start', function(){}, false);
+        uploader.removeEventListener('progress', function(){}, false);
+        uploader.removeEventListener('complete', function(){}, false);
+        uploader.destroy();
+        uploader = null;
       }
     },
     
@@ -138,6 +167,23 @@ define([
       test: function(data){
         console.log('Test socket succesful');
       },
+
+      create: function(data){
+        console.log('User ', data.user.username, 'connect to room ', data.roomId);
+      },
+
+      chatmessages: function(data){
+        var template = _.template(chatMessage);
+        var messagesHolder = app.chatRoomView.$el.find('.js-messages');
+        data.messageOwner = data.user.uid === app.userdata.uid ? true : false;
+        messagesHolder.append(template(data));
+        app.chatRoomView.sendData.files = [];
+        app.chatRoomView.$el.find('#messagefiles').val('');
+        setTimeout(function(){
+          app.chatRoomView.initGallery(messagesHolder.children().filter(':last').find('.js-imagesContainer'));
+          app.scrollToLastMessage();
+        }, 400);
+      },
       
       disconnect: function(){
         delete app.socket;
@@ -150,10 +196,71 @@ define([
           app.initServer();
           console.log('Connect New');
         }
-      }
+      },
+
+      getHistory: function(data){
+        var viewData = {
+          settings: {
+            header: {
+              visible: true,
+              title: 'Chat room #'+app.chatRoomView.roomid
+            },
+            footer: {
+              visible: true
+            }
+          },
+          data: {
+            user: app.userdata,
+            history: data
+          }
+        };
+        app.chatRoomView.$el.html(app.chatRoomView.template(viewData));
+        app.chatRoomView.afterRender();
+      },
       
+      getRooms: function(data){
+        var fragment = Backbone.history.getFragment();
+        if ( fragment === 'chat' ){
+          console.log(data);  
+          var viewData = {
+            settings: {
+              header: {
+                visible: true,
+                title: 'Chat'
+              },
+              footer: {
+                visible: false
+              }
+            },
+            data: {
+              rooms: data
+            }
+          };
+
+          app.chatView.$el.html(app.chatView.template(viewData));
+          app.chatView.afterRender();
+        }
+      },
+
+      newUserConnect: function(data){
+        console.log(data);
+      },
+
+      leaveroom: function(data){
+        console.log(data);
+      },
+
     },
     
+    scrollDuration: 1000,
+
+    scrollToLastMessage: function () {
+      var $scrollEl = $('.b-viewMain');
+      $scrollEl.animate({
+        scrollTop: $scrollEl[0].scrollHeight
+      }, app.scrollDuration);
+    },
+
     /**
      * change page
      * @param page {string} - page name
@@ -288,6 +395,8 @@ define([
       return res;
     },
   };
+
+  window.app = app;
   
   return app;
 });

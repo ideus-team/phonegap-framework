@@ -4,15 +4,15 @@ var Db = mongo.Db;
 var BSON = mongo.BSONPure;
 var ObjectID = mongo.ObjectID;
 var parseurl = require('parseurl');
-// var connect = require('connect');
+var connect = require('connect');
 
 
 var server = new Server('localhost', 27017, {auto_reconnect: true});
-db = new Db('YOUR_DATABASE_NAME', server, {safe: true});
+db = new Db('testPhonegapDB', server, {safe: true});
 
 db.open(function(err, db) {
   if(!err) {
-    console.log("Connected to 'YOUR_DATABASE_NAME DB' database");
+    console.log("Connected to 'testPhonegapDB DB' database");
   }
 });
 
@@ -42,6 +42,126 @@ exports.sendHeaders = function(req, res, next){
 
 exports.test = function (req, res) {
   sendR(res, 'Ok', 'Test node server succesful', 200);
+};
+
+exports.saveMessage = function (data, cb) {
+  var saveData = {
+    message: {
+      text: data.form.message,
+      files: data.files,
+    },
+    user: data.user,
+    room: data.room,
+    roomid: data.roomid,
+    date: data.date
+  };
+  db.collection('chatmessages').insert(saveData, function(err, result){
+    if ( err ){
+      console.log('error!');
+      return 'error';
+    } else {
+      result.ops[0].id = result.ops[0]._id;
+      var dataToSend = result.ops[0];
+      if ( cb ) { 
+        db.collection('chatrooms', function(err, collection){
+          var roomId = saveData.roomid;
+          collection.find({id: new ObjectID(roomId)}, function(err, result){
+            result.toArray(function(err, rooms) {
+              delete rooms[0]._id;
+              rooms[0].messages += 1;
+              var month = saveData.date.month > 10 ? saveData.date.month : '0'+saveData.date.month;
+              var hour = saveData.date.hour > 10 ? saveData.date.hour : '0'+saveData.date.hour;
+              var minutes = saveData.date.minutes > 10 ? saveData.date.minutes : '0'+saveData.date.minutes;
+              var monthDay = saveData.date.monthDay > 10 ? saveData.date.monthDay : '0'+saveData.date.monthDay;
+              rooms[0].lastMessage = monthDay+'.'+month+'.'+saveData.date.year+' '+hour+':'+minutes;
+              rooms[0].lastMessageUser = saveData.user.username;
+              collection.update({id: new ObjectID(roomId)}, rooms[0], {safe:true}, function(err, result){
+                cb(dataToSend);
+              });
+            });
+          });
+        });
+      }
+    }
+  });
+};
+
+exports.newRoom = function (data, cb) {
+  var saveData = data;
+  var id = new ObjectID();
+  saveData.id = id;
+  db.collection('chatrooms').insert(saveData, function(err, result){
+    if ( err ){
+      console.log('error!');
+      return 'error';
+    } else {
+      var newRoom = [result.ops[0]];
+      if ( cb ) { 
+        db.collection('chatrooms', function(err, collection){
+          collection.find({}, function(err, result){
+            result.toArray(function(err, rooms) {
+              cb(rooms);
+            });
+          });
+        });
+      }
+    }
+  });
+};
+
+exports.getHistory = function(data, cb){
+  var roomId = data.roomid;
+  db.collection('chatmessages').find({room: 'room_'+roomId}, function(err, result){
+    if ( err ){
+      console.log('error!');
+      return 'error';
+    } else {
+      result.toArray(function(err, items) {
+        db.collection('chatrooms', function(err, collection){
+          collection.find({id: new ObjectID(roomId)}, function(err, result){
+            result.toArray(function(err, rooms) {
+              delete rooms[0]._id;
+              rooms[0].users += 1;
+              collection.update({id: new ObjectID(roomId)}, rooms[0], {safe:true}, function(err, result){
+                cb(items);
+              });
+              
+            });
+          });
+        });
+      });
+    }
+  });
+
+};
+
+exports.leaveRoom = function(data, cb) {
+  var roomId = data.roomid;
+  db.collection('chatrooms', function(err, collection){
+    collection.find({id: new ObjectID(roomId)}, function(err, result){
+      result.toArray(function(err, rooms) {
+        delete rooms[0]._id;
+        rooms[0].users -= 1;
+        collection.update({id: new ObjectID(roomId)}, rooms[0], {safe:true}, function(err, result){
+          if ( cb ) cb(rooms[0]);
+        });
+      });
+    });
+  });
+};
+
+exports.getRooms = function(data, cb){
+  db.collection('chatrooms').find({}, function(err, result){
+    if ( err ){
+      console.log('error!');
+      return 'error';
+    } else {
+      result.toArray(function(err, items) {
+        console.log(items);
+        cb(items);
+      });
+    }
+  });
 };
 
 /*

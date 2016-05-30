@@ -36,32 +36,6 @@
             <% }); %>
           </ul>
         <% } %>
-        <!-- <ul class="b-chat__roomsList">
-          <li class="b-chat__roomHolder js-gotoroom" data-roomid="1">
-            <span class="b-chat__roomIcon"></span>
-            <div class="b-chat__roomTitle">Room title</div>
-            <div class="b-chat__creator">Creator: <b>Alex</b></div>
-            <div class="b-chat__info">
-              <span class="b-chat__usersNum">Users: 15</span>
-              <span class="b-chat__messagesNum">Messages: 125</span>
-              <span class="b-chat__lastMessage">Last message: 23.05.16 19:39 by Username</span>
-            </div>
-            <i class="fa fa-angle-right fa-3x -icon_nextArrow"></i>
-          </li>
-          <li class="b-chat__roomHolder js-gotoroom" data-roomid="2">
-            <span class="b-chat__roomIcon"></span>
-            <div class="b-chat__roomInfo">
-              <div class="b-chat__roomTitle">Room title</div>
-              <div class="b-chat__creator">Creator: <b>Alex</b></div>
-              <div class="b-chat__info">
-                <span class="b-chat__usersNum">Users: 15</span>
-                <span class="b-chat__messagesNum">Messages: 125</span>
-                <span class="b-chat__lastMessage">Last message: 23.05.16 19:39 by Username</span>
-              </div>
-            </div>
-            <i class="fa fa-angle-right fa-3x -icon_nextArrow"></i>
-          </li>
-        </ul> -->
       </div>
     </div>
   </div>
@@ -72,7 +46,8 @@
   </div>
   <% } %>
 
-  <div class="b-addRoom js-addRoom">
+  <div class="b-addRoom js-addRoomPopup">
+    <span class="b-addRoom__close js-closeAddRoom">x</span>
     <form action="#" id="add-room">
       <input type="text" name="title" required="required">
       <input type="file" name="img" id="loadImageRoom" required="required">

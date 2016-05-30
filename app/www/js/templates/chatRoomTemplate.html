@@ -29,7 +29,7 @@
               </div>
               <% } %>
 
-              <% if ( message.message.text.length ){ %>
+              <% if ( message.message.text && message.message.text.length ){ %>
               <div class="b-messages__text"><%= message.message.text %></div>
               <% } %>
               <div class="b-messages__time">

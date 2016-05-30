@@ -4,15 +4,14 @@ var Db = mongo.Db;
 var BSON = mongo.BSONPure;
 var ObjectID = mongo.ObjectID;
 var parseurl = require('parseurl');
-var connect = require('connect');
 
 
 var server = new Server('localhost', 27017, {auto_reconnect: true});
-db = new Db('testPhonegapDB', server, {safe: true});
+db = new Db('DATABASE_NAME', server, {safe: true});
 
 db.open(function(err, db) {
   if(!err) {
-    console.log("Connected to 'testPhonegapDB DB' database");
+    console.log("Connected to 'DATABASE_NAME DB' database");
   }
 });
 

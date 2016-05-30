@@ -34,7 +34,7 @@ define([
     developVersion: 'ios',
     
     sqlServer: '',
-    nodeServer: 'http://test-nodecmsnode.aliashenko.dev.ideus.biz',
+    nodeServer: 'http://localhost:8888',
     
     // main element where will be render all app content
     renderElem: '#app-main',
@@ -221,7 +221,6 @@ define([
       getRooms: function(data){
         var fragment = Backbone.history.getFragment();
         if ( fragment === 'chat' ){
-          console.log(data);  
           var viewData = {
             settings: {
               header: {

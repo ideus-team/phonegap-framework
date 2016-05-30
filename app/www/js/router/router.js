@@ -5,7 +5,6 @@ define([
   'junior',
   'utils',
   '../views/homeView',
-  '../views/secondView',
   '../views/chatView',
   '../views/chatRoomView',
   '../views/errorView'
@@ -25,11 +24,6 @@ define([
       app.initialize();
       app.homeView = new HomeView();
       this.renderView(app.homeView, app.renderElem);
-    },
-    
-    second: function(){
-      app.secondView = new SecondView();
-      this.renderView(app.secondView, app.renderElem);
     },
     
     chat: function(){

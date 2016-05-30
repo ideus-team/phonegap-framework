@@ -145,6 +145,10 @@ define([
         var bxViewport = $this.$el.find('.js-imageGallery .bx-viewport');
         $this.setY($this.popupY, bxViewport);
       }
+      if($this.galleryMovingVert) {
+        $this.galleryMovingVert = false;
+        $this.gallery.reloadSlider($.extend({}, $this.galleryConfig, {startSlide: $this.gallery.getCurrentSlide(), preventDefaultSwipeX: false}));
+      }
     },
 
     popupTouchmove: function(e){
@@ -152,7 +156,11 @@ define([
         x: e.originalEvent.changedTouches[0].pageX - $this.popuptouch.x,
         y: e.originalEvent.changedTouches[0].pageY - $this.popuptouch.y
       };
-      if ( /*$this.th.y < -150 && */($this.th.x < 30 && $this.th.x > -30) ){
+      if ( $this.th.y < -50 && ($this.th.x < 30 && $this.th.x > -30) ){
+        if(!$this.galleryMovingVert) {
+          $this.galleryMovingVert = true;
+          $this.gallery.reloadSlider($.extend({}, $this.galleryConfig, {startSlide: $this.gallery.getCurrentSlide()}));
+        }
         $this.popupY -= 5;
         var bxViewport = $this.$el.find('.js-imageGallery .bx-viewport');
         $this.setY($this.popupY, bxViewport);
@@ -216,6 +224,7 @@ define([
       var allPhotos = messageHolder.find('>a');
       var $galleryHolder = $('.js-imageGallery');
       var $galleryList = $('.js-galleryList');
+      $this.galleryMovingVert = false;
       $galleryList.html('');
       $.each(allPhotos, function(index, link){
         var $link = $(link);
@@ -224,20 +233,22 @@ define([
         $galleryList.append($(tpl));
         if ( (index+1) >= allPhotos.length ){
           $galleryHolder.fadeIn(function(){
-            $this.gallery = $galleryList.bxSlider({
-              pager: false,
-              infiniteLoop: false,
-              swipeThreshold: 20,
-              speed: 200,
-              preloadImages: 'visible',
-              controls: false,
-              startSlide: photoIndex
-            });
+            $this.gallery = $galleryList.bxSlider($.extend({}, $this.galleryConfig, {startSlide: photoIndex}));
         });
         }
       });
     },
-
+    
+    galleryConfig: {
+      pager: false,
+      infiniteLoop: false,
+      swipeThreshold: 20,
+      speed: 200,
+      preloadImages: 'visible',
+      adaptiveHeight: true,
+      controls: false
+    },
+    
     galleryClose: function(e){
       if ( e ){ e.preventDefault() }
       var $galleryHolder = $('.js-imageGallery');

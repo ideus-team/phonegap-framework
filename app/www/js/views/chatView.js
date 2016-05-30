@@ -52,6 +52,7 @@ define([
       'mouseup [data-roomid]': 'gotoroom',
       'click .js-back': 'back',
       'click .js-addRoom': 'addRoom',
+      'click .js-closeAddRoom': 'addRoomClose',
       'change #loadImageRoom': 'loadImage',
       'submit #add-room': 'createRoom',
     },
@@ -69,9 +70,13 @@ define([
     },
 
     addRoom: function(){
-      //app.changePage('addroom', true, 'left');
-      var addRoom = $this.$el.find('.js-addRoom');
+      var addRoom = $this.$el.find('.js-addRoomPopup');
       addRoom.addClass('-state_active');
+    },
+
+    addRoomClose: function(){
+      var addRoom = $this.$el.find('.js-addRoomPopup');
+      addRoom.removeClass('-state_active');
     },
 
     loadImage: function(e){

@@ -215,6 +215,7 @@
   }
 
   .b-imageGallery {
+    margin: 0;
     opacity: 0;
     overflow: hidden;
     height: 100%;
@@ -244,6 +245,7 @@
     }
     img {
       margin: 0 auto;
+      max-height: 100vh;
     }
   }
 }
@@ -339,15 +341,30 @@
   border-radius: 10px;
   text-align: center;
   left: 50%;
-  top: 100%;
+  top: 120%;
   transform: translateX(-50%);
-  transition: all 1s;
+  transition: all 0.5s;
   z-index: 10000;
   border: 1px solid #272822;
 
   &.-state_active {
     top: 50%;
     transform: translateX(-50%) translateY(-50%);
+  }
+
+  &__close {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    width: 20px;
+    height: 20px;
+    line-height: 17px;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 2px solid #000;
   }
 }
 

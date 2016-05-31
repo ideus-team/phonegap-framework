@@ -68,6 +68,7 @@ exports.saveMessage = function (data, cb) {
             result.toArray(function(err, rooms) {
               delete rooms[0]._id;
               rooms[0].messages += 1;
+              saveData.date.month += 1;
               var month = saveData.date.month > 10 ? saveData.date.month : '0'+saveData.date.month;
               var hour = saveData.date.hour > 10 ? saveData.date.hour : '0'+saveData.date.hour;
               var minutes = saveData.date.minutes > 10 ? saveData.date.minutes : '0'+saveData.date.minutes;

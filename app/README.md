@@ -61,6 +61,8 @@ Than run your server forever:
 npm start forever
 ```
 
+Note: If you have error with ws:// - change socket.connect settings to ``transports: ['polling']``
+
 
 ### Grunt package, stylesheet and images
 

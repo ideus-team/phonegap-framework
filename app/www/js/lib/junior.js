@@ -43,27 +43,35 @@ define(['jquery', 'modernizr', 'underscore', 'Backbone'], function($, Modernizr,
       SLIDE_OVER: 'SLIDE_OVER'
     },
     navigate: function(url, opts) {
-      this.history.push(opts);
-      this.backButtonFlag = false;
+      Jr.Navigator.history.push(opts);
+      Jr.Navigator.backButtonFlag = false;
       return Backbone.history.navigate(url, opts);
-    }, 
+    },
+
+    container: $('#app-container'),
+
     renderView: function(mainEl, view) {
       var animation, newEl;
-      animation = this.history.length > 0 ? this.history[this.history.length -1].animation : null;
+      animation = Jr.Navigator.history.length > 0 ? Jr.Navigator.history[Jr.Navigator.history.length -1].animation : null;
       if (animation) {
         var fragment = Backbone.history.getFragment();
         newEl = $('<div class="b-viewHolder -view_'+fragment+'"></div>');
-        this.resetContent(newEl, view);
-        this.normalRenderView(newEl, view);
-        this.animate(mainEl, newEl, animation.type, animation.direction);
-        return this.afterAnimation();
+        Jr.Navigator.resetContent(newEl, view);
+        Jr.Navigator.normalRenderView(newEl, view);
+        setTimeout(function() {
+          Jr.Navigator.animate(mainEl, newEl, animation.type, animation.direction);
+          Jr.Navigator.afterAnimation();
+        }, 1000);
       } else {
-        this.resetContent(mainEl, view);
-        return this.normalRenderView(mainEl, view);
+        Jr.Navigator.resetContent(mainEl, view);
+        Jr.Navigator.normalRenderView(mainEl, view);
+        setTimeout(function(){
+          $('body').removeClass('g-loading');
+        }, 50);
       }
     },
     normalRenderView: function(mainEl, view) {
-      return mainEl.append(view.render().el);
+      mainEl.append(view.render().el);
     },
     resetContent: function(mainEl) {
       var fragment = Backbone.history.getFragment();
@@ -72,29 +80,30 @@ define(['jquery', 'modernizr', 'underscore', 'Backbone'], function($, Modernizr,
     },
     afterAnimation: function() {
       var animation, opposite;
-      var lastNavigate = this.history.pop();
+      var lastNavigate = Jr.Navigator.history.pop();
       animation = lastNavigate.animation;
-      opposite = this.opposites[animation.direction];
+      opposite = Jr.Navigator.opposites[animation.direction];
       lastNavigate.animation.direction = opposite;
-      this.history.push(lastNavigate);
-      if(this.backButtonFlag) {
-        this.history.pop();
+      Jr.Navigator.history.push(lastNavigate);
+      if(Jr.Navigator.backButtonFlag) {
+        Jr.Navigator.history.pop();
       }
-      this.backButtonFlag = true;
+      Jr.Navigator.backButtonFlag = true;
     },
     animate: function(fromEl, toEl, type, direction) {
-      if (this.animations.hasOwnProperty(type)) {
-        return this.doAnimation(fromEl, toEl, type, direction);
+      $('body').removeClass('g-loading');
+      if (Jr.Navigator.animations.hasOwnProperty(type)) {
+        return Jr.Navigator.doAnimation(fromEl, toEl, type, direction);
       } else {
         throw Error("Animation Not Available");
       }
     },
     doAnimation: function(fromEl, toEl, type, direction) {
-      var after, next;
-      $('#app-container').prepend(toEl);
+      var after, next, $this = this;
+      $this.container.prepend(toEl);
       toEl.addClass('animate-to-view').addClass(direction).addClass('initial');
-      $('#app-container').addClass('animate');
-      $('#app-container').addClass(direction);
+      $this.container.addClass('animate');
+      $this.container.addClass(direction);
       next = function() {
         return toEl.removeClass('initial');
       };
@@ -103,7 +112,7 @@ define(['jquery', 'modernizr', 'underscore', 'Backbone'], function($, Modernizr,
         fromEl.remove();
         toEl.attr('id', 'app-main');
         toEl.removeClass('animate-to-view').removeClass(direction);
-        return $('#app-container').removeClass('animate').removeClass(direction);
+        return $this.container.removeClass('animate').removeClass(direction);
       };
       return setTimeout(after, 400);
     }

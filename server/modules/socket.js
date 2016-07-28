@@ -1,20 +1,10 @@
 var dir = {
-  uploadsDir: '../img/uploads',
-
-  userpicDir: function(){
-    return app.uploadsDir+'/userpic';
-  },
-
-  imagesDir: '../img/uploads/userimages',
-
-  filesDir: function(){
-    return app.uploadsDir+'/files';
-  },
+  uploadsDir: 'files/images/'
 };
 
 var newLoader = function(socket, siofu){
   socket.uploader = new siofu();
-  socket.uploader.dir = dir.imagesDir;
+  socket.uploader.dir = dir.uploadsDir;
   socket.uploader.listen(socket);
 
   // server side

@@ -18,6 +18,11 @@ requirejs.config({
     // js
     utils: '../app',
     appSettings: '../settings',
+
+    clientServer: '../server/clientServer',
+    socketServer: '../server/socketServer',
+    eventsCallback: '../server/eventsCallback',
+    eventsSend: '../server/eventsSend',
     
     // templates
     templates: '../templates',
@@ -39,16 +44,15 @@ requirejs.config({
 require([
   'jquery',
   'router',
-  'utils'
-], function ($, Router, app){
+  'utils',
+  'clientServer'
+], function ($, Router, app, server){
   if ( !app.socket ){
-    app.initServer();
+    server.initServer();
   }
-  $('body').addClass('g-loading');
   app.router = new Router();
   Backbone.history.start();
-  app.changePage('chat', true);
-  //app.changePage('home', true);
+  app.changePage('home', true);
 });
 
 File.prototype.convertToBase64 = function(callback){

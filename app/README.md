@@ -13,6 +13,9 @@ To install Cordova CLI visit [cordova.apache.org] (http://cordova.apache.org/doc
 6. [How to build Android production release] (#6-how-to-build-android-production-release)
 7. [CSS Media Queries for iPads & iPhones] (#7-css-media-queries-for-ipads--iphones)
 
+NOTE: 
+To solve the DexException must be imported via terminal this plugin:
+cordova plugin add https://github.com/jwall149/cordova-multidex
 
 ##1. Get Framework
 Git Clone:

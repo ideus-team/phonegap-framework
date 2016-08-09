@@ -148,6 +148,7 @@ Now we use this list of plugins:
 - [cordova-plugin-network-information] (https://github.com/apache/cordova-plugin-network-information)
 - [cordova-plugin-splashscreen] (https://github.com/apache/cordova-plugin-splashscreen)
 - [cordova-plugin-statusbar] (https://github.com/apache/cordova-plugin-statusbar)
+- [phonegap-plugin-push] (https://github.com/phonegap/phonegap-plugin-push)
 - iOS game center - [cordova-plugin-game-center] (https://github.com/leecrossley/cordova-plugin-game-center)
 - Android game center - [cordova-plugin-play-games-services] (https://github.com/artberri/cordova-plugin-play-games-services)
 

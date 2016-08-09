@@ -5,6 +5,7 @@ Our Phonegap Framework based on Cordova CLI with simple [Junior Framework] (http
 To install Cordova CLI visit [cordova.apache.org] (http://cordova.apache.org/docs/en/dev/guide/cli/index.html).
 
 ## Menu
+0. [Notes and some issues] (#notes-and-some-issues)
 1. [Get Framework] (#1-get-framework)
 2. [Install phonegap framework] (#2-install-phonegap-framework)
 3. [Config.xml settings] (#3-configxml-settings)
@@ -493,3 +494,10 @@ Screen Height = 480px (Actual Pixels)
 
 Device-pixel-ratio: 1
 ```
+
+
+##Notes and some issues
+
+ - (iOS): hide status bar:
+ Go to tab Info in xCode
+<img src="http://joxi.ru/lbrRDg4TdegM21.jpg" />

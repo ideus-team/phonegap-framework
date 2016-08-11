@@ -218,7 +218,7 @@ Files for this two methods you can download here:
    - then try to do step 4 from the beginning;
 
 To take SHA1 from debug apk follow this steps:
-- c:\Users\USERNAM\.android\debug.keystore copy this file to your dir
+- c:\Users\USERNAME\.android\debug.keystore copy this file to your dir
 - run command (password is 'android')
 ```
 keytool -exportcert -alias androiddebug key -keystore debug.keystore -list -v

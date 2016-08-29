@@ -5,6 +5,7 @@ Our Phonegap Framework based on Cordova CLI with simple [Junior Framework] (http
 To install Cordova CLI visit [cordova.apache.org] (http://cordova.apache.org/docs/en/dev/guide/cli/index.html).
 
 ## Menu
+0. [Notes and some issues] (#notes-and-some-issues)
 1. [Get Framework] (#1-get-framework)
 2. [Install phonegap framework] (#2-install-phonegap-framework)
 3. [Config.xml settings] (#3-configxml-settings)
@@ -148,6 +149,7 @@ Now we use this list of plugins:
 - [cordova-plugin-network-information] (https://github.com/apache/cordova-plugin-network-information)
 - [cordova-plugin-splashscreen] (https://github.com/apache/cordova-plugin-splashscreen)
 - [cordova-plugin-statusbar] (https://github.com/apache/cordova-plugin-statusbar)
+- [phonegap-plugin-push] (https://github.com/phonegap/phonegap-plugin-push)
 - iOS game center - [cordova-plugin-game-center] (https://github.com/leecrossley/cordova-plugin-game-center)
 - Android game center - [cordova-plugin-play-games-services] (https://github.com/artberri/cordova-plugin-play-games-services)
 
@@ -214,6 +216,13 @@ Files for this two methods you can download here:
    - go to PATH_TO_ANDROID_SDK\AndroidSDK\build-tools\LAST_VESTION\ and copy zipalign.exe;
    - paste zipalign.exe to folder \platform-tools and \tools;
    - then try to do step 4 from the beginning;
+
+To take SHA1 from debug apk follow this steps:
+- c:\Users\USERNAME\.android\debug.keystore copy this file to your dir
+- run command (password is 'android')
+```
+keytool -exportcert -alias androiddebug key -keystore debug.keystore -list -v
+```
 
 ##7. CSS Media Queries for iPads & iPhones
 
@@ -492,3 +501,10 @@ Screen Height = 480px (Actual Pixels)
 
 Device-pixel-ratio: 1
 ```
+
+
+##Notes and some issues
+
+ - (iOS): hide status bar:
+ Go to tab Info in xCode
+<img src="http://joxi.ru/lbrRDg4TdegM21.jpg" />

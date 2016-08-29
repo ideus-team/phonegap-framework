@@ -5,13 +5,10 @@ define([
   'eventsCallback',
   'eventsSend'
 ], function (app, io, socketServer, eventsCallback, eventsSend) {
-
-  var $this;
-
-  var clientServer = {
+  
+  return {
 
     initServer: function(){
-      $this = this;
       app.socket = app.socket || io.connect(app.nodeServer);
       app.server = app.server || new socketServer(app.socket);
       if ( !app.start ){
@@ -23,8 +20,8 @@ define([
     },
 
     send: function(e, btn){
-      var $this = btn || $(e.currentTarget);
-      var dataAttr = $this.data();
+      var target = btn || $(e.currentTarget || window.event.target);
+      var dataAttr = target.data();
       var event = dataAttr.event || null;
       if ( event ) {
         eventsSend[event](dataAttr, function(data){
@@ -33,12 +30,10 @@ define([
           }
         });
       } else {
-        console.log('Er');
+        throw new Error('Error: No "event" in "clientServer.js" method "send"');
       }
       e.preventDefault();
     }
     
   };
-  
-  return clientServer;
 });

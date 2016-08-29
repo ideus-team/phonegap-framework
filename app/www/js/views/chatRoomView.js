@@ -7,8 +7,9 @@ define([
   'montage',
   'bxSlider',
   'SocketIOFileUpload',
+  'uploader',
   'text!templates/chatRoomTemplate.html'
-], function ($, _, Backbone, Jr, app, montage, bxSlider, SocketIOFileUpload, chatRoomTemplate){
+], function ($, _, Backbone, Jr, app, montage, bxSlider, SocketIOFileUpload, uploader, chatRoomTemplate){
 
   var $this;
 
@@ -44,8 +45,8 @@ define([
 
       setTimeout(function(){
         $this.joinToRoom($this.roomid);
-        app.destroyUploader(app.chatView.uploader);
-        app.destroyUploader($this.uploader);
+        uploader.destroyUploader(app.chatView.uploader);
+        uploader.destroyUploader($this.uploader);
         $this.uploader = new SocketIOFileUpload(app.socket);
 
         $this.uploader.addEventListener('start', function(event){

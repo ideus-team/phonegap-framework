@@ -1,10 +1,8 @@
 define([
   'socket'
 ], function (io) {
-
-  var $this;
-
-  var socketServer = function(socket){
+  
+  return function(socket){
     /**
      * Запрос на сервер
      * @param method {string} - название евента
@@ -18,9 +16,7 @@ define([
         id: socket.id
       };
       socket.once('response', function(res){
-        if(typeof cb == 'function'){
-          cb(res);
-        }
+        cb && typeof cb == 'function' && cb(res);
       });
       socket.emit('client', data);
     };
@@ -33,9 +29,7 @@ define([
     this.on = function (eventName, cb){
       socket.on(eventName,function(){
         var args = [].slice.call(arguments);
-        if(cb){
-          cb.apply(socket, args);
-        }
+        cb && typeof cb == 'function' && cb.apply(socket, args);
       });
     };
 
@@ -45,14 +39,10 @@ define([
      * @param cb {callback} - функция которая должна выполнится при евенте
      */
     this.once = function (eventName, cb){
-      socket.once(eventName,function(){
+      socket.once(eventName, function(){
         var args = [].slice.call(arguments);
-        if(cb){
-          cb.apply(socket, args);
-        }
+        cb && typeof cb == 'function' && cb.apply(socket, args);
       });
     };
   };
-  
-  return socketServer;
 });

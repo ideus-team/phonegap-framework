@@ -1,8 +1,6 @@
 define(['socket', 'utils'], function (io, app) {
-
-  var $this;
-
-  var eventsSend = {
+  
+  return {
 
     test: function(dataAttr, send){
       var event = dataAttr.event;
@@ -10,12 +8,9 @@ define(['socket', 'utils'], function (io, app) {
         event: event,
         data: dataAttr
       }
-      if ( send ){
-        send(data);
-      }
+      
+      send && typeof send === 'function' && send(data);
     }
 
-  }
-  
-  return eventsSend;
+  };
 });

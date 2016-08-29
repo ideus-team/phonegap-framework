@@ -1,7 +1,7 @@
 var Jr = Jr || {};
 
 String.prototype.capitalizeFirstLetter = function() {
-    return this.charAt(0).toUpperCase() + this.slice(1);
+  return this.charAt(0).toUpperCase() + this.slice(1);
 }
 
 define(['jquery', 'modernizr', 'underscore', 'Backbone'], function($, Modernizr, _, Backbone){

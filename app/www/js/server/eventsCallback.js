@@ -1,8 +1,12 @@
-define(['socket', 'utils'], function (io, app) {
-
-  var $this;
-
-  var eventsCallback = {
+define([
+  'socket',
+  'utils',
+  'viewData',
+  'scrollToEnd'
+  'clientServer'
+], function (io, app, viewData, scrollToEnd, clientServer) {
+  
+  return {
       
       test: function(data){
         console.log('Test socket succesful');
@@ -18,10 +22,10 @@ define(['socket', 'utils'], function (io, app) {
         data.messageOwner = data.user.uid === app.userdata.uid ? true : false;
         messagesHolder.append(template(data));
         app.chatRoomView.sendData.files = [];
-        app.chatRoomView.$el.find('#messagefiles').val('');
+        app.chatRoomView.$('#messagefiles').val('');
         setTimeout(function(){
           app.chatRoomView.initGallery(messagesHolder.children().filter(':last').find('.js-imagesContainer'));
-          app.scrollToLastMessage();
+          scrollToEnd.scroll('.b-viewMain');
         }, 400);
       },
       
@@ -33,50 +37,26 @@ define(['socket', 'utils'], function (io, app) {
       connect: function(){
         console.log('Connect');
         if ( !app.socket ){
-          app.initServer();
+          clientServer.initServer();
           console.log('Connect New');
         }
       },
 
       getHistory: function(data){
-        var viewData = {
-          settings: {
-            header: {
-              visible: true,
-              title: 'Chat room #'+app.chatRoomView.roomid
-            },
-            footer: {
-              visible: true
-            }
-          },
-          data: {
-            user: app.userdata,
-            history: data
-          }
-        };
-        app.chatRoomView.$el.html(app.chatRoomView.template(viewData));
+        new viewData.call(app.chatRoomView, true, true);
+        app.chatRoomView.viewData.settings.header.title = 'Chat room #'+app.chatRoomView.roomid;
+        app.chatRoomView.viewData.data = { user: app.userdata, history: data };
+        app.chatRoomView.$el.html(app.chatRoomView.template(app.chatRoomView.viewData));
         app.chatRoomView.afterRender();
       },
       
       getRooms: function(data){
         var fragment = Backbone.history.getFragment();
         if ( fragment === 'chat' ){
-          var viewData = {
-            settings: {
-              header: {
-                visible: true,
-                title: 'Chat'
-              },
-              footer: {
-                visible: false
-              }
-            },
-            data: {
-              rooms: data
-            }
-          };
-
-          app.chatView.$el.html(app.chatView.template(viewData));
+          new viewData.call(app.chatView, true, false);
+          app.chatView.viewData.settings.header.title = 'Chat';
+          app.chatView.viewData.data = { rooms: data };
+          app.chatView.$el.html(app.chatView.template(app.chatView.viewData));
           app.chatView.afterRender();
         }
       },
@@ -92,6 +72,5 @@ define(['socket', 'utils'], function (io, app) {
     },
 
   };
-  
-  return eventsCallback;
+
 });

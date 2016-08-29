@@ -17,7 +17,17 @@ requirejs.config({
     
     // js
     utils: '../app',
-    appSettings: '../settings',
+
+    // additional js modules
+    settings: '../additional/settings',
+    randomNum: '../additional/randomNum',
+    appRequest: '../additional/request',
+    scrollToEnd: '../additional/scrollToEnd',
+    changePage: '../additional/changePage',
+    getFormData: '../additional/getFormData',
+    loader: '../additional/loader',
+    uploader: '../additional/uploader',
+    viewData: '../additional/viewData',
 
     clientServer: '../server/clientServer',
     socketServer: '../server/socketServer',

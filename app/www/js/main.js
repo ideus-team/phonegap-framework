@@ -18,16 +18,16 @@ requirejs.config({
     // js
     utils: '../app',
 
-    // additional js modules
-    settings: '../additional/settings',
-    randomNum: '../additional/randomNum',
-    appRequest: '../additional/request',
-    scrollToEnd: '../additional/scrollToEnd',
-    changePage: '../additional/changePage',
-    getFormData: '../additional/getFormData',
-    loader: '../additional/loader',
-    uploader: '../additional/uploader',
-    viewData: '../additional/viewData',
+    // js modules
+    settings: '../modules/settings',
+    randomNum: '../modules/randomNum',
+    appRequest: '../modules/request',
+    scrollToEnd: '../modules/scrollToEnd',
+    changePage: '../modules/changePage',
+    getFormData: '../modules/getFormData',
+    loader: '../modules/loader',
+    uploader: '../modules/uploader',
+    viewData: '../modules/viewData',
 
     clientServer: '../server/clientServer',
     socketServer: '../server/socketServer',

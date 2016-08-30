@@ -30,7 +30,7 @@ define([
     
     render: function(){
 
-      viewData.call(this, true, false);
+      new viewData.call(this, true, false);
 
       this.viewData.data = testdb[0];
 

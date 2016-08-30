@@ -6,7 +6,8 @@ define([], function(){
    */
 
   return function(settings){
-    this.viewData = {
+
+    return this.viewData = {
       settings: {
         header: {
           visible: settings && settings.header ? settings.header : false
@@ -16,7 +17,8 @@ define([], function(){
         }
       },
       data: {}
-    }
+    };
+
   };
   
 });

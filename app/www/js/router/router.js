@@ -4,13 +4,14 @@ define([
   'Backbone',
   'junior',
   'utils',
+  'settings',
   '../views/homeView',
   '../views/chatView',
   '../views/chatRoomView',
   '../views/errorView'
-], function ($, _, Backbone, Jr, app, HomeView, SecondView, ChatView, ChatRoomView, ErrorView) {
-
-  var Router = Jr.Router.extend({
+], function ($, _, Backbone, Jr, app, settings, HomeView, SecondView, ChatView, ChatRoomView, ErrorView) {
+  
+  return Jr.Router.extend({
     routes: {
       'home': 'home',
       'second': 'second',
@@ -20,28 +21,26 @@ define([
       '*notFound': 'notFound'
     },
 
-    home: function(){
+    home: function() {
       app.initialize();
       app.homeView = new HomeView();
-      this.renderView(app.homeView, app.renderElem);
+      this.renderView(app.homeView, settings.renderElem);
     },
     
-    chat: function(){
+    chat: function() {
       app.chatView = new ChatView();
-      this.renderView(app.chatView, app.renderElem);
+      this.renderView(app.chatView, settings.renderElem);
     },
 
-    chatRoom: function (id) {
+    chatRoom: function(id) {
       app.chatRoomView = new ChatRoomView(id);
-      this.renderView(app.chatRoomView, app.renderElem);
+      this.renderView(app.chatRoomView, settings.renderElem);
     },
 
-    notFound: function () {
+    notFound: function() {
       app.errorView = new ErrorView();
-      this.renderView(app.errorView, app.renderElem);
+      this.renderView(app.errorView, settings.renderElem);
     }
 
   });
-  
-  return Router;
 });

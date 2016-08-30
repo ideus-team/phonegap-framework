@@ -16,7 +16,7 @@ define([], function(){
 
     sqlServer: '',
 
-    nodeServer: 'http://localhost:8888',
+    nodeServer: 'http://localhost:8000',
     
     // main element where will be render all app content
     renderElem: '#app-main',

@@ -17,7 +17,7 @@ define([
         params: params
       };
 
-      loader && appLoader.initLoader();
+      loader && appLoader.show();
       
       $.ajax(settings.sqlServer, {
         method: 'POST',
@@ -53,12 +53,12 @@ define([
      */
     sync: function(command, model, loader, successFn, errorFn){
       // show loader
-      loader && appLoader.initLoader();
+      loader && appLoader.show();
 
       Backbone.sync(command, model, {
         success: function(response){
           // hide loader
-          loader && appLoader.removeLoader();
+          loader && appLoader.hide();
 
           // console.log(command, ': ', response);
 
@@ -67,7 +67,7 @@ define([
         },
         error: function(error){
           // hide loader
-          loader && appLoader.removeLoader();
+          loader && appLoader.hide();
 
           //console.log(command, ': ', error);
 

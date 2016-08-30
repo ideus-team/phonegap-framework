@@ -30,12 +30,12 @@ define([
     
     render: function(){
 
-      new viewData.call(this, true, false);
+      viewData.call(this, true, false);
 
       this.viewData.data = testdb[0];
 
-      $this.$el.html(this.template(this.viewData));
-      $this.afterRender();
+      this.$el.html(this.template(this.viewData));
+      this.afterRender();
       return this;
     },
 

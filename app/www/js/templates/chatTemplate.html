@@ -15,7 +15,7 @@
     <!-- chat content -->
     <div class="l-chat">
       <div class="b-chat">
-        <% if (data.rooms.length){ %>
+        <% if (data && data.rooms.length){ %>
           <ul class="b-chat__roomsList">
             <% _.each(data.rooms, function(room, index){ %>
               <li class="b-chat__roomHolder js-gotoroom" data-roomid="<%= room.id %>">

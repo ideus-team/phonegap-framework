@@ -36,6 +36,9 @@ requirejs.config({
     
     // templates
     templates: '../templates',
+
+    // views
+    views: '../views',
     
     // models
     models: '../models',
@@ -55,14 +58,15 @@ require([
   'jquery',
   'router',
   'utils',
-  'clientServer'
-], function ($, Router, app, server){
+  'clientServer',
+  'changePage'
+], function ($, Router, app, server, changePage){
   if ( !app.socket ){
     server.initServer();
   }
   app.router = new Router();
   Backbone.history.start();
-  app.changePage('home', true);
+  changePage('home', true);
 });
 
 File.prototype.convertToBase64 = function(callback){

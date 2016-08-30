@@ -5,12 +5,12 @@ define([
   'junior',
   'utils',
   'settings',
-  '../views/homeView',
-  '../views/chatView',
-  '../views/chatRoomView',
-  '../views/errorView'
-], function ($, _, Backbone, Jr, app, settings, HomeView, SecondView, ChatView, ChatRoomView, ErrorView) {
-  
+  'views/homeView',
+  'views/chatView',
+  'views/chatRoomView',
+  'views/errorView'
+], function ($, _, Backbone, Jr, app, settings, HomeView, ChatView, ChatRoomView, ErrorView) {
+
   return Jr.Router.extend({
     routes: {
       'home': 'home',

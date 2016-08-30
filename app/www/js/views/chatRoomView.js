@@ -6,10 +6,11 @@ define([
   'utils',
   'montage',
   'bxSlider',
+  'loader',
   'SocketIOFileUpload',
   'uploader',
   'text!templates/chatRoomTemplate.html'
-], function ($, _, Backbone, Jr, app, montage, bxSlider, SocketIOFileUpload, uploader, chatRoomTemplate){
+], function ($, _, Backbone, Jr, app, montage, bxSlider, loader, SocketIOFileUpload, uploader, chatRoomTemplate){
 
   var $this;
 
@@ -38,7 +39,7 @@ define([
     },
 
     afterRender: function() {
-      $('body').removeClass('g-loading');
+      loader.hide();
       $this.timeoutGallaryInit();
       $(window).resize($this.timeoutGallaryInit);
       $(document).on('keyup', $this.keyUp);

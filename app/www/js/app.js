@@ -6,7 +6,7 @@ define([
   'junior',
   'settings',
   'text!templates/chatMessage.html'
-], function($, _, Backbone, io, Jr, chatMessage){
+], function($, _, Backbone, io, Jr, settings, chatMessage){
 
   var app = {
     

@@ -3,13 +3,14 @@ define([
   'socket',
   'socketServer',
   'eventsCallback',
-  'eventsSend'
-], function (app, io, socketServer, eventsCallback, eventsSend) {
+  'eventsSend',
+  'settings'
+], function (app, io, socketServer, eventsCallback, eventsSend, settings) {
   
   return {
 
     initServer: function(){
-      app.socket = app.socket || io.connect(app.nodeServer);
+      app.socket = app.socket || io.connect(settings.nodeServer);
       app.server = app.server || new socketServer(app.socket);
       if ( !app.start ){
         for ( var event in eventsCallback ){

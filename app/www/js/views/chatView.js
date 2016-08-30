@@ -4,17 +4,21 @@ define([
   'Backbone',
   'junior',
   'utils',
+  'loader',
+  'uploader',
+  'settings',
+  'changePage',
+  'getFormData',
   'SocketIOFileUpload',
   'text!templates/chatTemplate.html'
-], function ($, _, Backbone, Jr, app, SocketIOFileUpload, chatTemplate){
-  var $this;
-  var ChatView = Jr.View.extend({
+], function ($, _, Backbone, Jr, app, loader, uploader, settings, changePage, getFormData, SocketIOFileUpload, chatTemplate){
+
+  return Jr.View.extend({
 
     template: _.template(chatTemplate),
     
     render: function(){
-      $this = this;
-
+      
       if ( app.socket ){
         var roomsData = {
           clientEvent: 'getRooms',
@@ -23,28 +27,28 @@ define([
         app.server.request(roomsData.clientEvent, roomsData);
       }
 
-      return $this;
+      return this;
     },
 
     afterRender: function() {
-      $('body').removeClass('g-loading');
-      app.destroyUploader(app.chatView.uploader);
-      $this.uploader = new SocketIOFileUpload(app.socket);
+      loader.hide();
+      this.uploader && uploader.destroyUploader(app.chatView.uploader);
+      this.uploader = new SocketIOFileUpload(app.socket);
       
-      $this.uploader.addEventListener('start', function(event){
+      this.uploader.addEventListener('start', function(event){
         $('body').addClass('g-loading');
       });
 
-      $this.uploader.addEventListener('progress', function(event){
+      this.uploader.addEventListener('progress', function(event){
         var percent = event.bytesLoaded / event.file.size * 100;
         console.log("File is", percent.toFixed(2), "percent loaded");
       });
 
-      $this.uploader.addEventListener('complete', function(event){
+      this.uploader.addEventListener('complete', function(event){
         $('body').removeClass('g-loading');
         var file = event.file;
         var fileStream = event.detail.stream;
-        $this.groupImage = fileStream.path;
+        app.chatView.groupImage = fileStream.path;
       });
     },
 
@@ -58,24 +62,24 @@ define([
     },
 
     back: function () {
-      app.destroyUploader($this.uploader);
-      app.changePage('home', true, 'right');
+      this.uploader && uploader.destroyUploader(this.uploader);
+      changePage('home', true, 'right');
     },
     
     gotoroom: function (e) {
       var roomHolder = $(e.currentTarget);
       var id = roomHolder.data().roomid;
-      app.destroyUploader($this.uploader);
-      app.changePage('chat-room-'+id, true, 'left');
+      this.uploader && uploader.destroyUploader(this.uploader);
+      changePage('chat-room-'+id, true, 'left');
     },
 
     addRoom: function(){
-      var addRoom = $this.$el.find('.js-addRoomPopup');
+      var addRoom = $this.$('.js-addRoomPopup');
       addRoom.addClass('-state_active');
     },
 
     addRoomClose: function(){
-      var addRoom = $this.$el.find('.js-addRoomPopup');
+      var addRoom = $this.$('.js-addRoomPopup');
       addRoom.removeClass('-state_active');
     },
 
@@ -83,26 +87,26 @@ define([
       var input = $(e.currentTarget);
       var files = input[0].files;
       if ( files ){
-        $this.uploader.submitFiles(files);
+        app.chatView.uploader.submitFiles(files);
       }
     },
 
     createRoom: function (e) {
       e.preventDefault();
       var form = $(e.currentTarget);
-      var formData = app.getFormData(form);
-      var addRoom = $this.$el.find('.js-addRoom');
+      var formData = getFormData(form);
+      var addRoom = this.$('.js-addRoom');
       addRoom.removeClass('-state_active');
       form.find('input').val('');
-      formData.img = $this.groupImage || 'img/nophoto.jpg';
-      $this.$el.find('#message').val('');
+      formData.img = this.groupImage || 'img/nophoto.jpg';
+      this.$('#message').val('');
       if ( app.socket ){
         var roomData = {
           clientEvent: 'newRoom',
           data: {
             title: formData.title,
             img: formData.img,
-            creator: app.userdata.username,
+            creator: app.userdata && app.userdata.username ? app.userdata.username : settings.testUser.username,
             users: 0,
             messages: 0,
             lastMessage: null,
@@ -116,6 +120,5 @@ define([
     }
 
   });
-  
-  return ChatView;
+
 });

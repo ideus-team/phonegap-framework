@@ -9,7 +9,7 @@ define([], function(){
     this.viewData = {
       settings: {
         header: {
-          visible: settings && settings.header.length ? settings.header : false
+          visible: settings && settings.header ? settings.header : false
         },
         footer: {
           visible: settings && settings.footer ? settings.footer : false

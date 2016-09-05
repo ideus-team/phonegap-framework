@@ -4,7 +4,7 @@ String.prototype.capitalizeFirstLetter = function() {
   return this.charAt(0).toUpperCase() + this.slice(1);
 }
 
-define(['jquery', 'modernizr', 'underscore', 'Backbone'], function($, Modernizr, _, Backbone){
+define(['jquery', 'modernizr', 'underscore', 'Backbone', 'settings', 'loader'], function($, Modernizr, _, Backbone, settings, loader){
   Jr.View = Backbone.View.extend({
     delegateEvents: function(events) {
       var key, newKey, oldValue;
@@ -48,7 +48,7 @@ define(['jquery', 'modernizr', 'underscore', 'Backbone'], function($, Modernizr,
       return Backbone.history.navigate(url, opts);
     },
 
-    container: $('#app-container'),
+    container: $(settings.mainContainer),
 
     renderView: function(mainEl, view) {
       var animation, newEl;
@@ -58,16 +58,12 @@ define(['jquery', 'modernizr', 'underscore', 'Backbone'], function($, Modernizr,
         newEl = $('<div class="b-viewHolder -view_'+fragment+'"></div>');
         Jr.Navigator.resetContent(newEl, view);
         Jr.Navigator.normalRenderView(newEl, view);
-        setTimeout(function() {
-          Jr.Navigator.animate(mainEl, newEl, animation.type, animation.direction);
-          Jr.Navigator.afterAnimation();
-        }, 1000);
+        Jr.Navigator.animate(mainEl, newEl, animation.type, animation.direction);
+        Jr.Navigator.afterAnimation();
       } else {
         Jr.Navigator.resetContent(mainEl, view);
         Jr.Navigator.normalRenderView(mainEl, view);
-        setTimeout(function(){
-          $('body').removeClass('g-loading');
-        }, 50);
+        loader.hide();
       }
     },
     normalRenderView: function(mainEl, view) {
@@ -75,8 +71,8 @@ define(['jquery', 'modernizr', 'underscore', 'Backbone'], function($, Modernizr,
     },
     resetContent: function(mainEl) {
       var fragment = Backbone.history.getFragment();
-      $(mainEl).addClass('b-viewHolder -view_'+fragment+'');
-      return mainEl.html('');
+      mainEl.addClass('b-viewHolder -view_'+fragment+'');
+      return mainEl.empty();
     },
     afterAnimation: function() {
       var animation, opposite;
@@ -91,7 +87,7 @@ define(['jquery', 'modernizr', 'underscore', 'Backbone'], function($, Modernizr,
       Jr.Navigator.backButtonFlag = true;
     },
     animate: function(fromEl, toEl, type, direction) {
-      $('body').removeClass('g-loading');
+      loader.hide();
       if (Jr.Navigator.animations.hasOwnProperty(type)) {
         return Jr.Navigator.doAnimation(fromEl, toEl, type, direction);
       } else {
@@ -114,7 +110,7 @@ define(['jquery', 'modernizr', 'underscore', 'Backbone'], function($, Modernizr,
         toEl.removeClass('animate-to-view').removeClass(direction);
         return $this.container.removeClass('animate').removeClass(direction);
       };
-      return setTimeout(after, 400);
+      return setTimeout(after, settings.slideDuration);
     }
   };
 

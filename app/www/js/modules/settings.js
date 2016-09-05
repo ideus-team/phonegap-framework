@@ -20,6 +20,10 @@ define([], function(){
     
     // main element where will be render all app content
     renderElem: '#app-main',
+    mainContainer: '#app-container',
+
+    // duration to animate pages
+    slideDuration: 400,
 
     testUser: {
       username: 'Test User',

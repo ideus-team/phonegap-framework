@@ -28,6 +28,7 @@ requirejs.config({
     loader: '../modules/loader',
     uploader: '../modules/uploader',
     viewData: '../modules/viewData',
+    checkCallback: '../modules/checkCallback',
 
     clientServer: '../server/clientServer',
     socketServer: '../server/socketServer',

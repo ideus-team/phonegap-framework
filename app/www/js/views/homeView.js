@@ -40,7 +40,7 @@ define([
     },
 
     afterRender: function() {
-      loader.removeLoader();
+      loader.hide();
     },
 
     events: {

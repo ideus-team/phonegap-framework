@@ -1,6 +1,7 @@
 define([
   'loader'
-], function(appLoader){
+  'checkCallback'
+], function(appLoader, checkCallback){
   
   return {
 
@@ -8,9 +9,9 @@ define([
      * Server request and fetch data
      * @param command {string} - server command
      * @param params {object} - command params
-     * @param callback {function} - callback for success response
+     * @param callback {function} - callback for success\error response
      */
-    fetch: function(command, params, success, loader){
+    fetch: function(command, params, successFn, errorFn, loader){
       
       var data = {
         command: command,
@@ -32,11 +33,13 @@ define([
         success: function(res){
           console.log('Request success: ', command, res);
           
-          //init success callback if defined
-          success && typeof success === 'function' && success(res);
+          //init success callback if defined and is function
+          checkCallback(successFn, res);
         },
         error: function(error){
           console.log('Request error: ', command, error);
+          //init error callback if defined and is function
+          checkCallback(errorFn, error);
           return error;
         }
       });
@@ -57,22 +60,21 @@ define([
 
       Backbone.sync(command, model, {
         success: function(response){
+          console.log(command, ': ', response);
           // hide loader
           loader && appLoader.hide();
-
-          // console.log(command, ': ', response);
 
           //init success callback if defined
-          successFn && typeof successFn === 'function' && successFn(response);
+          checkCallback(successFn, response);
         },
         error: function(error){
+          console.log(command, ': ', error);
+
           // hide loader
           loader && appLoader.hide();
 
-          //console.log(command, ': ', error);
-
           //init error callback if defined
-          errorFn && typeof errorFn === 'function' && errorFn(error);
+          checkCallback(errorFn, error);
         }
       });
     },

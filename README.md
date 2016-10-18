@@ -17,15 +17,10 @@ Old:
 - [Install phonegap framework] (#2-install-phonegap-framework)
 - [Add icons and splashes] (#4-add-icons-and-splashes-for-iosandroid-platforms)
 - [How to build Android production release] (#6-how-to-build-android-production-release)
-- [CSS Media Queries for iPads & iPhones] (#7-css-media-queries-for-ipads--iphones)
 
 NOTE: 
 To solve the DexException must be imported via terminal this plugin:
 cordova plugin add https://github.com/jwall149/cordova-multidex
-
-##1. Get Framework
-Git Clone:
-- URL: https://github.com/ideus-team/phonegap-framework.git
 
 ##2. Install phonegap framework
 
@@ -119,18 +114,6 @@ define([
   return HomeView;
 });
 ```
-
-##3. Config.xml settings
-
-Open config.xml file (app/config.xml). Change all variables by your project settings.
-
-Examples:
-```APPLICATION_ID: biz.ideus.mygamename```
-```APPLICATION_NAME: Mygame```
-```APPLICATION_DESCRIPTION: This game is for people with fast fingers!```
-```AUTHOR_EMAIL: info@ideus.biz```
-```AUTHOR_LINK: http://ideus.biz```
-```AUTHOR: iDeus company```
 
 ##4. Add icons and splashes for iOS\Android platforms
 

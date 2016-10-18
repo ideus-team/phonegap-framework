@@ -13,15 +13,12 @@ To install Cordova CLI visit [cordova.apache.org] (http://cordova.apache.org/doc
 - [Config.xml settings] (/docs/config.md)
 - [Used plugins] (/docs/plugins.md)
 
-
-0. [Notes and some issues] (#notes-and-some-issues)
-1. [Get Framework] (#1-get-framework)
-2. [Install phonegap framework] (#2-install-phonegap-framework)
-3. [Config.xml settings] (#3-configxml-settings)
-4. [Add icons and splashes] (#4-add-icons-and-splashes-for-iosandroid-platforms)
-5. [Install plugins] (#5-install-plugins-for-your-application-from-pluginstxt)
-6. [How to build Android production release] (#6-how-to-build-android-production-release)
-7. [CSS Media Queries for iPads & iPhones] (#7-css-media-queries-for-ipads--iphones)
+Old:
+- [Notes and some issues] (#notes-and-some-issues)
+- [Install phonegap framework] (#2-install-phonegap-framework)
+- [Add icons and splashes] (#4-add-icons-and-splashes-for-iosandroid-platforms)
+- [How to build Android production release] (#6-how-to-build-android-production-release)
+- [CSS Media Queries for iPads & iPhones] (#7-css-media-queries-for-ipads--iphones)
 
 NOTE: 
 To solve the DexException must be imported via terminal this plugin:

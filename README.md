@@ -1,4 +1,4 @@
-#iDeus Phonegap framework
+#iDeus Cordova Framework
 
 ##About
 

@@ -1,4 +1,4 @@
-#How to install Framework
+#How to install Framework (windows)
 
   - Install [nodeJS](https://nodejs.org/en/), current version.
   - Install [Android Studio](https://developer.android.com/studio/index.html) and all latest packages.

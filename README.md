@@ -10,6 +10,8 @@ To install Cordova CLI visit [cordova.apache.org] (http://cordova.apache.org/doc
 
 ## Menu
 - [Installation] (/docs/install.md)
+- [Config.xml settings] (/docs/config.md)
+- [Used plugins] (/docs/plugins.md)
 
 
 0. [Notes and some issues] (#notes-and-some-issues)

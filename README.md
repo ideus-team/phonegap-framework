@@ -1,12 +1,17 @@
 #iDeus Phonegap framework
 
-##How to install and run Phonegap Framework
+##About
+
+This is a Cordova boilerplate for building HTML5 mobile apps with a native look and feel based on Backbone.js framefork.
 
 Our Phonegap Framework based on Cordova CLI with simple [Junior Framework] (http://justspamjustin.github.io/junior/) for building HTML5 mobile apps with a native look and feel.
 
 To install Cordova CLI visit [cordova.apache.org] (http://cordova.apache.org/docs/en/dev/guide/cli/index.html).
 
 ## Menu
+- [Installation] (/docs/install.md)
+
+
 0. [Notes and some issues] (#notes-and-some-issues)
 1. [Get Framework] (#1-get-framework)
 2. [Install phonegap framework] (#2-install-phonegap-framework)

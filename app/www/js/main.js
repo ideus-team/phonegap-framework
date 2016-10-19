@@ -1,6 +1,7 @@
 requirejs.config({
   baseUrl: 'js/lib',
   paths: {
+    
     // lib
     jquery: 'jquery-2.1.4.min',
     modernizr: 'modernizr.custom',

@@ -26,31 +26,15 @@
 /* Framework Common Libraries */
 @import 'blocks/g-blocks';
 @import 'plugins/index';
-@import 'plugins/junior';
-@import 'plugins/bxslider';
 
 /* Project only code */
 @import 'blocks/common';
-@import 'blocks/sitemap';
 @import 'blocks/b-text';
 @import 'blocks/l-siteHeader';
 @import 'blocks/l-siteLogo';
 @import 'blocks/l-siteSearch';
 @import 'blocks/l-siteNavigation';
 @import 'blocks/l-siteFooter';
-@import 'blocks/l-siteNavigationBottom';
-@import 'blocks/l-siteCopyright';
-@import 'blocks/b-developerCopyright';
 
 @import 'blocks/home';
-@import 'blocks/chat';
-
-/**
-* Responsive & Print styles
-*/
-@import 'responsive/device_desktop';
-@import 'responsive/device_tablet';
-@import 'responsive/device_mobile';
-@import 'responsive/media_queries';
-@import 'print';
 

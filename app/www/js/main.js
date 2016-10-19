@@ -6,23 +6,15 @@ require.config({
 
   paths: {
     jquery: 'jquery.min',
+    es6: '../../node_modules/requirejs-babel/es6',
+    babel: '../../node_modules/requirejs-babel/babel-5.8.34.min',
     react: 'react.min',
     reactDom: 'react-dom.min',
-    JSXTransformer: 'JSXTransformer',
-    jsx: 'jsx',
-    es6: 'es6',
-    babel: 'babel',
     text: 'text',
     json: 'json',
 
     app: '../app',
-    templates: '../templates'
-  },
-
-  jsx: {
-    fileExtension: '.jsx',
-    harmony: true,
-    stripTypes: true
+    templates: '../templates',
   },
 
   es6: {
@@ -30,16 +22,13 @@ require.config({
   },
 
   babel: {
-    blacklist: [],
-    nonStandard: true,
-    modules: 'amd'
+    presets: ['es2015'],
+    plugins: ['transform-es2015-modules-amd']
   }
 
 });
 
 
-require([
-  'jsx!app'
-], function (App){
-  //new App();
+require(['es6!app'], function (App){
+  var app = new App();
 });

@@ -27,6 +27,7 @@ const CONFIG_DIR = 'public/';
 
 const PATH = {
   SRC: {
+    ALL_JS: SOURCE_DIR + 'js/**/*.js',
     APP_JS: SOURCE_DIR + 'js/bundle.js',
     HTML: SOURCE_DIR + '**/*.html',
     XML: SOURCE_DIR + '**/*.xml',
@@ -157,7 +158,7 @@ gulp.task('js:dev', function() {
 });
 
 const watchJsDev = () => {
-  gulp.watch(PATH.SRC.APP_JS, gulp.series('js:dev', 'sizereport:common'));
+  gulp.watch(PATH.SRC.ALL_JS, gulp.series('js:dev', 'sizereport:common'));
 }
 
 /**

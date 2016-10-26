@@ -7,7 +7,7 @@ console.log(text);
  * Main router of the application
  */
 export default Backbone.Router.extend({
-
+ 
   /**
    * [Define all routes, that using in your application and set controller for this route]
    * @type {Object}

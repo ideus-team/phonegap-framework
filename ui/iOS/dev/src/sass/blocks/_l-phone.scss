@@ -1,0 +1,47 @@
+/**
+* @section l-phone
+*/
+.b-phone{
+  background: #111 none repeat scroll 0 0;
+  border-radius: 55px;
+  box-shadow: 0 0 0 2px #aaa;
+  height: 568px;
+  padding: 125px 25px;
+  width: 320px;
+  margin: 30px auto;
+  position: relative;
+
+  &:before{
+    background: #333 none repeat scroll 0 0;
+    border-radius: 10px;
+    content: "";
+    height: 10px;
+    left: 50%;
+    margin-left: -30px;
+    position: absolute;
+    top: 50px;
+    width: 60px;
+  }
+  &:after{
+    border: 5px solid #333;
+    border-radius: 100%;
+    bottom: 20px;
+    box-sizing: border-box;
+    content: "";
+    height: 60px;
+    left: 50%;
+    margin-left: -30px;
+    position: absolute;
+    width: 60px;
+  }
+
+  &__statusbar{
+    background: rgba(0, 0, 0, 0) url("../img/blocks/mockup/status-bar.png") repeat scroll 0 0 / 100% auto;
+    height: 20px;
+    left: 50%;
+    margin-left: -160px;
+    position: absolute;
+    top: 100px;
+    width: 320px;
+  }
+}

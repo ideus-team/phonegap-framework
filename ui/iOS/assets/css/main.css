@@ -1,0 +1,3272 @@
+@charset "UTF-8";
+/*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
+/**
+ * 1. Change the default font family in all browsers (opinionated).
+ * 2. Prevent adjustments of font size after orientation changes in IE and iOS.
+ */
+/* line 8, ../../dev/src/sass/_normalize.scss */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/**
+ * Remove the margin in all browsers (opinionated).
+ */
+/* line 18, ../../dev/src/sass/_normalize.scss */
+body {
+  margin: 0;
+}
+
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ * 2. Add the correct display in IE.
+ */
+/* line 31, ../../dev/src/sass/_normalize.scss */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+  /* 1 */
+  display: block;
+}
+
+/**
+ * Add the correct display in IE 9-.
+ */
+/* line 50, ../../dev/src/sass/_normalize.scss */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+}
+
+/**
+ * Add the correct display in iOS 4-7.
+ */
+/* line 61, ../../dev/src/sass/_normalize.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+/* line 70, ../../dev/src/sass/_normalize.scss */
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Add the correct display in IE 10-.
+ * 1. Add the correct display in IE.
+ */
+/* line 79, ../../dev/src/sass/_normalize.scss */
+template,
+[hidden] {
+  display: none;
+}
+
+/* Links
+   ========================================================================== */
+/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+/* line 92, ../../dev/src/sass/_normalize.scss */
+a {
+  background-color: transparent;
+  /* 1 */
+  -webkit-text-decoration-skip: objects;
+  /* 2 */
+}
+
+/**
+ * Remove the outline on focused links when they are also active or hovered
+ * in all browsers (opinionated).
+ */
+/* line 102, ../../dev/src/sass/_normalize.scss */
+a:active,
+a:hover {
+  outline-width: 0;
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * 1. Remove the bottom border in Firefox 39-.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+/* line 115, ../../dev/src/sass/_normalize.scss */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */
+}
+
+/**
+ * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+ */
+/* line 125, ../../dev/src/sass/_normalize.scss */
+b,
+strong {
+  font-weight: inherit;
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+/* line 134, ../../dev/src/sass/_normalize.scss */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * Add the correct font style in Android 4.3-.
+ */
+/* line 143, ../../dev/src/sass/_normalize.scss */
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+/* line 152, ../../dev/src/sass/_normalize.scss */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/**
+ * Add the correct background and color in IE 9-.
+ */
+/* line 161, ../../dev/src/sass/_normalize.scss */
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+/* line 170, ../../dev/src/sass/_normalize.scss */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+/* line 179, ../../dev/src/sass/_normalize.scss */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 187, ../../dev/src/sass/_normalize.scss */
+sub {
+  bottom: -0.25em;
+}
+
+/* line 191, ../../dev/src/sass/_normalize.scss */
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10-.
+ */
+/* line 202, ../../dev/src/sass/_normalize.scss */
+img {
+  border-style: none;
+}
+
+/**
+ * Hide the overflow in IE.
+ */
+/* line 210, ../../dev/src/sass/_normalize.scss */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+/* line 222, ../../dev/src/sass/_normalize.scss */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/**
+ * Add the correct margin in IE 8.
+ */
+/* line 234, ../../dev/src/sass/_normalize.scss */
+figure {
+  margin: 1em 40px;
+}
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+/* line 243, ../../dev/src/sass/_normalize.scss */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change font properties to `inherit` in all browsers (opinionated).
+ * 2. Remove the margin in Firefox and Safari.
+ */
+/* line 257, ../../dev/src/sass/_normalize.scss */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font: inherit;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+/**
+ * Restore the font weight unset by the previous rule.
+ */
+/* line 270, ../../dev/src/sass/_normalize.scss */
+optgroup {
+  font-weight: bold;
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+/* line 279, ../../dev/src/sass/_normalize.scss */
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+/* line 289, ../../dev/src/sass/_normalize.scss */
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ */
+/* line 300, ../../dev/src/sass/_normalize.scss */
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+/* line 311, ../../dev/src/sass/_normalize.scss */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+/* line 323, ../../dev/src/sass/_normalize.scss */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Change the border, margin, and padding in all browsers (opinionated).
+ */
+/* line 334, ../../dev/src/sass/_normalize.scss */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+/* line 347, ../../dev/src/sass/_normalize.scss */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
+}
+
+/**
+ * Remove the default vertical scrollbar in IE.
+ */
+/* line 360, ../../dev/src/sass/_normalize.scss */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10-.
+ * 2. Remove the padding in IE 10-.
+ */
+/* line 369, ../../dev/src/sass/_normalize.scss */
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+/* line 379, ../../dev/src/sass/_normalize.scss */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+/* line 389, ../../dev/src/sass/_normalize.scss */
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/**
+ * Remove the inner padding and cancel buttons in Chrome and Safari on OS X.
+ */
+/* line 398, ../../dev/src/sass/_normalize.scss */
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Correct the text style of placeholders in Chrome, Edge, and Safari.
+ */
+/* line 407, ../../dev/src/sass/_normalize.scss */
+::-webkit-input-placeholder {
+  color: inherit;
+  opacity: 0.54;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+/* line 417, ../../dev/src/sass/_normalize.scss */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/*! HTML5 Boilerplate v5.2.0 | MIT License | https://html5boilerplate.com/ */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+/* line 13, ../../dev/src/sass/_h5b.scss */
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+/* line 27, ../../dev/src/sass/_h5b.scss */
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/* line 32, ../../dev/src/sass/_h5b.scss */
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+/* line 41, ../../dev/src/sass/_h5b.scss */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+/* line 56, ../../dev/src/sass/_h5b.scss */
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+/* line 69, ../../dev/src/sass/_h5b.scss */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+/* line 79, ../../dev/src/sass/_h5b.scss */
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+/* line 87, ../../dev/src/sass/_h5b.scss */
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+/*
+ * Hide visually and from screen readers:
+ */
+/* line 102, ../../dev/src/sass/_h5b.scss */
+.g-hidden {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+/* line 111, ../../dev/src/sass/_h5b.scss */
+.g-visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+/* line 128, ../../dev/src/sass/_h5b.scss */
+.g-visuallyhidden.focusable:active,
+.g-visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+/* line 142, ../../dev/src/sass/_h5b.scss */
+.g-invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+/* line 158, ../../dev/src/sass/_h5b.scss */
+.g-clearfix:before,
+.g-clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+/* line 164, ../../dev/src/sass/_h5b.scss */
+.g-clearfix:after {
+  clear: both;
+}
+
+/* Import Compass */
+/* Project filesтАж */
+/**
+* @section Fonts
+*
+* You can add fonts by mixin:
+* @include font-face($name, $file, $weight: normal, $style: normal);
+* @include font-face('PTSans', 'PTSansRegular');
+* @include font-face('PTSans', 'PTSansItalic', normal, italic);
+* @include font-face('PTSans', 'PTSansBold', bold);
+*
+* PLEASE RENAME FONT FILENAME ($file) TO MATCH CONTENT OF "<font id=" IN .SVG-FONT FILE GENERATED BY FONT-SQUIRREL
+* for correct font name after #hashtag in font-face rulse for svg: http://stackoverflow.com/questions/15422770/font-face-svg-not-working-properly-in-chrome#answer-21125630
+*/
+@font-face {
+  font-family: "Flaticon";
+  src: url("../fonts/Flaticon.eot");
+  src: url("../fonts/Flaticon.eot?#iefix") format("embedded-opentype"), url("../fonts/Flaticon.woff2") format("woff2"), url("../fonts/Flaticon.woff") format("woff"), url("../fonts/Flaticon.ttf") format("truetype"), url("../fonts/Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/**
+* @section Settings
+*/
+/**
+* @section Sprites
+*
+* $sprite-test: sprite-map('sprites/test/*.png', $spacing: 20px);
+*
+* .b-icon {
+    background: $sprite-test no-repeat;
+*   &.-type_example {background-position: sprite-position($spriteMap, $filename, $offset-x, $offset-y, $use-percentages);}
+*   &.-type_arrow {background-position: sprite-position($sprite-test, 'arrow');}
+*   &.-type_login {background-position: sprite-position($sprite-test, 'login', 3px, -2px);}
+* }
+*/
+/* GeneratedтАж */
+/* Plugins */
+/* Font */
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 19/02/2016 14:44
+  	*/
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+/* line 12, ../../dev/src/sass/plugins/_flaticon.scss */
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {
+  font-family: Flaticon;
+  font-size: 20px;
+  font-style: normal;
+  margin-left: 20px;
+}
+
+/* line 20, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-add:before {
+  content: "\f100";
+}
+
+/* line 21, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-add-frame:before {
+  content: "\f101";
+}
+
+/* line 22, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-add-phone:before {
+  content: "\f102";
+}
+
+/* line 23, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-address-book:before {
+  content: "\f103";
+}
+
+/* line 24, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-alarm-clock:before {
+  content: "\f104";
+}
+
+/* line 25, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-amex:before {
+  content: "\f105";
+}
+
+/* line 26, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-anchor:before {
+  content: "\f106";
+}
+
+/* line 27, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-anchor-point:before {
+  content: "\f107";
+}
+
+/* line 28, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-arrow:before {
+  content: "\f108";
+}
+
+/* line 29, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-arrow-1:before {
+  content: "\f109";
+}
+
+/* line 30, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-arrow-2:before {
+  content: "\f10a";
+}
+
+/* line 31, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-arrow-3:before {
+  content: "\f10b";
+}
+
+/* line 32, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-arrow-4:before {
+  content: "\f10c";
+}
+
+/* line 33, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-arrow-5:before {
+  content: "\f10d";
+}
+
+/* line 34, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-arrow-to-right:before {
+  content: "\f10e";
+}
+
+/* line 35, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-arrow-up:before {
+  content: "\f10f";
+}
+
+/* line 36, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-arrows:before {
+  content: "\f110";
+}
+
+/* line 37, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-arrows-1:before {
+  content: "\f111";
+}
+
+/* line 38, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-attachment:before {
+  content: "\f112";
+}
+
+/* line 39, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-bag:before {
+  content: "\f113";
+}
+
+/* line 40, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-bars:before {
+  content: "\f114";
+}
+
+/* line 41, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-basket:before {
+  content: "\f115";
+}
+
+/* line 42, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-battery:before {
+  content: "\f116";
+}
+
+/* line 43, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-battery-1:before {
+  content: "\f117";
+}
+
+/* line 44, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-battery-2:before {
+  content: "\f118";
+}
+
+/* line 45, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-battery-3:before {
+  content: "\f119";
+}
+
+/* line 46, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-battery-4:before {
+  content: "\f11a";
+}
+
+/* line 47, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-battery-5:before {
+  content: "\f11b";
+}
+
+/* line 48, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-battery-charging:before {
+  content: "\f11c";
+}
+
+/* line 49, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-bell:before {
+  content: "\f11d";
+}
+
+/* line 50, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-bluetooth:before {
+  content: "\f11e";
+}
+
+/* line 51, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-book:before {
+  content: "\f11f";
+}
+
+/* line 52, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-bookmark:before {
+  content: "\f120";
+}
+
+/* line 53, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-box:before {
+  content: "\f121";
+}
+
+/* line 54, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-box-1:before {
+  content: "\f122";
+}
+
+/* line 55, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-brain:before {
+  content: "\f123";
+}
+
+/* line 56, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-briefcase:before {
+  content: "\f124";
+}
+
+/* line 57, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-browser:before {
+  content: "\f125";
+}
+
+/* line 58, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-bullet-list:before {
+  content: "\f126";
+}
+
+/* line 59, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-calendar:before {
+  content: "\f127";
+}
+
+/* line 60, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-calendar-1:before {
+  content: "\f128";
+}
+
+/* line 61, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-calendar-2:before {
+  content: "\f129";
+}
+
+/* line 62, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-call-ended:before {
+  content: "\f12a";
+}
+
+/* line 63, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-camcorder:before {
+  content: "\f12b";
+}
+
+/* line 64, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-camcorder-1:before {
+  content: "\f12c";
+}
+
+/* line 65, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-camera:before {
+  content: "\f12d";
+}
+
+/* line 66, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-cancel-call:before {
+  content: "\f12e";
+}
+
+/* line 67, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-cash:before {
+  content: "\f12f";
+}
+
+/* line 68, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-caution:before {
+  content: "\f130";
+}
+
+/* line 69, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-center-align:before {
+  content: "\f131";
+}
+
+/* line 70, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-certificate:before {
+  content: "\f132";
+}
+
+/* line 71, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-chat:before {
+  content: "\f133";
+}
+
+/* line 72, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-check:before {
+  content: "\f134";
+}
+
+/* line 73, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-chronometer:before {
+  content: "\f135";
+}
+
+/* line 74, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-cigarette-smoking:before {
+  content: "\f136";
+}
+
+/* line 75, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-circle:before {
+  content: "\f137";
+}
+
+/* line 76, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-circular-arrow:before {
+  content: "\f138";
+}
+
+/* line 77, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-clapper:before {
+  content: "\f139";
+}
+
+/* line 78, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-cloud:before {
+  content: "\f13a";
+}
+
+/* line 79, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-cloud-1:before {
+  content: "\f13b";
+}
+
+/* line 80, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-cloud-2:before {
+  content: "\f13c";
+}
+
+/* line 81, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-cloud-upload:before {
+  content: "\f13d";
+}
+
+/* line 82, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-code:before {
+  content: "\f13e";
+}
+
+/* line 83, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-coding:before {
+  content: "\f13f";
+}
+
+/* line 84, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-codings:before {
+  content: "\f140";
+}
+
+/* line 85, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-coins:before {
+  content: "\f141";
+}
+
+/* line 86, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-coins-1:before {
+  content: "\f142";
+}
+
+/* line 87, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-coins-2:before {
+  content: "\f143";
+}
+
+/* line 88, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-columns:before {
+  content: "\f144";
+}
+
+/* line 89, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-compact-disc:before {
+  content: "\f145";
+}
+
+/* line 90, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-computer-mouse:before {
+  content: "\f146";
+}
+
+/* line 91, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-converging-arrows:before {
+  content: "\f147";
+}
+
+/* line 92, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-conversation:before {
+  content: "\f148";
+}
+
+/* line 93, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-correct:before {
+  content: "\f149";
+}
+
+/* line 94, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-credit-card:before {
+  content: "\f14a";
+}
+
+/* line 95, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-credit-card-1:before {
+  content: "\f14b";
+}
+
+/* line 96, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-credit-card-2:before {
+  content: "\f14c";
+}
+
+/* line 97, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-crop:before {
+  content: "\f14d";
+}
+
+/* line 98, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-cross-out:before {
+  content: "\f14e";
+}
+
+/* line 99, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-diagonal-arrows:before {
+  content: "\f14f";
+}
+
+/* line 100, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-digital-camera:before {
+  content: "\f150";
+}
+
+/* line 101, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-document:before {
+  content: "\f151";
+}
+
+/* line 102, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-documents:before {
+  content: "\f152";
+}
+
+/* line 103, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-dollar:before {
+  content: "\f153";
+}
+
+/* line 104, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-dollar-bag:before {
+  content: "\f154";
+}
+
+/* line 105, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-dollars:before {
+  content: "\f155";
+}
+
+/* line 106, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-double-arrow:before {
+  content: "\f156";
+}
+
+/* line 107, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-double-arrow-1:before {
+  content: "\f157";
+}
+
+/* line 108, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-double-arrow-2:before {
+  content: "\f158";
+}
+
+/* line 109, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-down:before {
+  content: "\f159";
+}
+
+/* line 110, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-down-arrow:before {
+  content: "\f15a";
+}
+
+/* line 111, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-down-arrow-1:before {
+  content: "\f15b";
+}
+
+/* line 112, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-down-arrow-2:before {
+  content: "\f15c";
+}
+
+/* line 113, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-down-arrow-3:before {
+  content: "\f15d";
+}
+
+/* line 114, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-down-arrow-4:before {
+  content: "\f15e";
+}
+
+/* line 115, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-down-arrow-5:before {
+  content: "\f15f";
+}
+
+/* line 116, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-download:before {
+  content: "\f160";
+}
+
+/* line 117, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-download-1:before {
+  content: "\f161";
+}
+
+/* line 118, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-download-from-cloud:before {
+  content: "\f162";
+}
+
+/* line 119, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-drums:before {
+  content: "\f163";
+}
+
+/* line 120, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-ear:before {
+  content: "\f164";
+}
+
+/* line 121, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-equalizer-controls:before {
+  content: "\f165";
+}
+
+/* line 122, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-expand:before {
+  content: "\f166";
+}
+
+/* line 123, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-eye:before {
+  content: "\f167";
+}
+
+/* line 124, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-eye-1:before {
+  content: "\f168";
+}
+
+/* line 125, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-fast-forward-arrow:before {
+  content: "\f169";
+}
+
+/* line 126, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-film-role:before {
+  content: "\f16a";
+}
+
+/* line 127, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-film-roll:before {
+  content: "\f16b";
+}
+
+/* line 128, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-film-roll-1:before {
+  content: "\f16c";
+}
+
+/* line 129, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-flag:before {
+  content: "\f16d";
+}
+
+/* line 130, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-flashlight:before {
+  content: "\f16e";
+}
+
+/* line 131, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-floppy-disc:before {
+  content: "\f16f";
+}
+
+/* line 132, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-flower:before {
+  content: "\f170";
+}
+
+/* line 133, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-folder:before {
+  content: "\f171";
+}
+
+/* line 134, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-folder-1:before {
+  content: "\f172";
+}
+
+/* line 135, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-folder-2:before {
+  content: "\f173";
+}
+
+/* line 136, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-folder-3:before {
+  content: "\f174";
+}
+
+/* line 137, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-four-arrow:before {
+  content: "\f175";
+}
+
+/* line 138, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-four-arrows:before {
+  content: "\f176";
+}
+
+/* line 139, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-four-arrows-1:before {
+  content: "\f177";
+}
+
+/* line 140, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-frame:before {
+  content: "\f178";
+}
+
+/* line 141, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-frame-1:before {
+  content: "\f179";
+}
+
+/* line 142, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-frames:before {
+  content: "\f17a";
+}
+
+/* line 143, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-funnel:before {
+  content: "\f17b";
+}
+
+/* line 144, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-gamepad:before {
+  content: "\f17c";
+}
+
+/* line 145, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-gift:before {
+  content: "\f17d";
+}
+
+/* line 146, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-glasses:before {
+  content: "\f17e";
+}
+
+/* line 147, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-globe-grid:before {
+  content: "\f17f";
+}
+
+/* line 148, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-graduate-cap:before {
+  content: "\f180";
+}
+
+/* line 149, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-guitar:before {
+  content: "\f181";
+}
+
+/* line 150, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-harp:before {
+  content: "\f182";
+}
+
+/* line 151, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-headphones:before {
+  content: "\f183";
+}
+
+/* line 152, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-headphones-1:before {
+  content: "\f184";
+}
+
+/* line 153, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-heart:before {
+  content: "\f185";
+}
+
+/* line 154, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-help:before {
+  content: "\f186";
+}
+
+/* line 155, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-hierarchy:before {
+  content: "\f187";
+}
+
+/* line 156, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-high-volume:before {
+  content: "\f188";
+}
+
+/* line 157, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-home:before {
+  content: "\f189";
+}
+
+/* line 158, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-id-card:before {
+  content: "\f18a";
+}
+
+/* line 159, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-incoming-arrow:before {
+  content: "\f18b";
+}
+
+/* line 160, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-incoming-call:before {
+  content: "\f18c";
+}
+
+/* line 161, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-information-button:before {
+  content: "\f18d";
+}
+
+/* line 162, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-jcb:before {
+  content: "\f18e";
+}
+
+/* line 163, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-justify:before {
+  content: "\f18f";
+}
+
+/* line 164, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-key:before {
+  content: "\f190";
+}
+
+/* line 165, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-keyboard:before {
+  content: "\f191";
+}
+
+/* line 166, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-laptop:before {
+  content: "\f192";
+}
+
+/* line 167, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-layers:before {
+  content: "\f193";
+}
+
+/* line 168, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-left-alignment:before {
+  content: "\f194";
+}
+
+/* line 169, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-left-and-right-arrows:before {
+  content: "\f195";
+}
+
+/* line 170, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-left-arrow:before {
+  content: "\f196";
+}
+
+/* line 171, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-left-arrow-1:before {
+  content: "\f197";
+}
+
+/* line 172, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-left-arrow-2:before {
+  content: "\f198";
+}
+
+/* line 173, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-left-arrow-3:before {
+  content: "\f199";
+}
+
+/* line 174, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-left-arrow-4:before {
+  content: "\f19a";
+}
+
+/* line 175, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-left-arrow-5:before {
+  content: "\f19b";
+}
+
+/* line 176, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-left-arrow-6:before {
+  content: "\f19c";
+}
+
+/* line 177, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-left-arrow-7:before {
+  content: "\f19d";
+}
+
+/* line 178, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-lens:before {
+  content: "\f19e";
+}
+
+/* line 179, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-lens-1:before {
+  content: "\f19f";
+}
+
+/* line 180, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-lens-2:before {
+  content: "\f1a0";
+}
+
+/* line 181, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-light-bulb:before {
+  content: "\f1a1";
+}
+
+/* line 182, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-list:before {
+  content: "\f1a2";
+}
+
+/* line 183, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-list-1:before {
+  content: "\f1a3";
+}
+
+/* line 184, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-list-2:before {
+  content: "\f1a4";
+}
+
+/* line 185, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-lock:before {
+  content: "\f1a5";
+}
+
+/* line 186, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-loudness:before {
+  content: "\f1a6";
+}
+
+/* line 187, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-low-volume:before {
+  content: "\f1a7";
+}
+
+/* line 188, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-magnifying-glass:before {
+  content: "\f1a8";
+}
+
+/* line 189, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-mail:before {
+  content: "\f1a9";
+}
+
+/* line 190, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-mail-voice:before {
+  content: "\f1aa";
+}
+
+/* line 191, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-mailbox:before {
+  content: "\f1ab";
+}
+
+/* line 192, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-mailbox-empty:before {
+  content: "\f1ac";
+}
+
+/* line 193, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-male-sign:before {
+  content: "\f1ad";
+}
+
+/* line 194, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-master-card:before {
+  content: "\f1ae";
+}
+
+/* line 195, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-measuring-cup:before {
+  content: "\f1af";
+}
+
+/* line 196, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-megaphone:before {
+  content: "\f1b0";
+}
+
+/* line 197, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-menu:before {
+  content: "\f1b1";
+}
+
+/* line 198, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-menu-1:before {
+  content: "\f1b2";
+}
+
+/* line 199, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-mic:before {
+  content: "\f1b3";
+}
+
+/* line 200, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-mic-1:before {
+  content: "\f1b4";
+}
+
+/* line 201, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-mic-off:before {
+  content: "\f1b5";
+}
+
+/* line 202, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-microphone:before {
+  content: "\f1b6";
+}
+
+/* line 203, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-mouse:before {
+  content: "\f1b7";
+}
+
+/* line 204, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-mouse-1:before {
+  content: "\f1b8";
+}
+
+/* line 205, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-mouse-2:before {
+  content: "\f1b9";
+}
+
+/* line 206, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-music-player:before {
+  content: "\f1ba";
+}
+
+/* line 207, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-musical-note:before {
+  content: "\f1bb";
+}
+
+/* line 208, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-mute:before {
+  content: "\f1bc";
+}
+
+/* line 209, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-newspaper:before {
+  content: "\f1bd";
+}
+
+/* line 210, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-next:before {
+  content: "\f1be";
+}
+
+/* line 211, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-next-1:before {
+  content: "\f1bf";
+}
+
+/* line 212, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-no-smoking:before {
+  content: "\f1c0";
+}
+
+/* line 213, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-not-charging:before {
+  content: "\f1c1";
+}
+
+/* line 214, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-oboe:before {
+  content: "\f1c2";
+}
+
+/* line 215, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-offer-label:before {
+  content: "\f1c3";
+}
+
+/* line 216, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-open-box:before {
+  content: "\f1c4";
+}
+
+/* line 217, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-open-box-1:before {
+  content: "\f1c5";
+}
+
+/* line 218, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-outcoming:before {
+  content: "\f1c6";
+}
+
+/* line 219, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-padlock:before {
+  content: "\f1c7";
+}
+
+/* line 220, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-paper-plane:before {
+  content: "\f1c8";
+}
+
+/* line 221, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-pause:before {
+  content: "\f1c9";
+}
+
+/* line 222, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-phone:before {
+  content: "\f1ca";
+}
+
+/* line 223, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-phone-call:before {
+  content: "\f1cb";
+}
+
+/* line 224, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-photo-camera:before {
+  content: "\f1cc";
+}
+
+/* line 225, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-photo-camera-1:before {
+  content: "\f1cd";
+}
+
+/* line 226, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-picture:before {
+  content: "\f1ce";
+}
+
+/* line 227, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-pictures:before {
+  content: "\f1cf";
+}
+
+/* line 228, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-piggy-bank:before {
+  content: "\f1d0";
+}
+
+/* line 229, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-play:before {
+  content: "\f1d1";
+}
+
+/* line 230, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-play-button:before {
+  content: "\f1d2";
+}
+
+/* line 231, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-plugin:before {
+  content: "\f1d3";
+}
+
+/* line 232, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-portfolio:before {
+  content: "\f1d4";
+}
+
+/* line 233, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-presentation:before {
+  content: "\f1d5";
+}
+
+/* line 234, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-previous:before {
+  content: "\f1d6";
+}
+
+/* line 235, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-price-label:before {
+  content: "\f1d7";
+}
+
+/* line 236, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-price-tag:before {
+  content: "\f1d8";
+}
+
+/* line 237, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-price-tag-1:before {
+  content: "\f1d9";
+}
+
+/* line 238, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-printer:before {
+  content: "\f1da";
+}
+
+/* line 239, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-radio:before {
+  content: "\f1db";
+}
+
+/* line 240, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-recycling-symbol:before {
+  content: "\f1dc";
+}
+
+/* line 241, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-rewind:before {
+  content: "\f1dd";
+}
+
+/* line 242, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-right-align:before {
+  content: "\f1de";
+}
+
+/* line 243, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-right-arrow:before {
+  content: "\f1df";
+}
+
+/* line 244, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-right-arrow-1:before {
+  content: "\f1e0";
+}
+
+/* line 245, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-right-arrow-2:before {
+  content: "\f1e1";
+}
+
+/* line 246, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-right-arrow-3:before {
+  content: "\f1e2";
+}
+
+/* line 247, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-right-arrow-4:before {
+  content: "\f1e3";
+}
+
+/* line 248, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-right-side-bar:before {
+  content: "\f1e4";
+}
+
+/* line 249, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-round-clock:before {
+  content: "\f1e5";
+}
+
+/* line 250, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-rows:before {
+  content: "\f1e6";
+}
+
+/* line 251, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-ruler-and-pencil:before {
+  content: "\f1e7";
+}
+
+/* line 252, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-saxophone:before {
+  content: "\f1e8";
+}
+
+/* line 253, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-scale:before {
+  content: "\f1e9";
+}
+
+/* line 254, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-scale-1:before {
+  content: "\f1ea";
+}
+
+/* line 255, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-scale-protector:before {
+  content: "\f1eb";
+}
+
+/* line 256, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-scaling:before {
+  content: "\f1ec";
+}
+
+/* line 257, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-scissors:before {
+  content: "\f1ed";
+}
+
+/* line 258, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-settings:before {
+  content: "\f1ee";
+}
+
+/* line 259, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-shopping-cart:before {
+  content: "\f1ef";
+}
+
+/* line 260, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-shopping-cart-1:before {
+  content: "\f1f0";
+}
+
+/* line 261, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-shopping-cart-2:before {
+  content: "\f1f1";
+}
+
+/* line 262, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-shopping-cart-3:before {
+  content: "\f1f2";
+}
+
+/* line 263, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-shopping-cart-4:before {
+  content: "\f1f3";
+}
+
+/* line 264, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-shutdown:before {
+  content: "\f1f4";
+}
+
+/* line 265, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-silent:before {
+  content: "\f1f5";
+}
+
+/* line 266, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-skype:before {
+  content: "\f1f6";
+}
+
+/* line 267, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-slanting-arrow:before {
+  content: "\f1f7";
+}
+
+/* line 268, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-small-circles-forming-a-circle:before {
+  content: "\f1f8";
+}
+
+/* line 269, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-smartphone:before {
+  content: "\f1f9";
+}
+
+/* line 270, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-spanner:before {
+  content: "\f1fa";
+}
+
+/* line 271, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-speaker:before {
+  content: "\f1fb";
+}
+
+/* line 272, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-speaker-1:before {
+  content: "\f1fc";
+}
+
+/* line 273, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-speech-ballon:before {
+  content: "\f1fd";
+}
+
+/* line 274, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-speech-bubble:before {
+  content: "\f1fe";
+}
+
+/* line 275, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-speech-bubble-1:before {
+  content: "\f1ff";
+}
+
+/* line 276, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-speech-bubble-2:before {
+  content: "\f200";
+}
+
+/* line 277, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-speech-bubble-3:before {
+  content: "\f201";
+}
+
+/* line 278, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-speech-bubble-4:before {
+  content: "\f202";
+}
+
+/* line 279, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-speech-bubble-5:before {
+  content: "\f203";
+}
+
+/* line 280, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-speech-bubble-6:before {
+  content: "\f204";
+}
+
+/* line 281, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-speech-bubble-7:before {
+  content: "\f205";
+}
+
+/* line 282, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-square:before {
+  content: "\f206";
+}
+
+/* line 283, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-square-1:before {
+  content: "\f207";
+}
+
+/* line 284, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-square-2:before {
+  content: "\f208";
+}
+
+/* line 285, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-square-3:before {
+  content: "\f209";
+}
+
+/* line 286, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-square-4:before {
+  content: "\f20a";
+}
+
+/* line 287, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-square-5:before {
+  content: "\f20b";
+}
+
+/* line 288, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-squares:before {
+  content: "\f20c";
+}
+
+/* line 289, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-squares-1:before {
+  content: "\f20d";
+}
+
+/* line 290, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-squares-2:before {
+  content: "\f20e";
+}
+
+/* line 291, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-star:before {
+  content: "\f20f";
+}
+
+/* line 292, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-storage:before {
+  content: "\f210";
+}
+
+/* line 293, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-store:before {
+  content: "\f211";
+}
+
+/* line 294, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-subtract:before {
+  content: "\f212";
+}
+
+/* line 295, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-synchronise:before {
+  content: "\f213";
+}
+
+/* line 296, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-table:before {
+  content: "\f214";
+}
+
+/* line 297, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-table-1:before {
+  content: "\f215";
+}
+
+/* line 298, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-tablet:before {
+  content: "\f216";
+}
+
+/* line 299, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-tablet-1:before {
+  content: "\f217";
+}
+
+/* line 300, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-tablet-2:before {
+  content: "\f218";
+}
+
+/* line 301, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-tablet-3:before {
+  content: "\f219";
+}
+
+/* line 302, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-tablet-locked:before {
+  content: "\f21a";
+}
+
+/* line 303, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-tag:before {
+  content: "\f21b";
+}
+
+/* line 304, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-target:before {
+  content: "\f21c";
+}
+
+/* line 305, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-telephone:before {
+  content: "\f21d";
+}
+
+/* line 306, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-telephone-1:before {
+  content: "\f21e";
+}
+
+/* line 307, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-telephone-call:before {
+  content: "\f21f";
+}
+
+/* line 308, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-television:before {
+  content: "\f220";
+}
+
+/* line 309, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-television-1:before {
+  content: "\f221";
+}
+
+/* line 310, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-television-2:before {
+  content: "\f222";
+}
+
+/* line 311, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-thermometer:before {
+  content: "\f223";
+}
+
+/* line 312, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-timer:before {
+  content: "\f224";
+}
+
+/* line 313, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-tray:before {
+  content: "\f225";
+}
+
+/* line 314, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-treble-clef:before {
+  content: "\f226";
+}
+
+/* line 315, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-trombone:before {
+  content: "\f227";
+}
+
+/* line 316, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-truck:before {
+  content: "\f228";
+}
+
+/* line 317, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-trumpet:before {
+  content: "\f229";
+}
+
+/* line 318, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-trumpet-1:before {
+  content: "\f22a";
+}
+
+/* line 319, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-umbrella:before {
+  content: "\f22b";
+}
+
+/* line 320, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-up-arrow:before {
+  content: "\f22c";
+}
+
+/* line 321, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-up-arrow-1:before {
+  content: "\f22d";
+}
+
+/* line 322, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-up-arrow-2:before {
+  content: "\f22e";
+}
+
+/* line 323, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-up-arrow-3:before {
+  content: "\f22f";
+}
+
+/* line 324, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-up-arrow-4:before {
+  content: "\f230";
+}
+
+/* line 325, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-up-arrow-5:before {
+  content: "\f231";
+}
+
+/* line 326, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-up-arrow-6:before {
+  content: "\f232";
+}
+
+/* line 327, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-up-arrow-7:before {
+  content: "\f233";
+}
+
+/* line 328, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-upload:before {
+  content: "\f234";
+}
+
+/* line 329, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-upload-to-cloud:before {
+  content: "\f235";
+}
+
+/* line 330, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-video-camera:before {
+  content: "\f236";
+}
+
+/* line 331, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-vintage-camera:before {
+  content: "\f237";
+}
+
+/* line 332, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-violin:before {
+  content: "\f238";
+}
+
+/* line 333, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-visa:before {
+  content: "\f239";
+}
+
+/* line 334, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-volume:before {
+  content: "\f23a";
+}
+
+/* line 335, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-wallet:before {
+  content: "\f23b";
+}
+
+/* line 336, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-waste-disposal:before {
+  content: "\f23c";
+}
+
+/* line 337, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-webcam:before {
+  content: "\f23d";
+}
+
+/* line 338, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-weighing-scale:before {
+  content: "\f23e";
+}
+
+/* line 339, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-weight:before {
+  content: "\f23f";
+}
+
+/* line 340, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-wifi:before {
+  content: "\f240";
+}
+
+/* line 341, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-women-symbol:before {
+  content: "\f241";
+}
+
+/* line 342, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-wrong-sign:before {
+  content: "\f242";
+}
+
+/* line 343, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-zoom:before {
+  content: "\f243";
+}
+
+/* line 344, ../../dev/src/sass/plugins/_flaticon.scss */
+.flaticon-zoom-out:before {
+  content: "\f244";
+}
+
+/* ==|== primary styles =====================================================
+   Authors: Syrov Igor
+   ========================================================================== */
+/* Framework Common Libraries */
+/*
+ * Image replacement
+.g-ir
+
+Add the `.g-ir` class to any element you are applying image-replacement to. When
+replacing an element's content with an image, make sure to also set a specific
+`background-image: url(pathtoimage.png);`, `width`, and `height` so that your
+replacement image appears.
+*/
+/* line 10, ../../dev/src/sass/blocks/_g-blocks.scss */
+.g-ir {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/*
+ * Telephone number
+*/
+/* line 20, ../../dev/src/sass/blocks/_g-blocks.scss */
+.g-tel {
+  color: inherit;
+  cursor: default;
+  text-decoration: none;
+}
+/* line 25, ../../dev/src/sass/blocks/_g-blocks.scss */
+.g-tel:hover {
+  color: inherit;
+}
+/* line 29, ../../dev/src/sass/blocks/_g-blocks.scss */
+.l-html.-device_desktop .g-tel {
+  pointer-events: none;
+}
+
+/*
+ * Overlay with loading icon
+*/
+/* line 38, ../../dev/src/sass/blocks/_g-blocks.scss */
+.g-loading {
+  position: relative;
+}
+/* line 41, ../../dev/src/sass/blocks/_g-blocks.scss */
+.g-loading::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url("../img/loading-ico.gif") 50% 50% no-repeat rgba(255, 255, 255, 0.8);
+}
+
+/* Project only code */
+/* line 1, ../../dev/src/sass/blocks/_common.scss */
+a {
+  color: #007aff;
+}
+/* line 3, ../../dev/src/sass/blocks/_common.scss */
+a:hover {
+  text-decoration: none;
+}
+
+/* line 11, ../../dev/src/sass/blocks/_common.scss */
+.l-body {
+  background: #fff;
+}
+
+/**
+* @section wrapper
+*/
+/* line 19, ../../dev/src/sass/blocks/_common.scss */
+.l-wrapper {
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+  width: 1200px;
+}
+
+/**
+* @section content
+*/
+/* line 29, ../../dev/src/sass/blocks/_common.scss */
+.l-content {
+  position: relative;
+}
+
+/**
+* @section main
+*/
+/* line 37, ../../dev/src/sass/blocks/_common.scss */
+.l-contentText {
+  position: relative;
+  display: block;
+}
+
+/* line 42, ../../dev/src/sass/blocks/_common.scss */
+.b-icon {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+}
+/* line 46, ../../dev/src/sass/blocks/_common.scss */
+.b-icon:before {
+  margin: 0;
+}
+
+/**
+* @section b-text
+*/
+/* line 5, ../../dev/src/sass/blocks/_b-text.scss */
+.b-text h1, .b-text h2, .b-text h3, .b-text h4, .b-text h5, .b-text h6, .b-text p, .b-text ul, .b-text ol, .b-text dl, .b-text blockquote {
+  margin: 1em 0;
+}
+/* line 78, ../../dev/src/sass/_mixins.scss */
+.b-text h1:first-child, .b-text h2:first-child, .b-text h3:first-child, .b-text h4:first-child, .b-text h5:first-child, .b-text h6:first-child, .b-text p:first-child, .b-text ul:first-child, .b-text ol:first-child, .b-text dl:first-child, .b-text blockquote:first-child {
+  margin-top: 0;
+}
+/* line 81, ../../dev/src/sass/_mixins.scss */
+.b-text h1:last-child, .b-text h2:last-child, .b-text h3:last-child, .b-text h4:last-child, .b-text h5:last-child, .b-text h6:last-child, .b-text p:last-child, .b-text ul:last-child, .b-text ol:last-child, .b-text dl:last-child, .b-text blockquote:last-child {
+  margin-bottom: 0;
+}
+/* line 28, ../../dev/src/sass/blocks/_b-text.scss */
+.b-text a {
+  text-decoration: underline;
+}
+/* line 72, ../../dev/src/sass/_mixins.scss */
+.b-text a:hover {
+  text-decoration: none;
+}
+/* line 32, ../../dev/src/sass/blocks/_b-text.scss */
+.b-text img {
+  max-width: 100%;
+}
+
+/**
+* @section Main Site Header
+*/
+/* line 4, ../../dev/src/sass/blocks/_l-siteHeader.scss */
+.l-siteHeader {
+  position: relative;
+}
+
+/* line 16, ../../dev/src/sass/_mixins.scss */
+.b-siteHeader:before, .b-siteHeader:after {
+  content: " ";
+  display: table;
+}
+/* line 21, ../../dev/src/sass/_mixins.scss */
+.b-siteHeader:after {
+  clear: both;
+}
+
+/**
+* @subsection Main Site Logo
+*/
+/* line 4, ../../dev/src/sass/blocks/_l-siteLogo.scss */
+.l-siteLogo {
+  overflow: hidden;
+  float: left;
+  width: 200px;
+  height: 150px;
+}
+
+/* line 10, ../../dev/src/sass/blocks/_l-siteLogo.scss */
+.b-siteLogo {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+/* line 16, ../../dev/src/sass/blocks/_l-siteLogo.scss */
+.b-siteLogo__link {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+/* line 21, ../../dev/src/sass/blocks/_l-siteLogo.scss */
+.b-siteLogo__icon {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #000;
+}
+
+/**
+* @subsection Main Site Search
+*/
+/* line 4, ../../dev/src/sass/blocks/_l-siteSearch.scss */
+.l-siteSearch {
+  float: right;
+  overflow: hidden;
+  right: 20px;
+  width: 200px;
+}
+
+/* line 12, ../../dev/src/sass/blocks/_l-siteSearch.scss */
+.b-siteSearch__input {
+  box-sizing: border-box !important;
+  margin: 0;
+  width: 100%;
+}
+/* line 17, ../../dev/src/sass/blocks/_l-siteSearch.scss */
+.b-siteSearch__button {
+  vertical-align: middle;
+}
+
+/**
+* @subsection Main Site Nav
+*/
+/* line 4, ../../dev/src/sass/blocks/_l-siteNavigation.scss */
+.l-siteNavigation {
+  clear: both;
+  width: 100%;
+  height: 50px;
+}
+
+/* line 9, ../../dev/src/sass/blocks/_l-siteNavigation.scss */
+.b-mainNavigation {
+  display: block;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  list-style: none;
+}
+/* line 16, ../../dev/src/sass/blocks/_l-siteNavigation.scss */
+.b-mainNavigation__item {
+  position: relative;
+  float: left;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  color: #000;
+}
+/* line 28, ../../dev/src/sass/blocks/_l-siteNavigation.scss */
+.b-mainNavigation__link {
+  text-decoration: none;
+  display: block;
+  color: inherit;
+}
+/* line 65, ../../dev/src/sass/_mixins.scss */
+.b-mainNavigation__link:hover {
+  text-decoration: underline;
+}
+
+/**
+* @section Main Site Footer
+*/
+/**
+* @section Site Navigation Bottom
+*/
+/* line 7, ../../dev/src/sass/blocks/_l-siteNavigationBottom.scss */
+.b-bottomNavigation {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/* line 12, ../../dev/src/sass/blocks/_l-siteNavigationBottom.scss */
+.b-bottomNavigation__item {
+  color: #464646;
+}
+/* line 19, ../../dev/src/sass/blocks/_l-siteNavigationBottom.scss */
+.b-bottomNavigation__link {
+  text-decoration: none;
+  color: inherit;
+}
+/* line 65, ../../dev/src/sass/_mixins.scss */
+.b-bottomNavigation__link:hover {
+  text-decoration: underline;
+}
+
+/**
+* @section Site Copyright
+*/
+/* line 4, ../../dev/src/sass/blocks/_l-siteCopyright.scss */
+.l-siteCopyright {
+  color: #464646;
+  font: 11px Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+/* line 8, ../../dev/src/sass/blocks/_l-siteCopyright.scss */
+.b-siteCopyright {
+  margin: 0 0 15px;
+  text-transform: uppercase;
+}
+/* line 12, ../../dev/src/sass/blocks/_l-siteCopyright.scss */
+.b-siteCopyright__link {
+  text-decoration: none;
+  color: inherit;
+}
+/* line 65, ../../dev/src/sass/_mixins.scss */
+.b-siteCopyright__link:hover {
+  text-decoration: underline;
+}
+
+/**
+* @subsection Developer Copyright
+*/
+/* line 6, ../../dev/src/sass/blocks/_b-developerCopyright.scss */
+.b-developerCopyright__link {
+  text-decoration: none;
+  color: inherit;
+}
+/* line 65, ../../dev/src/sass/_mixins.scss */
+.b-developerCopyright__link:hover {
+  text-decoration: underline;
+}
+
+/**
+* @section wrapper
+*/
+/* line 4, ../../dev/src/sass/blocks/_l-wrapper.scss */
+.b-wrapper {
+  background: #fff none repeat scroll 0 0;
+  color: #000;
+  font-family: -apple-system,SF UI Text,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/**
+* @section l-phone
+*/
+/* line 4, ../../dev/src/sass/blocks/_l-phone.scss */
+.b-phone {
+  background: #111 none repeat scroll 0 0;
+  border-radius: 55px;
+  box-shadow: 0 0 0 2px #aaa;
+  height: 568px;
+  padding: 125px 25px;
+  width: 320px;
+  margin: 30px auto;
+  position: relative;
+}
+/* line 14, ../../dev/src/sass/blocks/_l-phone.scss */
+.b-phone:before {
+  background: #333 none repeat scroll 0 0;
+  border-radius: 10px;
+  content: "";
+  height: 10px;
+  left: 50%;
+  margin-left: -30px;
+  position: absolute;
+  top: 50px;
+  width: 60px;
+}
+/* line 25, ../../dev/src/sass/blocks/_l-phone.scss */
+.b-phone:after {
+  border: 5px solid #333;
+  border-radius: 100%;
+  bottom: 20px;
+  box-sizing: border-box;
+  content: "";
+  height: 60px;
+  left: 50%;
+  margin-left: -30px;
+  position: absolute;
+  width: 60px;
+}
+/* line 38, ../../dev/src/sass/blocks/_l-phone.scss */
+.b-phone__statusbar {
+  background: transparent url("../img/blocks/mockup/status-bar.png") repeat scroll 0 0/100% auto;
+  height: 20px;
+  left: 50%;
+  margin-left: -160px;
+  position: absolute;
+  top: 100px;
+  width: 320px;
+}
+
+/**
+* @section views
+*/
+/* line 5, ../../dev/src/sass/blocks/_l-views.scss */
+.b-views {
+  height: 100%;
+  position: relative;
+  width: 100%;
+  z-index: 5000;
+}
+
+/* line 11, ../../dev/src/sass/blocks/_l-views.scss */
+.b-view {
+  height: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+}
+/* line 16, ../../dev/src/sass/blocks/_l-views.scss */
+.b-view a {
+  text-decoration: none;
+}
+
+/**
+* @section navbar
+*/
+/* line 4, ../../dev/src/sass/blocks/_l-navbar.scss */
+.b-navbar {
+  font-size: 17px;
+  left: 0;
+  top: 0;
+  background-color: #f7f7f8;
+  backface-visibility: hidden;
+  box-sizing: border-box;
+  font-size: 17px;
+  height: 44px;
+  margin: 0;
+  position: relative;
+  width: 100%;
+  z-index: 500;
+  font-size: 17px;
+}
+/* line 19, ../../dev/src/sass/blocks/_l-navbar.scss */
+.b-view > .b-navbar {
+  position: absolute;
+}
+/* line 22, ../../dev/src/sass/blocks/_l-navbar.scss */
+.b-navbar:after {
+  background-color: #c4c4c4;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 1px;
+  left: 0;
+  position: absolute;
+  right: auto;
+  top: auto;
+  transform-origin: 50% 100% 0;
+  width: 100%;
+  z-index: 15;
+  backface-visibility: hidden;
+}
+/* line 38, ../../dev/src/sass/blocks/_l-navbar.scss */
+.b-views > .b-navbar {
+  position: absolute;
+}
+/* line 42, ../../dev/src/sass/blocks/_l-navbar.scss */
+.b-navbar__left, .b-navbar__right {
+  align-items: center;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: flex-start;
+  transform: translate3d(0px, 0px, 0px);
+}
+/* line 50, ../../dev/src/sass/blocks/_l-navbar.scss */
+.b-navbar__left {
+  margin-right: 10px;
+}
+/* line 53, ../../dev/src/sass/blocks/_l-navbar.scss */
+.b-navbar__right {
+  margin-left: 10px;
+}
+/* line 56, ../../dev/src/sass/blocks/_l-navbar.scss */
+.b-navbar__center {
+  align-items: center;
+  display: flex;
+  flex-shrink: 10;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 44px;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* line 71, ../../dev/src/sass/blocks/_l-navbar.scss */
+.b-navbar__inner {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  left: 0;
+  padding: 0 8px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+/**
+* @section toolbar
+*/
+/* line 4, ../../dev/src/sass/blocks/_l-toolbar.scss */
+.b-toolbar {
+  background: #f7f7f8 none repeat scroll 0 0;
+  bottom: 0;
+  left: 0;
+  backface-visibility: hidden;
+  box-sizing: border-box;
+  font-size: 17px;
+  height: 44px;
+  margin: 0;
+  position: relative;
+  width: 100%;
+  z-index: 500;
+  font-size: 17px;
+}
+/* line 18, ../../dev/src/sass/blocks/_l-toolbar.scss */
+.b-toolbar:before {
+  background-color: #c4c4c4;
+  bottom: auto;
+  content: "";
+  display: block;
+  height: 1px;
+  left: 0;
+  position: absolute;
+  right: auto;
+  top: 0;
+  transform-origin: 50% 0 0;
+  width: 100%;
+  z-index: 15;
+}
+/* line 33, ../../dev/src/sass/blocks/_l-toolbar.scss */
+.b-views .b-toolbar {
+  position: absolute;
+}
+/* line 37, ../../dev/src/sass/blocks/_l-toolbar.scss */
+.b-toolbar__inner {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  left: 0;
+  padding: 0 8px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+/* line 49, ../../dev/src/sass/blocks/_l-toolbar.scss */
+.b-toolbar a {
+  flex-shrink: 1;
+  overflow: hidden;
+  position: relative;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/**
+* @section pannel
+*/
+/* line 8, ../../dev/src/sass/blocks/_l-panel.scss */
+.b-panel {
+  background: #111 none repeat scroll 0 0;
+  box-sizing: border-box;
+  height: 100%;
+  overflow: auto;
+  position: absolute;
+  top: 0;
+  transform: translate3d(0px, 0px, 0px);
+  transition: transform 400ms;
+  width: 260px;
+  z-index: 1000;
+}
+/* line 22, ../../dev/src/sass/blocks/_l-panel.scss */
+.b-panel.-type_left.-type_cover {
+  left: -260px;
+  z-index: 6000;
+}
+/* line 27, ../../dev/src/sass/blocks/_l-panel.scss */
+.b-panel.-type_right {
+  display: none;
+}
+/* line 29, ../../dev/src/sass/blocks/_l-panel.scss */
+.b-panel.-type_right.-type_reveal {
+  right: 0;
+}
+/* line 34, ../../dev/src/sass/blocks/_l-panel.scss */
+.b-panel.-layout-dark {
+  background-color: #222426;
+  color: #ddd;
+}
+
+/**
+* @section layout
+*/
+/**
+* @section links
+*/
+/* line 4, ../../dev/src/sass/blocks/_l-links.scss */
+.b-link {
+  height: 44px;
+  line-height: 44px;
+  position: relative;
+  text-decoration: none;
+  transform: translateZ(0px);
+  transition-duration: 0.3s;
+}
+/* line 12, ../../dev/src/sass/blocks/_l-links.scss */
+.b-link.-type_icon {
+  color: #007AFF;
+  margin: 0;
+  min-width: 44px;
+  text-align: center;
+}
+/* line 19, ../../dev/src/sass/blocks/_l-links.scss */
+.navbar .b-link, .subnavbar .b-link, .toolbar .b-link {
+  align-items: center;
+  display: flex;
+  height: 44px;
+  justify-content: flex-start;
+  line-height: 44px;
+  position: relative;
+  text-decoration: none;
+  transform: translateZ(0px);
+  transition-duration: 0.3s;
+}
+
+/**
+* @section popover
+*/
+/* line 6, ../../dev/src/sass/blocks/_l-popover.scss */
+.b-popover {
+  width: 240px;
+  background: rgba(255, 255, 255, 0.95) none repeat scroll 0 0;
+  border-radius: 13px;
+  display: none;
+  right: 5px;
+  margin: 0;
+  opacity: 0;
+  position: absolute;
+  bottom: 55px;
+  transform: none;
+  transition-property: opacity;
+  width: 240px;
+  z-index: 13500;
+}
+/* line 21, ../../dev/src/sass/blocks/_l-popover.scss */
+.b-popover.-type_modalIn {
+  opacity: 1;
+  transition-duration: 0.3s;
+}
+/* line 26, ../../dev/src/sass/blocks/_l-popover.scss */
+.b-popover__angle {
+  height: 26px;
+  right: 26px;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 26px;
+  z-index: 100;
+}
+/* line 35, ../../dev/src/sass/blocks/_l-popover.scss */
+.b-popover__angle:after {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 3px;
+  content: " ";
+  height: 26px;
+  left: 20px;
+  position: absolute;
+  top: 0;
+  transform: rotate(45deg);
+  width: 26px;
+}
+/* line 47, ../../dev/src/sass/blocks/_l-popover.scss */
+.b-popover__angle.-state__on-bottom {
+  right: 20px;
+  top: 100%;
+}
+/* line 50, ../../dev/src/sass/blocks/_l-popover.scss */
+.b-popover__angle.-state__on-bottom:after {
+  left: 0;
+  top: -19px;
+}
+/* line 57, ../../dev/src/sass/blocks/_l-popover.scss */
+.b-popover__inner {
+  overflow: auto;
+}
+
+/**
+* @section overlay
+*/
+/* line 6, ../../dev/src/sass/blocks/_l-overlay.scss */
+.b-overlay.-type_modal {
+  background: rgba(0, 0, 0, 0.4) none repeat scroll 0 0;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  transition-duration: 0.4s;
+  visibility: hidden;
+  width: 100%;
+  z-index: 13000;
+}
+/* line 18, ../../dev/src/sass/blocks/_l-overlay.scss */
+.b-overlay.-state_visible {
+  opacity: 1;
+  visibility: visible;
+}
+/* line 23, ../../dev/src/sass/blocks/_l-overlay.scss */
+.b-overlay.-type_pannel {
+  background: transparent none repeat scroll 0 0;
+  display: none;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 5999;
+}
+
+/**
+* @section list block
+*/
+/* line 4, ../../dev/src/sass/blocks/_l-listBlock.scss */
+.b-listBlock {
+  font-size: 17px;
+  margin: 35px 0;
+}
+/* line 8, ../../dev/src/sass/blocks/_l-listBlock.scss */
+.b-popover .b-listBlock {
+  margin: 0;
+}
+/* line 12, ../../dev/src/sass/blocks/_l-listBlock.scss */
+.b-listBlock__list {
+  border-radius: 13px;
+  background: #fff none repeat scroll 0 0;
+  list-style: outside none none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+/* line 20, ../../dev/src/sass/blocks/_l-listBlock.scss */
+.b-listBlock__item {
+  box-sizing: border-box;
+  position: relative;
+  border-bottom: 1px solid #c8c7cc;
+}
+/* line 24, ../../dev/src/sass/blocks/_l-listBlock.scss */
+.b-listBlock__item:last-child {
+  border-bottom: none;
+  border-radius: 0 0 13px 13px;
+}
+/* line 28, ../../dev/src/sass/blocks/_l-listBlock.scss */
+.b-listBlock__item:first-child {
+  border-radius: 13px 13px 0 0;
+}
+/* line 33, ../../dev/src/sass/blocks/_l-listBlock.scss */
+.b-listBlock__button {
+  text-decoration: none;
+  color: #007aff;
+  display: block;
+  line-height: 43px;
+  padding: 0 15px;
+  text-align: center;
+}
+
+/**
+* @section pages
+*/
+/* line 4, ../../dev/src/sass/blocks/_l-pages.scss */
+.b-pages {
+  background: #000;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+/* line 11, ../../dev/src/sass/blocks/_l-pages.scss */
+.b-page {
+  background: #efeff4;
+  box-sizing: border-box;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: translate3d(0px, 0px, 0px);
+  width: 100%;
+  height: 100%;
+  width: 100%;
+}
+/* line 22, ../../dev/src/sass/blocks/_l-pages.scss */
+.b-page__content {
+  padding: 44px 0;
+  box-sizing: border-box;
+  height: 100%;
+  overflow: auto;
+  position: relative;
+  z-index: 1;
+}
+/* line 30, ../../dev/src/sass/blocks/_l-pages.scss */
+.b-page__content_block {
+  box-sizing: border-box;
+  color: #6d6d72;
+  margin: 35px 0;
+  padding: 0 15px;
+}
+/* line 37, ../../dev/src/sass/blocks/_l-pages.scss */
+.b-page__content_title {
+  color: #6d6d72;
+  font-size: 14px;
+  line-height: 1;
+  margin: 35px 15px 10px;
+  overflow: hidden;
+  position: relative;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+/* line 47, ../../dev/src/sass/blocks/_l-pages.scss */
+.b-page__content_title + .b-page__content_block {
+  margin-top: 10px;
+}
+
+/**
+* @section button
+*/
+/* line 4, ../../dev/src/sass/blocks/_l-button.scss */
+.b-button {
+  -moz-appearance: none;
+  background: transparent;
+  border: 1px solid #007aff;
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: #007aff;
+  cursor: pointer;
+  display: block;
+  font-family: inherit;
+  font-size: 14px;
+  height: 29px;
+  line-height: 27px;
+  margin: 0;
+  outline: 0 none;
+  overflow: hidden;
+  padding: 0 10px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/*animations styles*/
+/**
+* @section main animations
+*/
+/* line 6, ../../dev/src/sass/animations/_l-animations.scss */
+.b-wrapper.-panel-left-cover .b-panel.-type_left {
+  transform: translate3d(260px, 0px, 0px);
+}
+
+/**
+* Responsive & Print styles
+*/
+/* ==========================================================================
+   Queries for Desktop Design.
+   Theses examples override the primary ('wide screen') styles.
+   Modify as content requires.
+   ========================================================================== */
+/* ==========================================================================
+   Queries for Tablet Design.
+   Theses examples override the primary ('wide screen') styles.
+   Modify as content requires.
+   ========================================================================== */
+/* ==========================================================================
+   Queries for Mobile Design.
+   Theses examples override the primary ('wide screen') styles.
+   Modify as content requires.
+   ========================================================================== */
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+@media print, (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+@media print {
+  /* line 8, ../../dev/src/sass/_print.scss */
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster:
+       http://www.sanbeiji.com/archives/953 */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* line 18, ../../dev/src/sass/_print.scss */
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  /* line 23, ../../dev/src/sass/_print.scss */
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  /* line 27, ../../dev/src/sass/_print.scss */
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  /* line 36, ../../dev/src/sass/_print.scss */
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+
+  /* line 41, ../../dev/src/sass/_print.scss */
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  /*
+   * Printing Tables:
+   * http://css-discuss.incutio.com/wiki/Printing_Tables
+   */
+  /* line 52, ../../dev/src/sass/_print.scss */
+  thead {
+    display: table-header-group;
+  }
+
+  /* line 56, ../../dev/src/sass/_print.scss */
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  /* line 61, ../../dev/src/sass/_print.scss */
+  img {
+    max-width: 100% !important;
+  }
+
+  /* line 65, ../../dev/src/sass/_print.scss */
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* line 72, ../../dev/src/sass/_print.scss */
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

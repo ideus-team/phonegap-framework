@@ -1,0 +1,50 @@
+a {
+  color: #007aff;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.l-html {
+
+}
+.l-body {
+  background: #fff;
+}
+
+
+/**
+* @section wrapper
+*/
+.l-wrapper {
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+  width: $site-width;
+}
+
+/**
+* @section content
+*/
+.l-content {
+  position: relative;
+}
+
+
+/**
+* @section main
+*/
+.l-contentText {
+  position: relative;
+  display: block;
+}
+
+.b-icon{
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  &:before{
+    margin: 0;
+  }
+  
+}

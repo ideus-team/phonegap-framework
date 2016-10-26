@@ -1,0 +1,2079 @@
+@charset "UTF-8";
+/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS and IE text size adjust after device orientation change,
+ *    without disabling user zoom.
+ */
+/* line 9, D:/__projects/phonegap-framework/application/src/sass/_normalize.scss */
+html {
+  font-family: sans-serif;
+  /* 2 */
+
+  -webkit-text-size-adjust: 100%;
+  /* 1 */
+      -ms-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/**
+ * Remove default margin.
+ */
+/* line 19, D:/__projects/phonegap-framework/application/src/sass/_normalize.scss */
+body {
+  margin: 0;
+}
+
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11
+ * and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
+/* line 33, D:/__projects/phonegap-framework/application/src/sass/_normalize.scss */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+/* line 54, D:/__projects/phonegap-framework/application/src/sass/_normalize.scss */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  /* 1 */
+
+  vertical-align: baseline;
+  /* 2 */
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+/* line 67, D:/__projects/phonegap-framework/application/src/sass/_normalize.scss */
+audio:not([controls]) {
+  display: none;
+
+  height: 0;
+}
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9/10.
+ * Hide the `template` element in IE 8/9/10/11, Safari, and Firefox < 22.
+ */
+/* line 77, D:/__projects/phonegap-framework/application/src/sass/_normalize.scss */
+[hidden],
+template {
+  display: none;
+}
+
+/* Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+/* line 89, D:/__projects/phonegap-framework/application/src/sass/_normalize.scss */
+a {
+  background-color: transparent;
+}
+
+/**
+ * Improve readability of focused elements when they are also in an
+ * active/hover state.
+ */
+/* line 98, D:/__projects/phonegap-framework/application/src/sass/_normalize.scss */
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ */
+/* line 110, D:/__projects/phonegap-framework/application/src/sass/_normalize.scss */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
+/* line 118, D:/__projects/phonegap-framework/application/src/sass/_normalize.scss */
+b,
+strong {
+  font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari and Chrome.
+ */
+/* line 127, D:/__projects/phonegap-framework/application/src/sass/_normalize.scss */
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari, and Chrome.
+ */
+/* line 136, D:/__projects/phonegap-framework/application/src/sass/_normalize.scss */
+h1 {
+  font-size: 2em;
+
+  margin: 0.67em 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+/* line 145, D:/__projects/phonegap-framework/application/src/sass/_normalize.scss */
+mark {
+  color: #000; 
+  background: #ff0;
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+/* line 154, D:/__projects/phonegap-framework/application/src/sass/_normalize.scss */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+/* line 162, D:/__projects/phonegap-framework/application/src/sass/_normalize.scss */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+
+  position: relative;
+
+  vertical-align: baseline;
+}
+
+/* line 170, D:/__projects/phonegap-framework/application/src/sass/_normalize.scss */
+sup {
+  top: -0.5em;
+}
+
+/* line 174, D:/__projects/phonegap-framework/application/src/sass/_normalize.scss */
+sub {
+  bottom: -0.25em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9/10.
+ */
+/* line 185, D:/__projects/phonegap-framework/application/src/sass/_normalize.scss */
+img {
+  border: 0;
+}
+
+/**
+ * Correct overflow not hidden in IE 9/10/11.
+ */
+/* line 193, D:/__projects/phonegap-framework/application/src/sass/_normalize.scss */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari.
+ */
+/* line 204, D:/__projects/phonegap-framework/application/src/sass/_normalize.scss */
+figure {
+  margin: 1em 40px;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+/* line 212, D:/__projects/phonegap-framework/application/src/sass/_normalize.scss */
+hr {
+  box-sizing: content-box;
+  height: 0;
+}
+
+/**
+ * Contain overflow in all browsers.
+ */
+/* line 221, D:/__projects/phonegap-framework/application/src/sass/_normalize.scss */
+pre {
+  overflow: auto;
+}
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+/* line 229, D:/__projects/phonegap-framework/application/src/sass/_normalize.scss */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ */
+/* line 252, D:/__projects/phonegap-framework/application/src/sass/_normalize.scss */
+button,
+input,
+optgroup,
+select,
+textarea {
+  /* 1 */
+  font: inherit;
+  /* 2 */
+
+  margin: 0;
+
+  color: inherit;
+  /* 3 */
+}
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
+/* line 266, D:/__projects/phonegap-framework/application/src/sass/_normalize.scss */
+button {
+  overflow: visible;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox.
+ */
+/* line 277, D:/__projects/phonegap-framework/application/src/sass/_normalize.scss */
+button,
+select {
+  text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+/* line 290, D:/__projects/phonegap-framework/application/src/sass/_normalize.scss */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  /* 2 */
+  cursor: pointer;
+
+  -webkit-appearance: button;
+  /* 3 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+/* line 302, D:/__projects/phonegap-framework/application/src/sass/_normalize.scss */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+/* line 311, D:/__projects/phonegap-framework/application/src/sass/_normalize.scss */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  padding: 0; 
+
+  border: 0;
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+/* line 322, D:/__projects/phonegap-framework/application/src/sass/_normalize.scss */
+input {
+  line-height: normal;
+}
+
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+/* line 334, D:/__projects/phonegap-framework/application/src/sass/_normalize.scss */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+/* line 346, D:/__projects/phonegap-framework/application/src/sass/_normalize.scss */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome.
+ */
+/* line 356, D:/__projects/phonegap-framework/application/src/sass/_normalize.scss */
+input[type="search"] {
+  /* 1 */
+  box-sizing: content-box;
+
+  -webkit-appearance: textfield;
+  /* 2 */
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+/* line 367, D:/__projects/phonegap-framework/application/src/sass/_normalize.scss */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+/* line 376, D:/__projects/phonegap-framework/application/src/sass/_normalize.scss */
+fieldset {
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; 
+
+  border: 1px solid #c0c0c0;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+/* line 387, D:/__projects/phonegap-framework/application/src/sass/_normalize.scss */
+legend {
+  /* 1 */
+  padding: 0;
+
+  border: 0;
+  /* 2 */
+}
+
+/**
+ * Remove default vertical scrollbar in IE 8/9/10/11.
+ */
+/* line 396, D:/__projects/phonegap-framework/application/src/sass/_normalize.scss */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+/* line 405, D:/__projects/phonegap-framework/application/src/sass/_normalize.scss */
+optgroup {
+  font-weight: bold;
+}
+
+/* Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+/* line 416, D:/__projects/phonegap-framework/application/src/sass/_normalize.scss */
+table {
+  border-spacing: 0; 
+  border-collapse: collapse;
+}
+
+/* line 421, D:/__projects/phonegap-framework/application/src/sass/_normalize.scss */
+td,
+th {
+  padding: 0;
+}
+
+/*! HTML5 Boilerplate v5.2.0 | MIT License | https://html5boilerplate.com/ */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+/* line 13, D:/__projects/phonegap-framework/application/src/sass/_h5b.scss */
+html {
+  font-size: 1em;
+  line-height: 1.4; 
+
+  color: #222;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+/* line 27, D:/__projects/phonegap-framework/application/src/sass/_h5b.scss */
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/* line 32, D:/__projects/phonegap-framework/application/src/sass/_h5b.scss */
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+/* line 41, D:/__projects/phonegap-framework/application/src/sass/_h5b.scss */
+hr {
+  display: block;
+
+  height: 1px;
+  margin: 1em 0;
+  padding: 0; 
+
+  border: 0;
+  border-top: 1px solid #ccc;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+/* line 56, D:/__projects/phonegap-framework/application/src/sass/_h5b.scss */
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+/* line 69, D:/__projects/phonegap-framework/application/src/sass/_h5b.scss */
+fieldset {
+  margin: 0;
+  padding: 0; 
+
+  border: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+/* line 79, D:/__projects/phonegap-framework/application/src/sass/_h5b.scss */
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+/* line 87, D:/__projects/phonegap-framework/application/src/sass/_h5b.scss */
+.browserupgrade {
+  margin: 0.2em 0;
+  padding: 0.2em 0; 
+
+  color: #000;
+  background: #ccc;
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+/*
+ * Hide visually and from screen readers:
+ */
+/* line 102, D:/__projects/phonegap-framework/application/src/sass/_h5b.scss */
+.g-hidden {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+/* line 111, D:/__projects/phonegap-framework/application/src/sass/_h5b.scss */
+.g-visuallyhidden {
+  position: absolute;
+
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+
+  width: 1px; 
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+
+  border: 0;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+/* line 128, D:/__projects/phonegap-framework/application/src/sass/_h5b.scss */
+.g-visuallyhidden.focusable:active,
+.g-visuallyhidden.focusable:focus {
+  position: static;
+
+  overflow: visible;
+  clip: auto;
+
+  width: auto; 
+  height: auto;
+  margin: 0;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+/* line 142, D:/__projects/phonegap-framework/application/src/sass/_h5b.scss */
+.g-invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+/* line 158, D:/__projects/phonegap-framework/application/src/sass/_h5b.scss */
+.g-clearfix:before,
+.g-clearfix:after {
+  /* 1 */
+  display: table;
+
+  content: " ";
+  /* 2 */
+}
+
+/* line 164, D:/__projects/phonegap-framework/application/src/sass/_h5b.scss */
+.g-clearfix:after {
+  clear: both;
+}
+
+/* Project files… */
+/**
+* @section Fonts
+*
+* You can add fonts by mixin:
+* @include font-face($name, $file, $weight: normal, $style: normal);
+* @include font-face('PTSans', 'PTSansRegular');
+* @include font-face('PTSans', 'PTSansItalic', normal, italic);
+* @include font-face('PTSans', 'PTSansBold', bold);
+*
+* PLEASE RENAME FONT FILENAME ($file) TO MATCH CONTENT OF "<font id=" IN .SVG-FONT FILE GENERATED BY FONT-SQUIRREL
+* for correct font name after #hashtag in font-face rulse for svg: http://stackoverflow.com/questions/15422770/font-face-svg-not-working-properly-in-chrome#answer-21125630
+*/
+/**
+* @section Settings
+*/
+/**
+* @section Sprites
+*
+* $sprite-test: sprite-map('sprites/test/*.png', $spacing: 20px);
+*
+* .b-icon {
+    background: $sprite-test no-repeat;
+*   &.-type_example {background-position: sprite-position($spriteMap, $filename, $offset-x, $offset-y, $use-percentages);}
+*   &.-type_arrow {background-position: sprite-position($sprite-test, 'arrow');}
+*   &.-type_login {background-position: sprite-position($sprite-test, 'login', 3px, -2px);}
+* }
+*/
+/* Generated… */
+/* Plugins */
+/* ==|== primary styles =====================================================
+   Authors: %Author Name%
+   ========================================================================== */
+/* Framework Common Libraries */
+/*
+ * Image replacement
+.g-ir
+
+Add the `.g-ir` class to any element you are applying image-replacement to. When
+replacing an element's content with an image, make sure to also set a specific
+`background-image: url(pathtoimage.png);`, `width`, and `height` so that your
+replacement image appears.
+*/
+/* line 10, D:/__projects/phonegap-framework/application/src/sass/blocks/_g-blocks.scss */
+.g-ir {
+  overflow: hidden; 
+
+  white-space: nowrap;
+  text-indent: 100%;
+}
+
+/*
+ * Telephone number
+*/
+/* line 20, D:/__projects/phonegap-framework/application/src/sass/blocks/_g-blocks.scss */
+.g-tel {
+  cursor: default;
+  text-decoration: none; 
+
+  color: inherit;
+}
+/* line 25, D:/__projects/phonegap-framework/application/src/sass/blocks/_g-blocks.scss */
+.g-tel:hover {
+  color: inherit;
+}
+/* line 29, D:/__projects/phonegap-framework/application/src/sass/blocks/_g-blocks.scss */
+.-device_desktop .g-tel {
+  pointer-events: none;
+}
+
+/* Project only code */
+/* line 2, D:/__projects/phonegap-framework/application/src/sass/blocks/_common.scss */
+a:hover {
+  text-decoration: none;
+}
+
+/* line 10, D:/__projects/phonegap-framework/application/src/sass/blocks/_common.scss */
+.l-body {
+  background: #fff;
+}
+
+/**
+* @section wrapper
+*/
+/* line 18, D:/__projects/phonegap-framework/application/src/sass/blocks/_common.scss */
+.l-wrapper {
+  position: relative;
+
+  width: 1200px; 
+  margin: 0 auto;
+  padding: 0;
+}
+
+/**
+* @section content
+*/
+/* line 28, D:/__projects/phonegap-framework/application/src/sass/blocks/_common.scss */
+.l-content {
+  position: relative;
+}
+
+/**
+* @section main
+*/
+/* line 36, D:/__projects/phonegap-framework/application/src/sass/blocks/_common.scss */
+.b-content {
+  position: relative;
+
+  display: block;
+}
+
+/* line 41, D:/__projects/phonegap-framework/application/src/sass/blocks/_common.scss */
+.b-viewContent {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+}
+/* line 48, D:/__projects/phonegap-framework/application/src/sass/blocks/_common.scss */
+.b-viewContent .b-viewHeader {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  box-sizing: border-box;
+  width: 100%;
+  height: 50px;
+
+  border-bottom: 1px solid #000;
+}
+/* line 57, D:/__projects/phonegap-framework/application/src/sass/blocks/_common.scss */
+.b-viewContent .b-viewHeader__title {
+  text-align: center;
+}
+/* line 62, D:/__projects/phonegap-framework/application/src/sass/blocks/_common.scss */
+.b-viewContent .b-viewMain {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  overflow: hidden; 
+
+  width: 100%;
+  height: 100%;
+}
+/* line 72, D:/__projects/phonegap-framework/application/src/sass/blocks/_common.scss */
+.b-viewContent.-has_header .b-viewMain {
+  top: 50px;
+}
+/* line 78, D:/__projects/phonegap-framework/application/src/sass/blocks/_common.scss */
+.b-viewContent.-has_footer .b-viewMain {
+  bottom: 50px;
+}
+
+/* line 2, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.l-body.-page_iDeusSitemap,
+.l-html.-page_iDeusSitemap {
+  height: 100%;
+}
+
+/**
+* @section sitemapWrapper
+*/
+/* line 11, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.l-sitemapWrapper {
+  font: 15px/1.3 "Roboto", sans-serif; 
+
+  position: relative;
+
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+
+  color: #292929;
+  background: #fff;
+}
+
+/**
+* @section sitemapHeader
+*/
+/* line 25, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.l-sitemapHeader {
+  background: #2b2d31 url("../img/blocks/sitemap/siteHeader-bg.jpg") repeat;
+}
+/* line 27, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.-type_netcraft .l-sitemapHeader {
+  border-bottom: 3px solid #3b6da3;
+  background: #fff;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* line 33, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.b-sitemapHeader {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 38px 20px 42px;
+}
+
+/**
+* @section sitemapLogo
+*/
+/* line 43, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.l-sitemapLogo {
+  overflow: hidden;
+
+  width: 131px;
+  height: 47px;
+}
+/* line 47, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.-type_netcraft .l-sitemapLogo {
+  width: 266px;
+  height: 50px;
+}
+
+/* line 52, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.b-sitemapLogo {
+  width: 100%;
+  height: 100%; 
+  margin: 0;
+  padding: 0;
+}
+/* line 58, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.b-sitemapLogo__link {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+}
+/* line 64, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.b-sitemapLogo__icon {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  color: #000;
+}
+
+/**
+* @section sitemapContent
+*/
+/* line 76, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.l-sitemapContent {
+  padding: 0 0 185px;
+}
+
+/* line 79, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.b-sitemapContent {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/**
+* @section clientLogo
+*/
+/* line 89, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.l-clientLogo {
+  margin: 33px 0 45px;
+  padding: 0;
+}
+
+/* line 95, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.b-clientLogo__link {
+  display: inline-block;
+}
+
+/* line 99, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.b-clientLogo__icon {
+  color: #000;
+}
+
+/**
+* @section sitemapLink
+*/
+/* line 108, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.b-sitemapLink {
+  text-decoration: underline; 
+
+  color: inherit;
+}
+/* line 112, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.b-sitemapLink:hover,
+.b-sitemapLink:focus,
+.b-sitemapLink:active,
+.b-sitemapLink:visited {
+  text-decoration: none;
+}
+
+/**
+* @section sitemapButton
+*/
+/* line 124, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.b-sitemapButton {
+  font-size: 14px;
+
+  position: relative;
+
+  display: inline-block;
+
+  box-sizing: border-box;
+  min-width: 155px;
+  padding: 11px 37px 8px 30px;
+
+  cursor: pointer; 
+  text-align: left;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  color: #292929;
+  border: 1px solid #ed1b23;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: none;
+}
+/* line 141, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.-type_netcraft .b-sitemapButton {
+  border-color: #3b6da3;
+}
+/* line 145, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.b-sitemapButton:before {
+  position: absolute;
+  top: 15px;
+  right: 28px;
+
+  display: block;
+
+  width: 6px;
+  height: 10px;
+
+  content: ""; 
+
+  background: url("../img/blocks/sitemap/sitemapButton-ico.png") -21px 0 no-repeat;
+}
+/* line 156, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.b-sitemapButton:hover {
+  text-decoration: none; 
+
+  color: #fff;
+  background: #ed1b23;
+}
+/* line 161, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.-type_netcraft .b-sitemapButton:hover {
+  background-color: #3b6da3;
+}
+/* line 165, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.b-sitemapButton:hover:before {
+  background-position: 0 0;
+}
+/* line 170, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.b-sitemapButton:focus,
+.b-sitemapButton:active,
+.b-sitemapButton:visited {
+  text-decoration: none;
+}
+
+/**
+* @section sitemapTabs
+*/
+/* line 184, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.b-sitemapTabs__title {
+  font: 18px/1.3 "Roboto Slab", serif;
+
+  box-sizing: border-box;
+  margin: 20px 0 0;
+
+  cursor: pointer; 
+
+  color: #636363;
+  background: #fafafa;
+}
+/* line 16, D:/__projects/phonegap-framework/application/src/sass/_mixins.scss */
+.b-sitemapTabs__title:before,
+.b-sitemapTabs__title:after {
+  display: table; 
+
+  content: " ";
+}
+/* line 21, D:/__projects/phonegap-framework/application/src/sass/_mixins.scss */
+.b-sitemapTabs__title:after {
+  clear: both;
+}
+/* line 24, D:/__projects/phonegap-framework/application/src/sass/_mixins.scss */
+.b-sitemapTabs__title {
+  *zoom: 1;
+}
+/* line 193, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.b-sitemapTabs__title.-state_active {
+  color: #ec1b23; 
+  border-bottom: 2px solid #d4d4d4;
+  background: transparent;
+}
+/* line 198, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.-type_netcraft .b-sitemapTabs__title.-state_active {
+  color: #3b6da3;
+}
+/* line 202, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.b-sitemapTabs__title.-state_active:not(.-state_default) {
+  animation: opacityAnimation 1.5s;
+}
+/* line 209, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.b-sitemapTabs__title.-state_inactive:not(.-state_default) {
+  animation: opacityAnimationReverse 1.5s;
+}
+
+/* line 216, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.b-sitemapTabs__titleText {
+  float: left; 
+
+  padding: 20px 0 15px 20px;
+}
+
+/* line 221, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.b-sitemapTabs__arrow {
+  position: relative;
+
+  float: right;
+
+  width: 60px;
+  height: 60px;
+
+  background: #f2f2f2;
+}
+/* line 228, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.b-sitemapTabs__arrow:before {
+  position: absolute;
+  top: 23px;
+  right: 20px;
+
+  display: block;
+
+  width: 18px;
+  height: 16px;
+
+  content: ""; 
+
+  background: url("../img/blocks/sitemap/sitemapTabs__title-ico.png") -58px 0 no-repeat;
+}
+/* line 239, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.-state_active .b-sitemapTabs__arrow {
+  background: transparent;
+}
+/* line 242, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.-state_active .b-sitemapTabs__arrow:before {
+  top: 26px;
+  right: 28px;
+
+  background-position: -26px 0;
+}
+/* line 249, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.-type_netcraft .-state_active .b-sitemapTabs__arrow:before {
+  background-position: -83px 0;
+}
+
+/* line 255, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.b-sitemapTabs__content {
+  display: none; 
+
+  margin: 0 0 20px;
+  padding: 20px 0 0;
+}
+/* line 260, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.b-sitemapTabs__content.-state_active {
+  display: block;
+}
+/* line 262, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.b-sitemapTabs__content.-state_active:not(.-state_default) {
+  animation: opacityAnimation 1.5s;
+}
+
+/* line 269, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.b-sitemapTabs__table {
+  width: 100%;
+}
+/* line 272, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.b-sitemapTabs__table tr {
+  border-bottom: 1px solid #eaeaea;
+}
+/* line 277, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.b-sitemapTabs__table tbody tr:last-child {
+  border-bottom: 0;
+}
+/* line 282, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.b-sitemapTabs__table td,
+.b-sitemapTabs__table th {
+  padding: 13px 20px 16px;
+}
+/* line 286, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.b-sitemapTabs__table td:first-child,
+.b-sitemapTabs__table th:first-child {
+  width: 47%;
+}
+/* line 290, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.b-sitemapTabs__table td.-type_link,
+.b-sitemapTabs__table th.-type_link {
+  padding-right: 2px;
+
+  text-align: right;
+}
+/* line 295, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.b-sitemapTabs__table td.-view_important,
+.b-sitemapTabs__table th.-view_important {
+  font-size: 16px;
+
+  text-transform: uppercase;
+}
+/* line 300, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.b-sitemapTabs__table td.-state_inactive,
+.b-sitemapTabs__table th.-state_inactive {
+  color: #c1c1c1;
+}
+/* line 305, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.b-sitemapTabs__table th {
+  font-size: 16px;
+  font-weight: normal;
+
+  text-align: left; 
+  text-transform: uppercase;
+
+  color: #ec1b23;
+}
+/* line 312, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.b-sitemapTabs__table th.-type_link {
+  padding-right: 60px;
+}
+/* line 316, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.-type_netcraft .b-sitemapTabs__table th {
+  color: #3b6da3;
+}
+
+@keyframes opacityAnimation {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes opacityAnimationReverse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/**
+* @section sitemapFooter
+*/
+/* line 358, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.l-sitemapFooter {
+  position: absolute;
+  right: 0; 
+  bottom: 0;
+  left: 0;
+}
+
+/* line 364, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.b-sitemapFooter {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/**
+* @section sitemapCopyright
+*/
+/* line 375, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.b-sitemapCopyright {
+  font-style: normal; 
+
+  text-align: center;
+
+  color: #c1c1c1;
+}
+/* line 380, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.b-sitemapCopyright__link {
+  text-decoration: none; 
+
+  color: inherit;
+}
+/* line 384, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.b-sitemapCopyright__link:hover {
+  text-decoration: underline;
+}
+/* line 388, D:/__projects/phonegap-framework/application/src/sass/blocks/_sitemap.scss */
+.b-sitemapCopyright__link:focus,
+.b-sitemapCopyright__link:active,
+.b-sitemapCopyright__link:visited {
+  text-decoration: none;
+}
+
+/**
+* @section b-text
+*/
+/* line 5, D:/__projects/phonegap-framework/application/src/sass/blocks/_b-text.scss */
+.b-text h1,
+.b-text h2,
+.b-text h3,
+.b-text h4,
+.b-text h5,
+.b-text h6,
+.b-text p,
+.b-text ul,
+.b-text ol,
+.b-text dl,
+.b-text blockquote {
+  margin: 1em 0;
+}
+/* line 79, D:/__projects/phonegap-framework/application/src/sass/_mixins.scss */
+.b-text h1:first-child,
+.b-text h2:first-child,
+.b-text h3:first-child,
+.b-text h4:first-child,
+.b-text h5:first-child,
+.b-text h6:first-child,
+.b-text p:first-child,
+.b-text ul:first-child,
+.b-text ol:first-child,
+.b-text dl:first-child,
+.b-text blockquote:first-child {
+  margin-top: 0;
+}
+/* line 82, D:/__projects/phonegap-framework/application/src/sass/_mixins.scss */
+.b-text h1:last-child,
+.b-text h2:last-child,
+.b-text h3:last-child,
+.b-text h4:last-child,
+.b-text h5:last-child,
+.b-text h6:last-child,
+.b-text p:last-child,
+.b-text ul:last-child,
+.b-text ol:last-child,
+.b-text dl:last-child,
+.b-text blockquote:last-child {
+  margin-bottom: 0;
+}
+
+/* line 28, D:/__projects/phonegap-framework/application/src/sass/blocks/_b-text.scss */
+.b-text a {
+  text-decoration: underline;
+}
+/* line 73, D:/__projects/phonegap-framework/application/src/sass/_mixins.scss */
+.b-text a:hover {
+  text-decoration: none;
+}
+
+/* line 32, D:/__projects/phonegap-framework/application/src/sass/blocks/_b-text.scss */
+.b-text img {
+  max-width: 100%;
+}
+
+/**
+* @section Main Site Header
+*/
+/* line 4, D:/__projects/phonegap-framework/application/src/sass/blocks/_l-siteHeader.scss */
+.l-siteHeader {
+  position: relative;
+}
+
+/* line 16, D:/__projects/phonegap-framework/application/src/sass/_mixins.scss */
+.b-siteHeader:before,
+.b-siteHeader:after {
+  display: table; 
+
+  content: " ";
+}
+
+/* line 21, D:/__projects/phonegap-framework/application/src/sass/_mixins.scss */
+.b-siteHeader:after {
+  clear: both;
+}
+
+/* line 24, D:/__projects/phonegap-framework/application/src/sass/_mixins.scss */
+.b-siteHeader {
+  *zoom: 1;
+}
+
+/**
+* @subsection Main Site Logo
+*/
+/* line 4, D:/__projects/phonegap-framework/application/src/sass/blocks/_l-siteLogo.scss */
+.l-siteLogo {
+  float: left;
+  overflow: hidden; 
+
+  width: 200px;
+  height: 150px;
+}
+
+/* line 10, D:/__projects/phonegap-framework/application/src/sass/blocks/_l-siteLogo.scss */
+.b-siteLogo {
+  width: 100%;
+  height: 100%; 
+  margin: 0;
+  padding: 0;
+}
+/* line 16, D:/__projects/phonegap-framework/application/src/sass/blocks/_l-siteLogo.scss */
+.b-siteLogo__link {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+}
+/* line 21, D:/__projects/phonegap-framework/application/src/sass/blocks/_l-siteLogo.scss */
+.b-siteLogo__icon {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  color: #000;
+}
+
+/**
+* @subsection Main Site Search
+*/
+/* line 4, D:/__projects/phonegap-framework/application/src/sass/blocks/_l-siteSearch.scss */
+.l-siteSearch {
+  right: 20px;
+
+  float: right;
+  overflow: hidden;
+
+  width: 200px;
+}
+
+/* line 12, D:/__projects/phonegap-framework/application/src/sass/blocks/_l-siteSearch.scss */
+.b-siteSearch__input {
+  box-sizing: border-box !important;
+  width: 100%; 
+  margin: 0;
+}
+
+/* line 17, D:/__projects/phonegap-framework/application/src/sass/blocks/_l-siteSearch.scss */
+.b-siteSearch__button {
+  vertical-align: middle;
+}
+
+/**
+* @subsection Main Site Nav
+*/
+/* line 4, D:/__projects/phonegap-framework/application/src/sass/blocks/_l-siteNavigation.scss */
+.l-siteNavigation {
+  clear: both;
+
+  width: 100%;
+  height: 50px;
+}
+
+/* line 9, D:/__projects/phonegap-framework/application/src/sass/blocks/_l-siteNavigation.scss */
+.b-mainNavigation {
+  display: block;
+
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+/* line 16, D:/__projects/phonegap-framework/application/src/sass/blocks/_l-siteNavigation.scss */
+.b-mainNavigation__item {
+  position: relative;
+
+  float: left;
+
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+  color: #000;
+}
+/* line 28, D:/__projects/phonegap-framework/application/src/sass/blocks/_l-siteNavigation.scss */
+.b-mainNavigation__link {
+  display: block;
+
+  text-decoration: none;
+
+  color: inherit;
+}
+/* line 66, D:/__projects/phonegap-framework/application/src/sass/_mixins.scss */
+.b-mainNavigation__link:hover {
+  text-decoration: underline;
+}
+
+/**
+* @section Main Site Footer
+*/
+/**
+* @section Site Navigation Bottom
+*/
+/* line 7, D:/__projects/phonegap-framework/application/src/sass/blocks/_l-siteNavigationBottom.scss */
+.b-bottomNavigation {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+/* line 12, D:/__projects/phonegap-framework/application/src/sass/blocks/_l-siteNavigationBottom.scss */
+.b-bottomNavigation__item {
+  color: #464646;
+}
+/* line 19, D:/__projects/phonegap-framework/application/src/sass/blocks/_l-siteNavigationBottom.scss */
+.b-bottomNavigation__link {
+  text-decoration: none;
+
+  color: inherit;
+}
+/* line 66, D:/__projects/phonegap-framework/application/src/sass/_mixins.scss */
+.b-bottomNavigation__link:hover {
+  text-decoration: underline;
+}
+
+/**
+* @section Site Copyright
+*/
+/* line 4, D:/__projects/phonegap-framework/application/src/sass/blocks/_l-siteCopyright.scss */
+.l-siteCopyright {
+  font: 11px Arial, "Helvetica Neue", Helvetica, sans-serif; 
+
+  color: #464646;
+}
+
+/* line 8, D:/__projects/phonegap-framework/application/src/sass/blocks/_l-siteCopyright.scss */
+.b-siteCopyright {
+  margin: 0 0 15px;
+
+  text-transform: uppercase;
+}
+/* line 12, D:/__projects/phonegap-framework/application/src/sass/blocks/_l-siteCopyright.scss */
+.b-siteCopyright__link {
+  text-decoration: none;
+
+  color: inherit;
+}
+/* line 66, D:/__projects/phonegap-framework/application/src/sass/_mixins.scss */
+.b-siteCopyright__link:hover {
+  text-decoration: underline;
+}
+
+/**
+* @subsection Developer Copyright
+*/
+/* line 6, D:/__projects/phonegap-framework/application/src/sass/blocks/_b-developerCopyright.scss */
+.b-developerCopyright__link {
+  text-decoration: none;
+
+  color: inherit;
+}
+/* line 66, D:/__projects/phonegap-framework/application/src/sass/_mixins.scss */
+.b-developerCopyright__link:hover {
+  text-decoration: underline;
+}
+
+/* line 2, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.b-chat__roomsList {
+  margin: 0;
+  padding: 0; 
+
+  list-style-type: none;
+}
+
+/* line 6, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.b-chat__roomHolder {
+  position: relative;
+
+  overflow: hidden; 
+
+  padding: 15px 40px 15px 15px;
+
+  border-bottom: 1px solid #e8e7e7;
+}
+
+/* line 15, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.b-chat__roomInfo {
+  overflow: hidden;
+}
+
+/* line 19, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.b-chat__info {
+  overflow: hidden;
+}
+/* line 21, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.b-chat__info > span {
+  font-size: 10px;
+
+  float: left;
+
+  margin-left: 10px;
+  padding-left: 10px; 
+
+  color: grey;
+  border-left: 1px solid grey;
+}
+/* line 29, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.b-chat__info > span:first-child {
+  margin-left: 0; 
+  padding-left: 0;
+
+  border-left: none;
+}
+
+/* line 37, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.b-chat__roomIcon {
+  position: relative;
+
+  float: left;
+  overflow: hidden;
+
+  width: 44px;
+  height: 44px;
+  margin-right: 10px; 
+
+  border: 1px solid grey;
+  border-radius: 5px;
+  background: #fafafa;
+}
+/* line 48, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.b-chat__roomIcon img {
+  /*
+  NEED TEST
+  // Add styles to parent el prevent elements to be blurry due to the element being placed on a “half pixel”
+  .parent-element {
+    transform-style: preserve-3d;
+  }
+*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  max-width: 100%;
+  max-height: 100%;
+
+  transform: translateX(-50%) translateY(-50%); 
+
+  border-radius: 3px;
+}
+
+/* line 58, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.b-viewHolder[class*="-view_chat-room"] .b-viewMain {
+  background-color: #f1f1f1;
+}
+
+/* line 63, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.b-messages {
+  padding: 0 10px;
+}
+/* line 69, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.b-messages__userpic {
+  float: left;
+
+  width: 32px;
+  height: 32px;
+
+  background: url(../img/nophoto.jpg) center center no-repeat;
+  background-size: cover; 
+  box-shadow: rgba(0, 0, 0, 0.2) 0 0 7px;
+}
+/* line 77, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.b-messages__userpic img {
+  width: 100%;
+  height: 100%;
+}
+/* line 82, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.b-messages__item.-type_owner .b-messages__userpic {
+  float: right;
+}
+/* line 87, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.b-messages__holder {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 0 60px 5px 20px;
+}
+/* line 92, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.b-messages__item.-type_owner .b-messages__holder {
+  padding: 0 20px 5px 48px;
+
+  text-align: right;
+}
+/* line 95, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.b-messages__item.-type_owner .b-messages__holder:before {
+  position: absolute;
+  z-index: 100; 
+  top: 5px;
+  right: 0;
+  left: auto;
+
+  content: "";
+
+  border-top: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #3e3e3e;
+}
+/* line 109, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.b-messages__holderInner {
+  position: relative;
+
+  display: inline-block;
+
+  padding: 3px; 
+
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 0 7px;
+}
+/* line 115, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.b-messages__item.-type_owner .b-messages__holderInner {
+  color: #fff; 
+  background: #3e3e3e;
+}
+/* line 121, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.b-messages__holder:before {
+  position: absolute;
+  z-index: 100; 
+  top: 5px;
+  left: 0;
+
+  content: "";
+
+  border-top: 10px solid transparent;
+  border-right: 10px solid #fff;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid transparent;
+}
+/* line 136, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.b-messages__time {
+  position: absolute;
+  bottom: 0;
+  left: 100%;
+
+  margin-left: 10px;
+}
+/* line 142, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.b-messages__item.-type_owner .b-messages__time {
+  position: absolute;
+  right: 100%;
+  bottom: 0;
+  left: auto;
+
+  margin-right: 10px; 
+
+  color: #000;
+}
+/* line 152, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.b-messages__text {
+  clear: both; 
+
+  padding: 8px;
+
+  -moz-text-align-last: auto;
+       text-align-last: auto;
+}
+/* line 158, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.b-messages__item {
+  padding: 10px 0;
+}
+/* line 162, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.b-messages__images {
+  min-width: 200px; 
+
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.5) 0 0 5px;
+}
+/* line 167, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.b-messages__item.-type_owner .b-messages__images > a {
+  float: right;
+}
+/* line 171, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.b-messages__images > a {
+  position: relative;
+
+  float: left;
+  overflow: hidden;
+}
+/* line 177, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.b-messages__images img {
+  position: absolute;
+
+  outline: none;
+}
+
+/* line 186, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.-icon_nextArrow {
+  position: absolute; 
+  top: 50%;
+  right: 20px;
+
+  transform: translateY(-50%);
+}
+
+/* line 194, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.l-imageGallery {
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  display: none; 
+
+  background: #272822;
+}
+/* line 204, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.l-imageGallery .b-galleryClose {
+  font-size: 16px;
+  line-height: 1;
+
+  position: absolute;
+  z-index: 10000; 
+  top: 0;
+  right: 0;
+
+  padding: 12px 14px;
+
+  text-align: center;
+
+  color: #fff;
+  background-color: #000;
+}
+/* line 217, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.l-imageGallery .b-imageGallery {
+  overflow: hidden;
+
+  height: 100%; 
+  margin: 0;
+
+  opacity: 0;
+}
+/* line 222, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.l-imageGallery .b-imageGallery__item {
+  top: 50%;
+
+  padding: 5px; 
+
+  transform: translateY(-50%);
+}
+/* line 229, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.l-imageGallery .bx-wrapper {
+  position: absolute;
+  top: 50%;
+
+  transform: translateY(-50%);
+}
+/* line 234, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.l-imageGallery .bx-wrapper .bx-viewport {
+  left: 0; 
+
+  text-align: center;
+
+  border: none;
+  background: none;
+  box-shadow: none;
+}
+/* line 242, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.l-imageGallery .bx-wrapper .b-imageGallery {
+  opacity: 1;
+}
+/* line 246, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.l-imageGallery .bx-wrapper img {
+  max-height: 100vh; 
+  margin: 0 auto;
+}
+
+/* line 253, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.b-formMessage {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0; 
+  left: 0;
+}
+/* line 260, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.b-formMessage__files {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 50px;
+  height: 50px;
+}
+/* line 266, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.b-formMessage__files input {
+  position: absolute;
+  z-index: 100; 
+  top: 0;
+  left: 0;
+
+  width: 50px;
+  height: 50px;
+
+  opacity: 0;
+}
+/* line 275, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.b-formMessage__files span {
+  margin-top: 7px; 
+  margin-left: 9px;
+}
+/* line 281, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.b-formMessage__message {
+  position: absolute;
+  top: 0;
+  right: 50px;
+  left: 50px;
+
+  border-right: 1px solid #7d7d7d; 
+  border-left: 1px solid #7d7d7d;
+}
+/* line 289, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.b-formMessage__message input {
+  font-size: 16px; 
+
+  display: block;
+
+  box-sizing: border-box;
+  width: 100%;
+  height: 50px;
+  margin: 0;
+  padding: 5px 15px;
+
+  border: 0;
+}
+/* line 301, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.b-formMessage__send {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 50px;
+  height: 50px;
+}
+/* line 307, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.b-formMessage__send input {
+  position: absolute;
+  z-index: 100; 
+  top: 0;
+  left: 0;
+
+  width: 50px;
+  height: 50px;
+
+  opacity: 0;
+}
+/* line 316, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.b-formMessage__send span {
+  margin-top: -1px; 
+  margin-left: 18px;
+}
+
+/* line 325, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.b-backButton {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 50px; 
+  height: 100%;
+}
+/* line 331, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.b-backButton span {
+  margin-left: 10px;
+}
+
+/* line 336, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.b-addRoom {
+  position: fixed;
+  z-index: 10000;
+  top: 120%;
+  left: 50%;
+
+  width: 300px;
+  padding: 20px;
+
+  transition: all 0.5s;
+  transform: translateX(-50%);
+  text-align: center;
+
+  border: 1px solid #272822; 
+  border-radius: 10px;
+  background-color: #fff;
+}
+/* line 350, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.b-addRoom.-state_active {
+  top: 50%;
+
+  transform: translateX(-50%) translateY(-50%);
+}
+/* line 355, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.b-addRoom__close {
+  font-size: 20px;
+  line-height: 17px;
+
+  position: absolute;
+  top: -10px;
+  right: -10px;
+
+  width: 20px;
+  height: 20px;
+
+  cursor: pointer;
+  text-align: center;
+
+  border: 2px solid #000; 
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+/* line 371, D:/__projects/phonegap-framework/application/src/sass/blocks/_chat.scss */
+.b-addRoomButton {
+  font-size: 24px; 
+  line-height: 50px;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 50px;
+  height: 50px;
+
+  text-align: center;
+}
+
+/**
+* Responsive & Print styles
+*/
+/* ==========================================================================
+   Queries for Desktop Design.
+   Theses examples override the primary ('wide screen') styles.
+   Modify as content requires.
+   ========================================================================== */
+/* ==========================================================================
+   Queries for Tablet Design.
+   Theses examples override the primary ('wide screen') styles.
+   Modify as content requires.
+   ========================================================================== */
+/* ==========================================================================
+   Queries for Mobile Design.
+   Theses examples override the primary ('wide screen') styles.
+   Modify as content requires.
+   ========================================================================== */
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print, (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+@media print {
+  /* line 8, D:/__projects/phonegap-framework/application/src/sass/_print.scss */
+  *,
+  *:before,
+  *:after {
+    color: #000 !important;
+    background: transparent !important;
+    /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  /* line 18, D:/__projects/phonegap-framework/application/src/sass/_print.scss */
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  /* line 23, D:/__projects/phonegap-framework/application/src/sass/_print.scss */
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  /* line 27, D:/__projects/phonegap-framework/application/src/sass/_print.scss */
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+  /* line 36, D:/__projects/phonegap-framework/application/src/sass/_print.scss */
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+  /* line 41, D:/__projects/phonegap-framework/application/src/sass/_print.scss */
+  pre,
+  blockquote {
+    border: 1px solid #999;
+
+    page-break-inside: avoid;
+  }
+  /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+  /* line 52, D:/__projects/phonegap-framework/application/src/sass/_print.scss */
+  thead {
+    display: table-header-group;
+  }
+  /* line 56, D:/__projects/phonegap-framework/application/src/sass/_print.scss */
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  /* line 61, D:/__projects/phonegap-framework/application/src/sass/_print.scss */
+  img {
+    max-width: 100% !important;
+  }
+  /* line 65, D:/__projects/phonegap-framework/application/src/sass/_print.scss */
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  /* line 72, D:/__projects/phonegap-framework/application/src/sass/_print.scss */
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}

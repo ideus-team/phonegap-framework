@@ -1,0 +1,19 @@
+cordova plugin add cordova-plugin-device
+cordova plugin add cordova-plugin-console
+cordova plugin add cordova-plugin-device-orientation
+cordova plugin add cordova-plugin-dialogs
+cordova plugin add cordova-plugin-file
+cordova plugin add cordova-plugin-file-transfer
+cordova plugin add cordova-plugin-inappbrowser
+cordova plugin add cordova-plugin-network-information
+cordova plugin add cordova-plugin-splashscreen
+cordova plugin add cordova-plugin-statusbar
+cordova plugin add cordova-plugin-whitelist
+cordova plugin add cordova-plugin-game-center
+
+Simple Cordova plugin to see if other apps are installed and launch them.
+https://github.com/nchutchind/App-Launcher-Cordova-Plugin
+
+
+-------------------------------------------------
+Shifrovanie https://www.npmjs.com/package/crypto-js

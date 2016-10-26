@@ -1,0 +1,68 @@
+   @charset "utf-8";
+
+@import 'normalize';
+@import 'h5b';
+
+/* Import Compass */
+@import 'compass/css3/images';
+
+@import 'mixins';
+
+/* Project files… */
+@import 'fonts';
+@import 'settings';
+@import 'sprites';
+
+/* Generated… */
+@import 'base64';
+
+/* Plugins */
+
+/* Font */
+@import 'plugins/flaticon';
+
+/* ==|== primary styles =====================================================
+   Authors: Syrov Igor
+   ========================================================================== */
+
+/* Framework Common Libraries */
+@import 'blocks/g-blocks';
+
+/* Project only code */
+@import 'blocks/common';
+@import 'blocks/b-text';
+@import 'blocks/l-siteHeader';
+@import 'blocks/l-siteLogo';
+@import 'blocks/l-siteSearch';
+@import 'blocks/l-siteNavigation';
+@import 'blocks/l-siteFooter';
+@import 'blocks/l-siteNavigationBottom';
+@import 'blocks/l-siteCopyright';
+@import 'blocks/b-developerCopyright';
+
+@import 'blocks/l-wrapper';
+@import 'blocks/l-phone';
+@import 'blocks/l-views';
+@import 'blocks/l-navbar';
+@import 'blocks/l-toolbar';
+@import 'blocks/l-panel';
+@import 'blocks/l-layout';
+@import 'blocks/l-links';
+@import 'blocks/l-popover';
+@import 'blocks/l-overlay';
+@import 'blocks/l-listBlock';
+@import 'blocks/l-pages';
+@import 'blocks/l-button';
+
+/*animations styles*/
+@import 'animations/l-animations';
+
+
+/**
+* Responsive & Print styles
+*/
+@import 'responsive/device_desktop';
+@import 'responsive/device_tablet';
+@import 'responsive/device_mobile';
+@import 'responsive/media_queries';
+@import 'print';

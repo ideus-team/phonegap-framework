@@ -1,0 +1,35 @@
+{
+  "name": "Ideus-phonegap-framework",
+  "version": "1.6.0",
+  "description": "Our phonegap boilerplate",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.9.0",
+    "babelify": "^7.3.0",
+    "backbone": "^1.3.3",
+    "browserify": "^13.1.0",
+    "del": "^2.2.2",
+    "gulp": "gulpjs/gulp#4.0",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-csscomb": "^3.0.8",
+    "gulp-duration": "0.0.0",
+    "gulp-imagemin": "^3.0.3",
+    "gulp-sass": "^2.3.2",
+    "gulp-sizereport": "^1.2.0",
+    "gulp-streamify": "^1.0.2",
+    "gulp-uglify": "^1.5.4",
+    "jquery": "^3.1.1",
+    "requirejs-text": "^2.0.12",
+    "text": "^0.1.0",
+    "underscore": "^1.8.3",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "dependencies": {},
+  "scripts": {
+    "dev": "cls && echo Please wait ... && gulp dev",
+    "prod": "cls && echo Please wait ... && gulp prod"
+  },
+  "author": {
+    "name": "iDeus",
+    "url": "https://github.com/ideus-team/phonegap-framework/"
+  }
+}

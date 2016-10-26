@@ -1,7 +1,4 @@
 window.Backbone = window.Backbone || require('Backbone');
-let text = require('requirejs-text');
-console.log(text);
-//import template from 'text!./js/common/templates/test.html';
 
 /**
  * Main router of the application

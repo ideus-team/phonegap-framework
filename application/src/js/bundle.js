@@ -13,7 +13,7 @@ import Application from './app';
 
 
 /**
- * [App] is main object of Application
+ * [App] is a main object of Application
  * @constructor {Application}
  */
 window.App = new Application();

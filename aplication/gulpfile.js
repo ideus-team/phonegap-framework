@@ -15,7 +15,9 @@ const streamify     = require('gulp-streamify');
 
 const del           = require('del');
 const sizereport    = require('gulp-sizereport');
-const duration      = require('gulp-duration')
+const duration      = require('gulp-duration');
+
+const colour = require('colour');
 
 
 /**
@@ -151,11 +153,23 @@ const watchStylesDev = () => {
 gulp.task('js:dev', function() {
   return browserify(PATH.SRC.APP_JS)
     .transform('babelify', { presets: ["es2015"] })
-    .bundle()
+    .bundle().on('error', log)
     .pipe(source('bundle.js'))
     .pipe(duration('----------- Babel time -----------'))
     .pipe(gulp.dest(PATH.BUILD.APP_JS));
 });
+
+function log(error) {
+  console.log([
+    '',
+    "----------ERROR MESSAGE START----------".bold.red.underline,
+    ("[" + error.name + "]").red.bold.inverse,
+    error.message,
+    "----------ERROR MESSAGE END----------".bold.red.underline,
+    ''
+  ].join('\n'));
+  this.emit('end');
+}
 
 const watchJsDev = () => {
   gulp.watch(PATH.SRC.ALL_JS, gulp.series('js:dev', 'sizereport:common'));
@@ -201,7 +215,7 @@ gulp.task('styles:prod', () => {
 gulp.task('js:prod', function() {
   return browserify(PATH.SRC.APP_JS)
     .transform('babelify', { presets: ["es2015"] })
-    .bundle()
+    .bundle().on('error', log)
     .pipe(source('bundle.js'))
     .pipe(streamify(uglify()))
     .pipe(gulp.dest(PATH.BUILD.APP_JS));

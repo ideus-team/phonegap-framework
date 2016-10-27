@@ -1,5 +1,6 @@
 window.Backbone = window.Backbone || require('Backbone');
 
+
 /**
  * Main router of the application
  */

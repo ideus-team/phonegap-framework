@@ -2,6 +2,7 @@
 const gulp          = require('gulp');
 
 const imagemin      = require('gulp-imagemin');
+const newer         = require('gulp-newer');
 
 const sass          = require('gulp-sass');
 const autoprefixer  = require('gulp-autoprefixer');
@@ -17,7 +18,7 @@ const del           = require('del');
 const sizereport    = require('gulp-sizereport');
 const duration      = require('gulp-duration');
 
-const colour = require('colour');
+const colour        = require('colour');
 
 
 /**
@@ -36,6 +37,7 @@ const PATH = {
     SASS: SOURCE_DIR + 'sass/**/*.scss',
     FONTS: SOURCE_DIR + 'fonts/**/*.{eot,svg,ttf,woff,woff2,otf}',
     IMG: SOURCE_DIR + 'img/**/*.{png,jpg,gif,svg}',
+    MEDIA: SOURCE_DIR + ['media/**/*.*'],
   },
 
   BUILD: {
@@ -45,6 +47,7 @@ const PATH = {
     CSS: BUILD_DIR + 'css/',
     FONTS: BUILD_DIR + 'fonts/',
     IMG: BUILD_DIR + 'img/',
+    MEDIA: BUILD_DIR + 'media/',
     SIZEREPORT: [
       BUILD_DIR + '/js/bundle.js', 
       BUILD_DIR + '/css/main.css'
@@ -93,10 +96,23 @@ const watchFONTS = () => {
 }
 
 /**
+ * MEDIA COMMON
+ */
+gulp.task('media:common', () => {
+  return gulp.src(PATH.SRC.MEDIA)
+    .pipe(gulp.dest(PATH.BUILD.MEDIA))
+});
+
+const watchMEDIA = () => {
+  gulp.watch(PATH.SRC.MEDIA, gulp.series('media:common'));
+}
+
+/**
  * IMG COMMON
  */
 gulp.task('img:common', () => {
   return gulp.src(PATH.SRC.IMG)
+    .pipe(newer(PATH.BUILD.IMG))
     .pipe(imagemin())
     .pipe(gulp.dest(PATH.BUILD.IMG))
 });
@@ -183,13 +199,25 @@ gulp.task('watch:dev', () => {
   watchXML();
   watchFONTS();
   watchIMG();
+  watchMEDIA();
 
   watchJsDev();
   watchStylesDev();
 });
 
 // DEV
-gulp.task('dev', gulp.series('clean:build', gulp.parallel('js:dev', 'html:common', 'xml:common', 'styles:dev', 'fonts:common', 'img:common'), 'sizereport:common', 'watch:dev'));
+gulp.task('dev', 
+  gulp.series('clean:build', 
+    gulp.parallel(
+      'js:dev', 
+      'media:common', 
+      'html:common', 
+      'xml:common', 
+      'styles:dev', 
+      'fonts:common', 
+      'img:common'
+      ),
+    'sizereport:common', 'watch:dev'));
 
 
 // =================================================================================================================
@@ -233,6 +261,7 @@ gulp.task('watch:prod', () => {
   watchXML();
   watchFONTS();
   watchIMG();
+  watchMEDIA();
 
   watchJsProd()
   watchStylesProd();
@@ -243,4 +272,15 @@ const watchStylesProd = () => {
 }
 
 // PROD
-gulp.task('prod', gulp.series('clean:build', gulp.parallel('js:prod', 'html:common', 'xml:common', 'styles:prod', 'fonts:common', 'img:common'), 'sizereport:common', 'watch:prod'));
+gulp.task('prod', 
+  gulp.series('clean:build', 
+    gulp.parallel(
+      'js:prod', 
+      'media:common', 
+      'html:common', 
+      'xml:common', 
+      'styles:prod', 
+      'fonts:common', 
+      'img:common'
+      ),
+    'sizereport:common', 'watch:prod'));

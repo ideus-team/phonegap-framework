@@ -20,6 +20,9 @@ const duration      = require('gulp-duration');
 
 const colour        = require('colour');
 
+const template      = require('gulp-template-compile-es6');
+const concat        = require('gulp-concat');
+
 
 /**
  * PATH FILES
@@ -33,6 +36,7 @@ const PATH = {
     ALL_JS: SOURCE_DIR + 'js/**/*.js',
     APP_JS: SOURCE_DIR + 'js/bundle.js',
     HTML: SOURCE_DIR + '**/*.html',
+    TEMPLATES: SOURCE_DIR + 'js/common/templates/**/*.html',
     XML: SOURCE_DIR + '**/*.xml',
     SASS: SOURCE_DIR + 'sass/**/*.scss',
     FONTS: SOURCE_DIR + 'fonts/**/*.{eot,svg,ttf,woff,woff2,otf}',
@@ -43,20 +47,24 @@ const PATH = {
   BUILD: {
     APP_JS: BUILD_DIR + 'js/',
     HTML: BUILD_DIR,
+    TEMPLATES: SOURCE_DIR + 'js/common/templates/',
     XML: BUILD_DIR,
     CSS: BUILD_DIR + 'css/',
     FONTS: BUILD_DIR + 'fonts/',
     IMG: BUILD_DIR + 'img/',
     MEDIA: BUILD_DIR + 'media/',
     SIZEREPORT: [
-      BUILD_DIR + '/js/bundle.js', 
-      BUILD_DIR + '/css/main.css'
+      BUILD_DIR + '/js/bundle.js',
+      SOURCE_DIR + 'js/common/templates/templates.js',
+      BUILD_DIR + '/css/main.css',
     ]
   }
 }
 
 // =================================================================================================================
+// 
 // COMMON
+// 
 // =================================================================================================================
 
 /**
@@ -69,6 +77,24 @@ gulp.task('html:common', () => {
 
 const watchHTML = () => {
   gulp.watch(PATH.SRC.HTML, gulp.series('html:common'));
+}
+
+/**
+ * TEMPLATES DEV
+ */
+gulp.task('templates:common', () => {
+  return gulp.src(PATH.SRC.TEMPLATES)
+    .pipe(template({
+        templateSettings : {
+            variable : 'data'
+        }
+    }))
+    .pipe(concat('templates.js'))
+    .pipe(gulp.dest(PATH.BUILD.TEMPLATES));
+});
+
+const watchTEMPLATES = () => {
+  gulp.watch(PATH.SRC.TEMPLATES, gulp.series('templates:common'));
 }
 
 /**
@@ -142,7 +168,9 @@ gulp.task('sizereport:common', function () {
 
 
 // =================================================================================================================
+// 
 // DEVELOPER
+// 
 // =================================================================================================================
 
 /**
@@ -200,6 +228,7 @@ gulp.task('watch:dev', () => {
   watchFONTS();
   watchIMG();
   watchMEDIA();
+  watchTEMPLATES();
 
   watchJsDev();
   watchStylesDev();
@@ -209,6 +238,7 @@ gulp.task('watch:dev', () => {
 gulp.task('dev', 
   gulp.series('clean:build', 
     gulp.parallel(
+      'templates:common',
       'js:dev', 
       'media:common', 
       'html:common', 
@@ -221,7 +251,9 @@ gulp.task('dev',
 
 
 // =================================================================================================================
+// 
 // PRODUCTION
+// 
 // =================================================================================================================
 
 /**
@@ -250,7 +282,7 @@ gulp.task('js:prod', function() {
 });
 
 const watchJsProd = () => {
-  gulp.watch(PATH.SRC.APP_JS, gulp.series('js:prod', 'sizereport:common'));
+  gulp.watch(PATH.SRC.ALL_JS, gulp.series('js:prod', 'sizereport:common'));
 }
 
 /**
@@ -262,6 +294,7 @@ gulp.task('watch:prod', () => {
   watchFONTS();
   watchIMG();
   watchMEDIA();
+  watchTEMPLATES();
 
   watchJsProd()
   watchStylesProd();
@@ -275,6 +308,7 @@ const watchStylesProd = () => {
 gulp.task('prod', 
   gulp.series('clean:build', 
     gulp.parallel(
+      'templates:common',
       'js:prod', 
       'media:common', 
       'html:common', 

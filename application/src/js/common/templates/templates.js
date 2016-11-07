@@ -1,7 +1,6 @@
-export var test = function(data) {
+export var 404 = function(data) {
 var __t, __p = '';
-__p += 'Template render ' +
-((__t = ( data.text )) == null ? '' : __t);
+__p += '404 - page not found';
 return __p
 };
 

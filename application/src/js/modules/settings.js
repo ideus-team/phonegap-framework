@@ -40,10 +40,10 @@ export default {
   options: {
 
     // default page before signUp/signIn
-    defaultPage: '',
+    defaultPage: '/',
 
     // default page after signUp/signIn
-    specialPage: '',
+    specialPage: '/',
 
     // duration to animate pages
     slideDuration: 500,

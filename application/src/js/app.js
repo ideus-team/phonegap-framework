@@ -18,7 +18,7 @@ export default class App {
      * [Main Event for deviceready/DOMContentLoaded. Using for start application]
      * @param {string} settings.initEvent [Event that fired when dom is already loaded]
      */
-    document.addEventListener(settings.initEvent, this.startApplication);
+    document.addEventListener(settings.initEvent, this.startApplication, false);
   }
 
   /**
@@ -30,8 +30,6 @@ export default class App {
   }
 
   extendOptions(_options){
-    if ( _options ){
-      this.options = $.extend(settings.options, _options);
-    }
+    this.options = $.extend(settings.options, _options);
   }
 }

@@ -10,7 +10,12 @@ window.$ = window.$ || require('jQuery');
  * Import modules
  */
 import Application from './app';
+import log from './modules/log';
+import loader from './modules/loader';
 
+
+window.log = window.log || log;
+window.loader = window.loader || loader;
 
 /**
  * [App] is a main object of Application

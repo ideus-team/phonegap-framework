@@ -1,11 +1,14 @@
-window.Backbone = window.Backbone || require('Backbone');
-
-
+let Router = require('Backbone').Router;
+import Views from '../views/mainViews';
 /**
  * Main router of the application
  */
-export default Backbone.Router.extend({
- 
+export default Router.extend({
+
+  initialize(options){
+    console.log('Router initialized with options:', options ? options : 'NO OPTIONS');
+  },
+
   /**
    * [Define all routes, that using in your application and set controller for this route]
    * @type {Object}
@@ -16,16 +19,15 @@ export default Backbone.Router.extend({
     '*notFound': 'notFound'
   },
 
-  home: function() {
-    console.log('Router Home');
+  home() {
+    new Views.home();
   },
 
   /**
    * [Controller that fired when some url not defined in routes object (404 not found)]
    */
-  notFound: function() {
-    // app.errorView = new ErrorView();
-    // this.renderView(app.errorView, settings.renderElem);
+  notFound() {
+    new Views.notFound();
   }
 
 });

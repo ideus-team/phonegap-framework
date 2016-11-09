@@ -1,17 +1,27 @@
-export default function(){
+import promise from './promise';
+import renderView from './renderView';
 
-  let checkRender = () => {
+export default function(callback){
 
+  let checkRender = function(array, counter) {
+    let view = this;
+    if ( counter >= array.length) {
+      promise(
+        renderView.bind(view),
+        () => {
+          callback && callback(view);
+        }
+      );
+    }
   };
 
   /* our view */
-  const VIEW = this;
+  let VIEW = this;
 
   /* array of models and collections */
-  const ARRAY = [...this.models, ...this.collections];
+  let ARRAY = [...this.models, ...this.collections];
 
   if ( ARRAY.length ){
-
     let loadCounter = 0; // need, because some responses can be faster than prev
     let arrLength = ARRAY.length; // check ARRAY length
 
@@ -38,7 +48,9 @@ export default function(){
       request.fetch(element.fetchParams, element.successFetch.bind(VIEW), element.errorFetch.bind(VIEW), true)
 
         .done((response) => {
-
+          VIEW.viewData.data[element.name] = element[element.type].toJSON();
+          loadCounter++;
+          checkRender.call(VIEW, ARRAY, loadCounter);
         })
 
         .error((response) => {
@@ -46,6 +58,8 @@ export default function(){
         });
 
     });
+  } else {
+    checkRender.call(VIEW, ARRAY, 0);
   }
 
 }

@@ -6,4 +6,8 @@ Register.view('home', {
     console.log('Home');
   },
 
+  afterRender(){
+    console.log('afterRender');
+  }
+
 });

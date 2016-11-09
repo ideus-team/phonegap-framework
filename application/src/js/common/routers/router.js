@@ -1,5 +1,6 @@
 let Router = require('Backbone').Router;
 import Views from '../views/mainViews';
+import createView from '../../modules/createView';
 /**
  * Main router of the application
  */
@@ -28,6 +29,10 @@ export default Router.extend({
    */
   notFound() {
     new Views.notFound();
+  },
+
+  renderView(view, el) {
+    return createView.create(view, $(el));
   }
 
 });

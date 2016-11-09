@@ -2,17 +2,21 @@
  * @constructor
  * Main application constructor
  */
+import * as templates from './common/templates/templates';
 import settings from './modules/settings';
 import MainRouter from './common/routers/router';
 
 export default class App {
 
   constructor(_options){
+    this.templates = templates;
     this.extendOptions(_options);
     this.bindEvents();
   }
 
   bindEvents(){
+    /* initialize Application router */
+    this.router = new MainRouter();
 
     /**
      * [Main Event for deviceready/DOMContentLoaded. Using for start application]
@@ -25,7 +29,6 @@ export default class App {
    * [Initialize application function]
    */
   startApplication(){
-    this.router = new MainRouter();
     Backbone.history.start();
   }
 

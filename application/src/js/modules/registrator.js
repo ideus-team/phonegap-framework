@@ -25,7 +25,7 @@ class Register {
 
       this.views = this.views || {};
       this.views[name] = View.extend($.extend({
-
+        
         name: name,
 
         header: false,
@@ -45,6 +45,10 @@ class Register {
         }),
 
         initialize(data){
+          //this.el = App.options.renderElement;
+          /* define template for view */
+          this.template = App.templates[name];
+
           /* save initialization data localy */
           this.initData = data || {};
 

@@ -1,6 +1,13 @@
-export var 404 = function(data) {
+export var home = function(data) {
 var __t, __p = '';
-__p += '404 - page not found';
+__p += 'Home template';
+return __p
+};
+
+
+export var notFound = function(data) {
+var __t, __p = '';
+__p += 'notFound template';
 return __p
 };
 

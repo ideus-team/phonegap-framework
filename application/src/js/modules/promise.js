@@ -1,9 +1,12 @@
 export default (fn, success, error) => {
   let promise = new Promise((resolve, reject) => {
+    if ( !fn ) { reject(); return false; }
     fn() ? resolve() : reject();
   });
 
-  promise.then(success, error);
+  let _error = error ? error : () => {
+    console.log(`Promise error`);
+  }
 
-  return promise;
+  promise.then(success, error);
 }

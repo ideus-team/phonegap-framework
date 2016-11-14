@@ -15,12 +15,13 @@ export default Router.extend({
    * @type {Object}
    */
   routes: {
-    '': 'home',
+    '(/)': 'home',
 
     '*notFound': 'notFound'
   },
 
   home() {
+    console.log('Home');
     new Views.home();
   },
 
@@ -28,10 +29,12 @@ export default Router.extend({
    * [Controller that fired when some url not defined in routes object (404 not found)]
    */
   notFound() {
+    console.log('notFound');
     new Views.notFound();
   },
 
   renderView(view, el) {
+    console.log('RENDER VIEW');
     return createView.create(view, $(el));
   }
 

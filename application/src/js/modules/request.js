@@ -39,15 +39,53 @@ export default request = {
 
   logCommand(params, response){
     let _params = Array.isArray(params) ? params : [params];
-    let _data = Array.isArray(response.data) ? response.data : [response.data];
+    let _response = Array.isArray(response) ? response : [response];
     _params.forEach((param, index) => {
-      let text = param.command+ ' : '+ _data[index];
       console.groupCollapsed(param.command);
       log('----- '+param.command+' -----', 'green');
-      console.log(_data[index]);
+      console.log(_response[index].data);
       log('----- '+param.command+' -----', 'green');
       console.groupEnd();
     });
   }
 
 }
+/*
+
+var params = [
+{
+  command: 'command #1',
+  params: {}
+},
+{
+  command: 'command #2',
+  params: {}
+},
+{
+  command: 'command #3',
+  params: {}
+}
+];
+
+var response = [
+{
+  code: 200,
+  data: {
+    param: '1'
+  }
+},
+{
+  code: 200,
+  data: {
+    param: '2'
+  }
+},
+{
+  code: 200,
+  data: {
+    param: '3'
+  }
+}
+]
+
+*/

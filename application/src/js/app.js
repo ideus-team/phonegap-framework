@@ -10,12 +10,7 @@ import MainRouter from './common/routers/router';
 export default class App {
 
   constructor(_options){
-
-    /* initialize Application templates */
-    this.templates = templates;
-
-    /* initialize Application Navigator */
-    this.navigate = navigate.bind(this);
+    this.defineModules();
 
     /* initialize Application router */
     this.router = new MainRouter();
@@ -37,6 +32,14 @@ export default class App {
    */
   startApplication(){
     Backbone.history.start();
+  }
+
+  defineModules(){
+    /* define Application templates */
+    this.templates = templates;
+
+    /* define Application Navigator */
+    this.navigate = navigate.bind(this);
   }
 
   extendOptions(_options){

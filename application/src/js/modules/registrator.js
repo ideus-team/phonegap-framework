@@ -40,9 +40,13 @@ class Register {
           collection: {}
         },
 
-        events: $.extend(options.events, {
-          'mouseup .js-pageLink': 'pageLink',
-        }),
+        // events: $.extend(options.events, {
+        //   'mouseup .js-pageLink': 'pageLink',
+        // }),
+
+        events: {
+          'mouseup .js-pageLink': 'pageLink'
+        },
 
         initialize(data){
           //this.el = App.options.renderElement;
@@ -82,7 +86,11 @@ class Register {
         },
 
         pageLink(e){
-          console.log('js-pageLink', e);
+          e.preventDefault();
+          let link = $(e.currentTarget);
+          let page = link.data('page');
+          let options = link.data();
+          App.navigate(page, options);
         }
 
       }, options));

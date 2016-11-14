@@ -46,19 +46,3 @@
 @import 'responsive/device_tablet';
 @import 'responsive/device_mobile';
 @import 'responsive/media_queries';
-
-
-#app-container {
-  .b-subContainer {
-    position: absolute;
-    top: 0;
-    left: 100%;
-    transition: all 0.4s;
-  }
-
-  &.-state_animate {
-    .b-subContainer {
-      left: 0;
-    }
-  }
-}

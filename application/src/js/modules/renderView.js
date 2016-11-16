@@ -1,6 +1,6 @@
 import promise from './promise';
 
-export default function() {
+export default function(cb) {
 
   this.$el.html(this.template(this.viewData));
 
@@ -11,20 +11,14 @@ export default function() {
   if ( this.viewData.settings.header.visible && this.viewData.settings.header.tpl ){
     this.$('.js-header').html(this.viewData.settings.header.tpl(this.viewData));
   }
-  
-  promise(
 
-    App.router.renderView.bind(null, this, App.options.renderElement),
-
-    () => {
-      this.init && this.init();
-      this.afterRender && this.afterRender();
-    },
-
-    () => {
-      console.log('Error');
-    },
-  );
+  promise(App.router.renderView.bind(null, this, App.options.renderElement))
+    .then(result => {
+      cb && cb(result);
+    })
+    .catch(error => {
+      console.log(error);
+    });
 
   return this;
 

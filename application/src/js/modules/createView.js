@@ -2,6 +2,10 @@ import promise from './promise';
 
 export default module = {
 
+  constructor(){
+    console.log('test');
+  },
+
   animateClass: '-state_animate',
   doAnimationClass: '-do_animation',
 
@@ -41,8 +45,8 @@ export default module = {
       .addClass(module.animateClass);
     this.el
       .addClass(this.animType.class)
-      .addClass(this.dir.class);
-    $(this._subContainer).addClass(this.dir.class);
+      .addClass(!this._options.back ? this.dir.class : this.dir.backClass);
+    $(this._subContainer).addClass(!this._options.back ? this.dir.class : this.dir.backClass);
     return setTimeout(() => {
       $(this._subContainer).addClass(this.animType.class);
       $(this.container).addClass(module.doAnimationClass);
@@ -57,7 +61,7 @@ export default module = {
       .empty()
       .append(this.view.el)
       .removeClass(this.animType.class)
-      .removeClass(this.dir.class);
+      .removeClass(!this._options.back ? this.dir.class : this.dir.backClass);
 
     this._subContainer.remove();
 
@@ -65,15 +69,14 @@ export default module = {
     $(this.container)
       .removeClass(module.animateClass)
       .removeClass(module.doAnimationClass)
-      .removeClass(this.dir.class);
+      .removeClass(!this._options.back ? this.dir.class : this.dir.backClass);
     $(this._subContainer).removeClass(this.animType.class);
-    return true;
   },
 
   renderStaticView(){
     this.el.empty();
     this.el.append(this.view.el);
-    return true;
+    //return true;
   },
 
   animations: {

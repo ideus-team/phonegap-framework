@@ -20,8 +20,8 @@ class Register {
     Constructor to register views in Application
    */
   view(name, options){
-
-    if ( name ){
+    
+    if ( name && (typeof(name) === 'string' || name instanceof String) ){
 
       this.views = this.views || {};
       this.views[name] = View.extend($.extend({
@@ -40,16 +40,12 @@ class Register {
           collection: {}
         },
 
-        // events: $.extend(options.events, {
-        //   'mouseup .js-pageLink': 'pageLink',
-        // }),
-
-        events: {
-          'mouseup .js-pageLink': 'pageLink'
-        },
+        events: $.extend(options.events, {
+          'mouseup .js-pageLink': 'pageLink',
+        }),
 
         initialize(data){
-          //this.el = App.options.renderElement;
+
           /* define template for view */
           this.template = App.templates[name];
 
@@ -63,33 +59,27 @@ class Register {
           App.views[name] = this;
 
           /* Before init promise */
-          promise(
-            this.beforeInit,
-
-            // success
-            () => {
+          promise(this.beforeInit)
+            .then(() => {
               viewData.call(this);
               requireData.call(this);
-            },
-
-            // error
-            () => {
-              console.log(`View "${this.name}" error with beforeInit callback. [must return true]`);
-            }
-          );
+            })
+            .catch(error => {
+              log(`message: ${error.message}, code: ${error.code}`, 'red');
+            });
 
         },
 
         // default callback before init event
         beforeInit(){
-          return true;
+          //throw new App.error(312, 'asdasd');
         },
 
         pageLink(e){
           e.preventDefault();
           let link = $(e.currentTarget);
-          let page = link.data('page');
           let options = link.data();
+          let page = options.page;
           App.navigate(page, options);
         }
 
@@ -97,7 +87,7 @@ class Register {
     }
 
     else {
-      throw Error('View must have name!');
+      throw Error('Registration view error: Name is not defined or Name must be a string. http://github.com');
     }
 
   }

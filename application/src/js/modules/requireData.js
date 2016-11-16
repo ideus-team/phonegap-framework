@@ -6,12 +6,10 @@ export default function(callback){
   let checkRender = function(array, counter) {
     let view = this;
     if ( counter >= array.length) {
-      promise(
-        renderView.bind(view),
-        () => {
-          callback && callback(view);
-        }
-      );
+      promise(renderView.bind(view))
+        .then((result) => {
+          callback && callback(result);
+        });
     }
   };
 

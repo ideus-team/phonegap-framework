@@ -6,6 +6,7 @@ import * as templates from './common/templates/templates';
 import settings from './modules/settings';
 import navigate from './modules/navigate';
 import MainRouter from './common/routers/router';
+import AppError from './modules/error';
 
 export default class App {
 
@@ -40,6 +41,8 @@ export default class App {
 
     /* define Application Navigator */
     this.navigate = navigate.bind(this);
+
+    this.error = AppError;
   }
 
   extendOptions(_options){

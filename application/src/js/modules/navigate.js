@@ -5,11 +5,12 @@ export default function(fragment, options) {
     trigger: true,
     direction: 'left',
     animationType: 'default',
-    back: false
+    back: false,
+    writable: true
   }, options);
 
   this.history = this.history || [];
-  this.history.push(this.navigateOptions);
+  this.navigateOptions.writable && this.history.push(this.navigateOptions);
   Backbone.history.navigate(fragment, this.navigateOptions);
 
 }

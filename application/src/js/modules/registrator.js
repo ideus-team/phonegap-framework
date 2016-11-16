@@ -27,7 +27,7 @@ class Register {
       this.views[name] = View.extend($.extend({
         
         name: name,
-
+        
         header: false,
         footer: false,
 
@@ -65,14 +65,15 @@ class Register {
               requireData.call(this);
             })
             .catch(error => {
-              log(`message: ${error.message}, code: ${error.code}`, 'red');
+              console.log(error);
+              //log(`message: ${error.message}, code: ${error.code}`, 'red');
             });
 
         },
 
         // default callback before init event
         beforeInit(){
-          //throw new App.error(312, 'asdasd');
+         //throw new App.error('asdasdasd', 2213, {id: 213});
         },
 
         pageLink(e){

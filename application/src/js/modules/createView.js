@@ -2,10 +2,6 @@ import promise from './promise';
 
 export default module = {
 
-  constructor(){
-    console.log('test');
-  },
-
   animateClass: '-state_animate',
   doAnimationClass: '-do_animation',
 

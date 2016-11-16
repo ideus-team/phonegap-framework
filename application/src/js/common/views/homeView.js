@@ -8,10 +8,6 @@ Register.view('home', {
 
   afterRender(){
     console.log('afterRender');
-  },
-
-  events: {
-    'asd .asd': 'init'
   }
 
 });

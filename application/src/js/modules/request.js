@@ -22,7 +22,7 @@ export default request = {
         },
         success: function(res){
           request.logCommand(params, res);
-          
+
           //init success callback if defined and is function
           checkCallback(successFn, res);
         },

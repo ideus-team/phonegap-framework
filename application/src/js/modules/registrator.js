@@ -112,9 +112,7 @@ class Register {
         loadPerRender: false,
         name: name,
 
-        defaults: $.extend(options.defaults, {
-          
-        }),
+        defaults: $.extend(options.defaults, {}),
         
         initialize(data){
 
@@ -168,6 +166,77 @@ class Register {
 
     } else {
       throw Error('Registration model error: Name is not defined or Name must be a string.');
+    }
+
+  }
+
+  /*
+    Constructor to register models in Application
+   */
+  collection(name, options){
+
+    if ( name && (typeof(name) === 'string' || name instanceof String) ){
+
+      this.collections = this.collections || {};
+      this.collections[name] = Collection.extend($.extend({
+
+        model: options.model || this.model(name+'Model'),
+        type: 'collection',
+        loadPerRender: false,
+        name: name,
+        
+        initialize(data){
+
+          /* save initialization data localy */
+          this.initData = data || {};
+
+          /* check for App.views defined */
+          App.collections = App.collections || {};
+
+          /* save created view by its name into global App object */
+          App.collections[name] = this;
+        },
+
+        successFetch(response){
+          let data = response.data;
+          let collectionName = this.name;
+
+          console.log('------');
+          console.log('Получили данные для модели с ID:', collectionName, 'и записали их в модель. ');
+          console.log('Данные: ', data, ' для модели ', collectionName, ' записали в кеш.');
+          console.log('------');
+
+          cache.setData(collectionName, data);
+          this.set(data);
+        },
+
+        errorFetch(error){
+          console.log(error);
+        },
+
+        createFetch(page, callback, params = this.fetchParams){
+
+          let name = this.name;
+
+          compareFetchData(params, this)
+            .then(fetchParams => {
+              console.log(fetchParams);
+              return request.fetch(params, true);
+            })
+            .then(result => {
+              this.successFetch(result);
+              callback && callback(result);
+              page && App.navigate(page);
+            })
+            .catch(error => {
+              console.log(error);
+            });
+        }
+
+      }, options));
+
+    } else {
+      throw Error('Registration collection error: Name is not defined or Name must be a string.');
     }
 
   }

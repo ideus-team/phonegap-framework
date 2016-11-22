@@ -17,10 +17,10 @@ export default function(callback){
   };
 
   /* our view */
-  let VIEW = this;
+  const VIEW = this;
 
   /* array of models and collections */
-  let ARRAY = [...this.models, ...this.collections];
+  const ARRAY = [...this.models, ...this.collections];
 
   if ( ARRAY.length ){
     let loadCounter = 0; // need, because some responses can be faster than prev
@@ -56,7 +56,7 @@ export default function(callback){
         })
 
         .catch(error => {
-          
+
           if ( error.status === 404 || error.status === 500 ) {
             console.log('Server Error');
             App.navigate('error');

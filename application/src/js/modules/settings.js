@@ -21,7 +21,7 @@ export default {
     domain: '',
     host: '',
     apiUrl: 'api',
-    lang: 'en',
+    lang: '',
     url(){
       var url = window.cordova ? this.protocol+'://'+this.domain+'.'+this.host+this.getLang()+this.apiUrl+'/' : this.getLang()+this.apiUrl+'/';
       return url;

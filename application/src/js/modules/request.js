@@ -1,11 +1,15 @@
+import appLoader from './loader';
+import settings from './settings';
+
+let request = {};
 export default request = {
 
-  fetch(params, success, error, loader) {
+  fetch(params, loader, success, error) {
 
     var promise = $.ajax();
 
     loader && appLoader.show();
-    if ( app.online && params ) {
+    if ( /* App.online && */ params ) {
       promise = $.ajax(settings.sqlServer.url(), {
         method: 'POST',
         data: JSON.stringify(params),
@@ -23,7 +27,8 @@ export default request = {
           checkCallback(successFn, res);
         },
         error: function(error){
-          request.logCommand(params, res);
+          //throw Error('Server error. Please try again later;');
+          //request.logCommand(params, res);
           //init error callback if defined and is function
           //checkCallback(errorFn, error);
         }

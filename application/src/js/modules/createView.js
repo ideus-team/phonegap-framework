@@ -72,7 +72,6 @@ export default module = {
   renderStaticView(){
     this.el.empty();
     this.el.append(this.view.el);
-    //return true;
   },
 
   animations: {

@@ -23,3 +23,29 @@ export let compareFetchData = function(data, model){
     return data;
   });
 }
+
+export let defineHideProp = function(obj, name, value){
+
+  Object.defineProperty(obj, name, {
+    value: value,
+    writable: false,
+    configurable: false,
+    enumerable: false
+  });
+
+}
+export let getFormData = function(form){
+  let o = {};
+  let a = form.serializeArray();
+  $.each(a, function() {
+      if (o[this.name] !== undefined) {
+        if (!o[this.name].push) {
+          o[this.name] = [o[this.name]];
+        }
+        o[this.name].push(this.value || undefined);
+      } else {
+        o[this.name] = this.value || undefined;
+      }
+  });
+  return o;
+}

@@ -1,0 +1,6 @@
+<h3>Collections model</h3>
+<ul data-cid="<%= data.model.cid %>">
+  <% for ( var prop in data.model ) { %>
+    <li data-bind="<%= prop %>" data-<%= prop %>-bind="<%= data.model[prop] %>"><%= data.model[prop] %></li>
+  <% } %>
+</ul>

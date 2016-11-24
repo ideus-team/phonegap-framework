@@ -1,6 +1,7 @@
 import promise from './promise';
 import renderView from './renderView';
 import request from './request';
+import * as utils from './utility';
 
 export default function(callback){
 
@@ -15,6 +16,15 @@ export default function(callback){
       return false;
     }
   };
+
+  let defineProps = function(elementViewData, element){
+    utils.defineHideProp(elementViewData[element.name], 'cname', element.name);
+    if ( element.type == 'collection' ){
+      element[element.type].models.forEach((model, index) => {
+        utils.defineHideProp(elementViewData[element.name][index], 'cid', model.cid);
+      });
+    }
+  }
 
   /* our view */
   const VIEW = this;
@@ -34,12 +44,17 @@ export default function(callback){
       element.ctor = Element;
       element.name = element.ctor.prototype.name;
       element.type = element.ctor.prototype.type;
-      element.data = VIEW.data[element.type][element.name];
+      element.data = VIEW.datas[element.type][element.name];
       element[element.type] = new Element(element.data);
 
       /* check for need loading data for element before rendering view */
       if ( !element[element.type].loadPerRender ) {
         loadCounter++;
+
+        VIEW.viewData.data[element.name] = element[element.type].toJSON();
+
+        defineProps(VIEW.viewData.data, element);
+
         return checkRender.call(VIEW, ARRAY, loadCounter);
       }
 
@@ -51,6 +66,9 @@ export default function(callback){
 
         .then(response => {
           VIEW.viewData.data[element.name] = element[element.type].toJSON();
+
+          defineProps(VIEW.viewData.data, element);
+
           loadCounter++;
           checkRender.call(VIEW, ARRAY, loadCounter);
         })

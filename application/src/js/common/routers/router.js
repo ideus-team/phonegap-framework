@@ -1,5 +1,6 @@
 let Router = require('Backbone').Router;
 import Models from '../models/mainModels';
+import Collections from '../collections/mainCollections';
 import Views from '../views/mainViews';
 import createView from '../../modules/createView';
 /**

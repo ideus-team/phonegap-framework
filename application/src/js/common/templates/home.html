@@ -2,3 +2,19 @@
 <div data-page="asd" data-direction="down" class="js-pageLink">To NotFound down</div>
 <div data-page="asd" data-direction="left" class="js-pageLink">To NotFound left</div>
 <div data-page="asd" data-direction="right" class="js-pageLink">To NotFound right</div>
+
+<!-- <h2>Collections</h2>
+<%= App.templates.userList(data.data.usersList) %> -->
+
+<form action="#" class="js-form">
+  <div><input type="text" placeholder="name" name="name" value="Nick"></div>
+  <div><input type="text" placeholder="age" name="age" value="12"></div>
+  <div><input type="text" placeholder="email" name="email" value="nick@gmail.com"></div>
+  <button>Добавить</button>
+</form>
+
+<div class="js-users">
+  <h2>Users</h2>
+  <%= App.templates.auth(data.data.auth) %>
+  <%= App.templates.auth(data.data.auth2) %>
+</div>

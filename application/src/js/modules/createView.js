@@ -15,6 +15,8 @@ export default module = {
 
     console.log(this._options);
 
+
+    this.view.init && this.view.init();
     // if we render without options
     if ( !this._options ) {
 
@@ -67,11 +69,21 @@ export default module = {
       .removeClass(module.doAnimationClass)
       .removeClass(!this._options.back ? this.dir.class : this.dir.backClass);
     $(this._subContainer).removeClass(this.animType.class);
+
+    this.afterRender();
   },
 
   renderStaticView(){
     this.el.empty();
     this.el.append(this.view.el);
+
+    this.afterRender();
+  },
+
+  afterRender(){
+    this.view.afterRender && this.view.afterRender();
+    this.view.bindModels && this.view.bindModels();
+    this.view.bindCollections && this.view.bindCollections();
   },
 
   animations: {

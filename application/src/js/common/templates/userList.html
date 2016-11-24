@@ -1,0 +1,5 @@
+<div data-cname="<%= data.cname %>" >
+  <% _.each(data, function(model, index){ %>
+    <%= App.templates.user({model: model}) %>
+  <% }); %>
+</div>

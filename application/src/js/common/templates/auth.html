@@ -1,0 +1,7 @@
+<ul data-cname="<%= data.cname %>">
+  <% for ( var prop in data ) { %>
+    <% if ( data[prop] ) { %>
+      <%= App.templates.authLi({prop: prop, value: data[prop]}) %>
+    <% } %>
+  <% } %>
+</ul>

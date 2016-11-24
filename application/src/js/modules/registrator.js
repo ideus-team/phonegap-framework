@@ -10,7 +10,7 @@ import viewData from './viewData';
 import requireData from './requireData';
 import cache from './cache';
 import request from './request';
-import { compareFetchData } from './utility';
+import * as utils from './utility';
 
 class Register {
 
@@ -25,6 +25,8 @@ class Register {
     Constructor to register views in Application
    */
   view(name, options){
+
+    
     
     if ( name && (typeof(name) === 'string' || name instanceof String) ){
 
@@ -40,9 +42,9 @@ class Register {
         models: [],
         collections: [],
 
-        data: {
-          model: {},
-          collection: {}
+        datas: {
+          model: options.datas ? $.extend(options.datas.model, {}) : {},
+          collection: options.datas ? $.extend(options.datas.collection, {}) : {}
         },
 
         events: $.extend(options.events, {
@@ -50,7 +52,6 @@ class Register {
         }),
         
         initialize(data){
-
           /* define template for view */
           this.template = App.templates[name];
 
@@ -64,7 +65,7 @@ class Register {
           App.views[name] = this;
 
           /* Before init promise */
-          promise(this.beforeInit)
+          promise(this.beforeRender)
             .then(() => {
               viewData.call(this);
               requireData.call(this);
@@ -77,8 +78,76 @@ class Register {
         },
 
         // default callback before init event
-        beforeInit(){
+        beforeRender(){
          //throw new App.error('asdasdasd', 2213, {id: 213});
+        },
+
+        bindModels(){
+          this.models.forEach((model, index) => {
+            const VIEW = this;
+            let name = model.prototype.name;
+            let _model = _.findWhere(App.models, {name: name});
+
+            /* model change event */
+            _model.on('change', changedModel => {
+              console.log(changedModel);
+              let changed = changedModel.changed;
+              let dom = VIEW.$('[data-cname="'+name+'"]');
+              if ( dom.length ){
+                for ( let prop in changed ){
+                  if ( changed[prop] ){
+                    let _data = changedModel.toJSON();
+                    utils.defineHideProp(_data, 'cname', name);
+                    dom.replaceWith(App.templates[name](_data));
+                  } else {
+                    dom.find('[data-bind="'+prop+'"]').remove();
+                    dom.is(':empty') && dom.remove();
+                  }
+                }
+              } else {
+                let _data = changedModel.toJSON();
+                utils.defineHideProp(_data, 'cname', name);
+                VIEW.$el.append(App.templates[name](_data));
+              }
+            });
+
+          });
+        },
+
+        bindCollections(){
+          this.collections.forEach((collection, index) => {
+            const VIEW = this;
+            let name = collection.prototype.name;
+            let _collection = _.findWhere(App.collections, {name: name});
+
+            /* collection change model */
+            _collection.on('change', changedModel => {
+              let changed = changedModel.changed;
+              let dom = VIEW.$('[data-cname="'+name+'"]');
+              let cid = changedModel.cid;
+              let model = dom.find('[data-cid="'+cid+'"]');
+              for ( var prop in changed ){
+                let attr = model.find('[data-'+prop+'-bind]');
+                attr && attr.attr('data-'+prop+'-bind', changed[prop]);
+                model.find('[data-bind="'+prop+'"]').html(changed[prop]);
+              }
+            });
+
+            /* collection add model */
+            _collection.on('add', newModel => {
+              let modelName = newModel.name;
+              let cid = newModel.cid;
+              let dataModel = newModel.toJSON();
+              utils.defineHideProp(dataModel, 'cid', cid);
+              VIEW.$('[data-cname="'+name+'"]').append(App.templates[modelName]({model: dataModel}));
+            });
+
+            /* collection remove model */
+            _collection.on('remove', deleteModel => {
+              let cid = deleteModel.cid;
+              VIEW.$('[data-cid="'+cid+'"]').remove();
+            });
+          });
         },
 
         pageLink(e){
@@ -108,6 +177,8 @@ class Register {
       this.models = this.models || {};
       this.models[name] = Model.extend($.extend({
         
+        idAttribute: '_id',
+
         type: 'model',
         loadPerRender: false,
         name: name,
@@ -147,7 +218,7 @@ class Register {
 
           let name = this.name;
 
-          compareFetchData(params, this)
+          utils.compareFetchData(params, this)
             .then(fetchParams => {
               console.log(fetchParams);
               return request.fetch(params, true);
@@ -218,7 +289,7 @@ class Register {
 
           let name = this.name;
 
-          compareFetchData(params, this)
+          utils.compareFetchData(params, this)
             .then(fetchParams => {
               console.log(fetchParams);
               return request.fetch(params, true);

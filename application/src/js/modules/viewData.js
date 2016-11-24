@@ -18,6 +18,7 @@ export default function() {
       header: obj.header,
       footer: obj.footer
     },
-    page: curPage
+    page: curPage,
+    data: {}
   };
 }

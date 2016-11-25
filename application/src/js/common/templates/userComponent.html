@@ -1,0 +1,9 @@
+<% var _data = data.toJSON(); %>
+
+<ul data-cid="<%= data.cid %>">
+  <% for ( var prop in _data ) { %>
+    <% if ( _data[prop] ) { %>
+      <%= App.templates.userPropComponent({prop: prop, data: _data}) %>
+    <% } %>
+  <% } %>
+</ul>

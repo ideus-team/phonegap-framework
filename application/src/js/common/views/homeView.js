@@ -10,8 +10,8 @@ Register.view('home', {
     'submit .js-form': 'addUser'
   },
 
-  models: [models.auth, models.auth2],
-  collections: [collections.usersList],
+  // models: [],
+  // collections: [],
 
   datas: {
     model: {},
@@ -49,22 +49,8 @@ Register.view('home', {
     e.preventDefault()
     let data = utils.getFormData($(e.currentTarget));
     let modelName = 'user_'+data.name;
-    let User = Register.model(modelName, {
-
-      idAttribute: '_id',
-
-      defaults: {
-        name: 'Alex2',
-        age: '27_2',
-        email: 'mrmasterix@gmail.com_2'
-      }
-    });
-
-    new Register.models[modelName](data);
-    let _data = App.models[modelName].toJSON();
-    utils.defineHideProp(_data, 'cname', modelName);
-    console.log(_data);
-    this.$('.js-users').append(App.templates.auth(_data));
+    let user = new Register.models.user(data);
+    this.$('.js-users').html(App.templates[user.template](user));
   }
 
 });

@@ -25,8 +25,6 @@ class Register {
     Constructor to register views in Application
    */
   view(name, options){
-
-    
     
     if ( name && (typeof(name) === 'string' || name instanceof String) ){
 
@@ -83,71 +81,11 @@ class Register {
         },
 
         bindModels(){
-          this.models.forEach((model, index) => {
-            const VIEW = this;
-            let name = model.prototype.name;
-            let _model = _.findWhere(App.models, {name: name});
-
-            /* model change event */
-            _model.on('change', changedModel => {
-              console.log(changedModel);
-              let changed = changedModel.changed;
-              let dom = VIEW.$('[data-cname="'+name+'"]');
-              if ( dom.length ){
-                for ( let prop in changed ){
-                  if ( changed[prop] ){
-                    let _data = changedModel.toJSON();
-                    utils.defineHideProp(_data, 'cname', name);
-                    dom.replaceWith(App.templates[name](_data));
-                  } else {
-                    dom.find('[data-bind="'+prop+'"]').remove();
-                    dom.is(':empty') && dom.remove();
-                  }
-                }
-              } else {
-                let _data = changedModel.toJSON();
-                utils.defineHideProp(_data, 'cname', name);
-                VIEW.$el.append(App.templates[name](_data));
-              }
-            });
-
-          });
+          
         },
 
         bindCollections(){
-          this.collections.forEach((collection, index) => {
-            const VIEW = this;
-            let name = collection.prototype.name;
-            let _collection = _.findWhere(App.collections, {name: name});
 
-            /* collection change model */
-            _collection.on('change', changedModel => {
-              let changed = changedModel.changed;
-              let dom = VIEW.$('[data-cname="'+name+'"]');
-              let cid = changedModel.cid;
-              let model = dom.find('[data-cid="'+cid+'"]');
-              for ( var prop in changed ){
-                let attr = model.find('[data-'+prop+'-bind]');
-                attr && attr.attr('data-'+prop+'-bind', changed[prop]);
-                model.find('[data-bind="'+prop+'"]').html(changed[prop]);
-              }
-            });
-
-            /* collection add model */
-            _collection.on('add', newModel => {
-              let modelName = newModel.name;
-              let cid = newModel.cid;
-              let dataModel = newModel.toJSON();
-              utils.defineHideProp(dataModel, 'cid', cid);
-              VIEW.$('[data-cname="'+name+'"]').append(App.templates[modelName]({model: dataModel}));
-            });
-
-            /* collection remove model */
-            _collection.on('remove', deleteModel => {
-              let cid = deleteModel.cid;
-              VIEW.$('[data-cid="'+cid+'"]').remove();
-            });
-          });
         },
 
         pageLink(e){
@@ -182,6 +120,7 @@ class Register {
         type: 'model',
         loadPerRender: false,
         name: name,
+        template: 'default',
 
         defaults: $.extend(options.defaults, {}),
         
@@ -195,6 +134,35 @@ class Register {
 
           /* save created view by its name into global App object */
           App.models[name] = this;
+          this.bindModel();
+        },
+
+        bindModel(){
+          const VIEW = App.currentView;
+          let model = this;
+          let name = model.name;
+          let tpl = model.template;
+          let _model = _.findWhere(App.models, {name: name});
+
+          /* model change event */
+          _model.on('change', changedModel => {
+            console.log('model change ', changedModel);
+            let changed = changedModel.changed;
+            let dom = VIEW.$('[data-cid="'+changedModel.cid+'"]');
+            
+            if ( dom.length ){
+              for ( let prop in changed ){
+                if ( changed[prop] ){
+                  dom.replaceWith(App.templates[tpl](changedModel));
+                } else {
+                  dom.find('[data-bind="'+prop+'"]').remove();
+                  dom.is(':empty') && dom.remove();
+                }
+              }
+            } else {
+              VIEW.$el.append(App.templates[tpl](changedModel));
+            }
+          });
         },
 
         successFetch(response){
@@ -266,6 +234,42 @@ class Register {
 
           /* save created view by its name into global App object */
           App.collections[name] = this;
+          this.bindCollection();
+        },
+
+        bindCollection(){
+          const VIEW = App.currentView;
+          let collection = this;
+          let name = collection.name;
+          let _collection = _.findWhere(App.collections, {name: name});
+
+          /* collection change model */
+          _collection.on('change', changedModel => {
+            let changed = changedModel.changed;
+            let dom = VIEW.$('[data-cname="'+name+'"]');
+            let cid = changedModel.cid;
+            let model = dom.find('[data-cid="'+cid+'"]');
+            for ( var prop in changed ){
+              let attr = model.find('[data-'+prop+'-bind]');
+              attr && attr.attr('data-'+prop+'-bind', changed[prop]);
+              model.find('[data-bind="'+prop+'"]').html(changed[prop]);
+            }
+          });
+
+          /* collection add model */
+          _collection.on('add', newModel => {
+            let modelName = newModel.name;
+            let cid = newModel.cid;
+            let dataModel = newModel.toJSON();
+            utils.defineHideProp(dataModel, 'cid', cid);
+            VIEW.$('[data-cname="'+name+'"]').append(App.templates[modelName]({model: dataModel}));
+          });
+
+          /* collection remove model */
+          _collection.on('remove', deleteModel => {
+            let cid = deleteModel.cid;
+            VIEW.$('[data-cid="'+cid+'"]').remove();
+          });
         },
 
         successFetch(response){

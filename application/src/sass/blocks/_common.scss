@@ -105,6 +105,7 @@ $defaultDuration: 0.4s;
   height: 100%;
   transform: translate3d(0, 0, 0);
   will-change: transform;
+  overflow: auto;
 
   &.-default_animation {
     transition: transform $defaultDuration;

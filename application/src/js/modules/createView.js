@@ -82,8 +82,7 @@ export default module = {
 
   afterRender(){
     this.view.afterRender && this.view.afterRender();
-    this.view.bindModels && this.view.bindModels();
-    this.view.bindCollections && this.view.bindCollections();
+    App.currentView = this.view;
   },
 
   animations: {

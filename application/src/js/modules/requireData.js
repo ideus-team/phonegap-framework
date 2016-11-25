@@ -51,7 +51,7 @@ export default function(callback){
       if ( !element[element.type].loadPerRender ) {
         loadCounter++;
 
-        VIEW.viewData.data[element.name] = element[element.type].toJSON();
+        VIEW.viewData.data[element.name] = element[element.type];
 
         defineProps(VIEW.viewData.data, element);
 
@@ -65,7 +65,7 @@ export default function(callback){
       request.fetch(element.fetchParams, true, element.successFetch.bind(VIEW), element.errorFetch.bind(VIEW))
 
         .then(response => {
-          VIEW.viewData.data[element.name] = element[element.type].toJSON();
+          VIEW.viewData.data[element.name] = element[element.type];
 
           defineProps(VIEW.viewData.data, element);
 

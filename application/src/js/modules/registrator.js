@@ -227,7 +227,7 @@ class Register {
 
           /* save created view by its name into global App object */
           App.collections[name] = this;
-          this.bindCollection();
+          //this.bindCollection();
         },
 
         bindCollection(){
@@ -238,6 +238,24 @@ class Register {
 
           /* collection change model */
           _collection.on('change', changedModel => {
+
+            // console.log('model change ', changedModel);
+            // let changed = changedModel.changed;
+            // let dom = VIEW.$('[data-cid="'+changedModel.cid+'"]');
+            
+            // if ( dom.length ){
+            //   for ( let prop in changed ){
+            //     if ( changed[prop] ){
+            //       dom.replaceWith(App.templates[tpl](changedModel));
+            //     } else {
+            //       dom.find('[data-bind="'+prop+'"]').remove();
+            //       dom.is(':empty') && dom.remove();
+            //     }
+            //   }
+            // } else {
+            //   VIEW.$el.append(App.templates[tpl](changedModel));
+            // }
+
             let changed = changedModel.changed;
             let dom = VIEW.$('[data-cname="'+name+'"]');
             let cid = changedModel.cid;

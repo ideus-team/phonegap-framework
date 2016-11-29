@@ -80,14 +80,6 @@ class Register {
          //throw new App.error('asdasdasd', 2213, {id: 213});
         },
 
-        bindModels(){
-          
-        },
-
-        bindCollections(){
-
-        },
-
         pageLink(e){
           e.preventDefault();
           let link = $(e.currentTarget);
@@ -133,7 +125,7 @@ class Register {
           App.models = App.models || {};
 
           /* save created view by its name into global App object */
-          App.models[name] = this;
+          App.models[name+'_'+this.cid] = this;
           this.bindModel();
         },
 
@@ -142,7 +134,8 @@ class Register {
           let model = this;
           let name = model.name;
           let tpl = model.template;
-          let _model = _.findWhere(App.models, {name: name});
+          name = name+'_'+model.cid;
+          let _model = App.models[name];
 
           /* model change event */
           _model.on('change', changedModel => {

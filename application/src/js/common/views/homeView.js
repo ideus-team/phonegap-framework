@@ -48,9 +48,8 @@ Register.view('home', {
   addUser(e){
     e.preventDefault()
     let data = utils.getFormData($(e.currentTarget));
-    let modelName = 'user_'+data.name;
     let user = new Register.models.user(data);
-    this.$('.js-users').html(App.templates[user.template](user));
+    this.$('.js-users').append(App.templates[user.template](user));
   }
 
 });

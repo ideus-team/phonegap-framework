@@ -15,6 +15,15 @@ export default module = {
 
     console.log(this._options);
 
+    if ( App.firstStart ){
+      App.firstStart = false;
+      App.history = [];
+      App.history.push({
+        page: Backbone.history.getFragment(),
+        previusView: {}
+      });
+    }
+
 
     this.view.init && this.view.init();
     // if we render without options

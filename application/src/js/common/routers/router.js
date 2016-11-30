@@ -25,15 +25,6 @@ export default Router.extend({
   },
 
   home() {
-    if ( App.firstStart ){
-      App.firstStart = false;
-      App.history = [];
-      App.history.push({
-        page: '/',
-        previusView: {}
-      });
-    }
-
     new Views.home();
   },
 

@@ -10,9 +10,6 @@ Register.view('home', {
     'submit .js-form': 'addUser'
   },
 
-  // models: [],
-  // collections: [],
-
   datas: {
     model: {},
     collection: {

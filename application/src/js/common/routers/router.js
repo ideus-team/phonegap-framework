@@ -3,6 +3,7 @@ import Models from '../models/mainModels';
 import Collections from '../collections/mainCollections';
 import Views from '../views/mainViews';
 import createView from '../../modules/createView';
+import createPopup from '../../modules/createPopup';
 /**
  * Main router of the application
  */
@@ -18,12 +19,21 @@ export default Router.extend({
    */
   routes: {
     '(/)': 'home',
+    'popup/:id': 'popup',
 
     '*notFound': 'notFound'
   },
 
   home() {
-    console.log('Home');
+    if ( App.firstStart ){
+      App.firstStart = false;
+      App.history = [];
+      App.history.push({
+        page: '/',
+        previusView: {}
+      });
+    }
+
     new Views.home();
   },
 
@@ -31,13 +41,23 @@ export default Router.extend({
    * [Controller that fired when some url not defined in routes object (404 not found)]
    */
   notFound() {
-    console.log('notFound');
     new Views.notFound();
   },
 
+  popup(id){
+    return App.popup.open(id);
+  },
+
   renderView(view, el) {
-    console.log('RENDER VIEW');
-    return createView.create(view, $(el));
+    App.popup.close().then(() => {
+      return createView.create(view, $(el));
+    });
+  },
+
+  renderPopup(view, el) {
+    App.popup.close().then(() => {
+      return createPopup.create(view, $(el));
+    });
   }
 
 });

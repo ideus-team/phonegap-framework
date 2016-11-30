@@ -34,6 +34,7 @@ export let defineHideProp = function(obj, name, value){
   });
 
 }
+
 export let getFormData = function(form){
   let o = {};
   let a = form.serializeArray();

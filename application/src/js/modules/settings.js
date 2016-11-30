@@ -59,7 +59,13 @@ export default {
 
     mainContainer: '#app-container',
 
-    popupsHolder: '#app-popups',
+    popupsWrapper: '#app-popupWrap',
+
+    popupOptions: {
+      openClass: '-state_open',
+      closeClass: '-state_close',
+      fadeDuration: 200
+    }
   },
 
 };

@@ -1,12 +1,17 @@
 export default function(fragment, options) {
   
   this.navigateOptions = $.extend({
-    fragment: fragment || '',
+    page: '/',
     trigger: true,
     direction: 'left',
     animationType: 'default',
     back: false,
-    writable: true
+    writable: true,
+    static: false,
+    previusView: {
+      view: App.currentView,
+      page: App.history && App.history.slice(-1)[0] ? App.history.slice(-1)[0].page : '/'
+    }
   }, options);
 
   this.history = this.history || [];

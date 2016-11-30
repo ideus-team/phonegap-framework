@@ -86,7 +86,7 @@ gulp.task('templates:common', () => {
   return gulp.src(PATH.SRC.TEMPLATES)
     .pipe(template({
         templateSettings : {
-            variable : 'data'
+          variable : 'data'
         }
     }))
     .pipe(concat('templates.js'))

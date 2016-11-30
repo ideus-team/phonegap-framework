@@ -83,6 +83,7 @@ export default module = {
   afterRender(){
     this.view.afterRender && this.view.afterRender();
     App.currentView = this.view;
+    App.history[App.history.length-1].previusView.view = App.currentView;
   },
 
   animations: {

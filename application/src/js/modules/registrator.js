@@ -17,6 +17,7 @@ class Register {
   /* Registrator constructor */
   constructor(){
     this.views = this.views || {};
+    this.popups = this.popups || {};
     this.models = this.models || {};
     this.collections = this.collections || {};
   }
@@ -35,6 +36,7 @@ class Register {
 
         header: false,
         footer: false,
+        isPopup: false,
  
         /* models and collection that needed for view */
         models: [],
@@ -47,20 +49,27 @@ class Register {
 
         events: $.extend(options.events, {
           'mouseup .js-pageLink': 'pageLink',
+          'mouseup .js-popup': 'openPopup',
+          'mouseup .js-popupClose': 'popupClose'
         }),
         
         initialize(data){
           /* define template for view */
-          this.template = App.templates[name];
+          this.template = this.template || App.templates[name];
 
           /* save initialization data localy */
           this.initData = data || {};
 
           /* check for App.views defined */
           App.views = App.views || {};
+          App.popups = App.popups || {};
 
           /* save created view by its name into global App object */
-          App.views[name] = this;
+          if ( !this.isPopup ){
+            App.views[name] = this;
+          } else {
+            App.popups[name] = this;
+          }
 
           /* Before init promise */
           promise(this.beforeRender)
@@ -86,6 +95,28 @@ class Register {
           let options = link.data();
           let page = options.page;
           App.navigate(page, options);
+        },
+
+        openPopup(e){
+          e.preventDefault();
+          let link = $(e.currentTarget);
+          let options = link.data();
+          let page = options.page;
+          options.writable = false;
+          App.navigate(page, options);
+        },
+
+        popupClose(e){
+          e.preventDefault();
+          if ( App.history.splice ){
+            let lastRoute = App.history.slice(-1)[0] || App.history.slice(0)[0];
+            App.history.splice(-1, 1);
+            App.navigate(lastRoute.page, {
+              trigger: false
+            });
+            App.currentView = lastRoute.previusView && lastRoute.previusView.view ? lastRoute.previusView.view : null;
+            App.popup.close();
+          }
         }
 
       }, options));
@@ -301,6 +332,8 @@ class Register {
         },
 
         createFetch(page, callback, params = this.fetchParams){
+
+          if ( !params ) return;
 
           let name = this.name;
 

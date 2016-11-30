@@ -11,9 +11,6 @@ export default module = {
 
     this.view = view;
     this.el = el;
-    this.view = view;
-
-    console.log(this._options);
 
     if ( App.firstStart ){
       App.firstStart = false;

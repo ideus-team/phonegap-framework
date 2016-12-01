@@ -17,7 +17,7 @@ export default function(cb) {
   if ( !this.isPopup ){
     promise(App.router.renderView.bind(null, this, App.options.renderElement))
       .then(result => {
-        cb && cb(result);
+        cb && cb instanceof Function && cb(result);
       })
       .catch(error => {
         console.log(error);
@@ -25,7 +25,7 @@ export default function(cb) {
   } else {
     promise(App.router.renderPopup.bind(null, this, App.options.popupsWrapper))
       .then(result => {
-        cb && cb(result);
+        cb && cb instanceof Function && cb(result);
       })
       .catch(error => {
         console.log(error);

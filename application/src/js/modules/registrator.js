@@ -72,7 +72,7 @@ class Register {
           }
 
           /* Before init promise */
-          promise(this.beforeRender)
+          promise(this.beforeRender, this.initData, this)
             .then(() => {
               viewData.call(this);
               requireData.call(this);
@@ -85,7 +85,7 @@ class Register {
         },
 
         // default callback before init event
-        beforeRender(){
+        beforeRender(data){
          //throw new App.error('asdasdasd', 2213, {id: 213});
         },
 

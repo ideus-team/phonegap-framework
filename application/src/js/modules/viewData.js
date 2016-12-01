@@ -21,4 +21,8 @@ export default function() {
     page: curPage,
     data: {}
   };
+  
+  if ( this.initData ){
+    this.viewData.defaults = this.initData;
+  }
 }

@@ -1,3 +1,16 @@
+export var alert = function(data) {
+var __t, __p = '';
+__p += '<div class="b-popupInner"><div class="b-alert"><div class="b-alert__title">' +
+((__t = ( data.defaults.title )) == null ? '' : __t) +
+'</div><div class="b-alert__message">' +
+((__t = ( data.defaults.message )) == null ? '' : __t) +
+'</div><div class="b-alert__button js-button">' +
+((__t = ( data.defaults.button )) == null ? '' : __t) +
+'</div></div></div>';
+return __p
+};
+
+
 export var home = function(data) {
 var __t, __p = '';
 __p += '<div data-page="asd" data-direction="up" class="js-pageLink" data-writable="false">To NotFound up</div><div data-page="asd" data-direction="down" class="js-pageLink">To NotFound down</div><div data-page="asd" data-direction="left" class="js-pageLink">To NotFound left</div><div data-page="asd" data-direction="right" class="js-pageLink">To NotFound right</div><form action="#" class="js-form"><div><input type="text" placeholder="name" name="name" value="Nick"></div><div><input type="text" placeholder="age" name="age" value="12"></div><div><input type="text" placeholder="email" name="email" value="nick@gmail.com"></div><button>Добавить</button></form><div data-page="popup/testPopup" class="js-popup">Test popup</div><div class="js-users"></div>';
@@ -14,7 +27,14 @@ return __p
 
 export var testPopup = function(data) {
 var __t, __p = '';
-__p += '<div class="b-popupInner">Test popup<div class="js-popupClose">Close</div></div>';
+__p += '<div class="b-popupInner"><div data-page="popup/testPopup2" class="js-popup">Popup in popup</div><div class="js-popupClose">Close</div></div>';
+return __p
+};
+
+
+export var testPopup2 = function(data) {
+var __t, __p = '';
+__p += '<div class="b-popupInner"><div class="js-popupClose">Close</div></div>';
 return __p
 };
 

@@ -39,6 +39,8 @@ export default {
    */
   options: {
 
+    applicationName: 'iDeus',
+
     // default page before signUp/signIn
     defaultPage: '/',
 
@@ -64,7 +66,17 @@ export default {
     popupOptions: {
       openClass: '-state_open',
       closeClass: '-state_close',
-      fadeDuration: 200
+      fadeDuration: 200,
+
+      alertDefaults: {
+        title(){
+          return App.applicationName;
+        },
+        button: 'Ok',
+        template(){
+          return App.templates.alert
+        }
+      }
     }
   },
 

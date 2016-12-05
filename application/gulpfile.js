@@ -196,7 +196,7 @@ const watchStylesDev = () => {
  */
 gulp.task('js:dev', function() {
   return browserify(PATH.SRC.APP_JS)
-    .transform('babelify', { presets: ["es2015"] })
+    .transform(['babelify', { presets: ["es2015", "react"] }])
     .bundle().on('error', log)
     .pipe(source('bundle.js'))
     .pipe(duration('----------- Babel time -----------'))

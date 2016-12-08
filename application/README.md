@@ -1,0 +1,1 @@
+npm install npm@3.10.7 -g

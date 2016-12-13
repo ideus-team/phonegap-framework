@@ -4,6 +4,7 @@ import Register from '../../modules/registrator';
 import notFound from './404View';
 import homeView from './homeView';
 import alert from './alertView';
+import prompt from './promptView';
 import testPopup from './testPopupView';
 import testPopup2 from './testPopupView2';
 

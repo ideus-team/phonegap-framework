@@ -60,4 +60,20 @@ export default class Popup {
     });
   }
 
+  prompt(title, defaultInput, ok, cancel, callback){
+    let popup = this;
+
+    return new Promise((resolve, reject) => {
+      popup.view = new Views['prompt']({
+        defaultInput: defaultInput || null,
+        buttonOk: ok || 'Ok',
+        buttonCancel: cancel || 'Cancel',
+        title: title || App.options.applicationName,
+        callback: callback
+      });
+      popup.view.resolve = resolve;
+      popup.view.reject = reject;
+    });
+  }
+
 }

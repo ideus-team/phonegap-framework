@@ -21,4 +21,4 @@ window.loader = window.loader || loader;
  * [App] is a main object of Application
  * @constructor {Application}
  */
-window.App = new Application();
+window.App = Application.init();

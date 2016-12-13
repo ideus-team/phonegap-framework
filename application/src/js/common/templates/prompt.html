@@ -1,0 +1,15 @@
+<div class="b-popupInner">
+  <div class="b-prompt">
+
+    <% if ( data.defaults.title ) { %>
+      <div class="b-prompt__title"><%= data.defaults.title %></div>
+    <% } %>
+
+    <div class="b-prompt__input">
+      <input type="text" value="<%= data.defaults.defaultInput ? data.defaults.defaultInput : '' %>" class="js-promptInput" >
+    </div>
+
+    <div class="b-prompt__button -type_ok js-buttonOk"><%= data.defaults.buttonOk %></div>
+    <div class="b-prompt__button -type_cancel js-buttonCancel"><%= data.defaults.buttonCancel %></div>
+  </div>
+</div>

@@ -25,6 +25,26 @@ return __p
 };
 
 
+export var prompt = function(data) {
+var __t, __p = '', __j = Array.prototype.join;
+function print() { __p += __j.call(arguments, '') }
+__p += '<div class="b-popupInner"><div class="b-prompt">';
+ if ( data.defaults.title ) { ;
+__p += '<div class="b-prompt__title">' +
+((__t = ( data.defaults.title )) == null ? '' : __t) +
+'</div>';
+ } ;
+__p += '<div class="b-prompt__input"><input type="text" value="' +
+((__t = ( data.defaults.defaultInput ? data.defaults.defaultInput : '' )) == null ? '' : __t) +
+'" class="js-promptInput" ></div><div class="b-prompt__button -type_ok js-buttonOk">' +
+((__t = ( data.defaults.buttonOk )) == null ? '' : __t) +
+'</div><div class="b-prompt__button -type_cancel js-buttonCancel">' +
+((__t = ( data.defaults.buttonCancel )) == null ? '' : __t) +
+'</div></div></div>';
+return __p
+};
+
+
 export var testPopup = function(data) {
 var __t, __p = '';
 __p += '<div class="b-popupInner"><div data-page="popup/testPopup2" class="js-popup">Popup in popup</div><div class="js-popupClose">Close</div></div>';

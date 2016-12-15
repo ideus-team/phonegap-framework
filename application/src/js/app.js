@@ -20,7 +20,7 @@ let App = {
   templates,
 
   /* define Application Navigator */
-  navigate: navigate.bind(this),
+  navigate: navigate,
 
   error: AppError,
 

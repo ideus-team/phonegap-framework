@@ -1,5 +1,5 @@
 export default function(fragment, options) {
-  
+
   this.navigateOptions = $.extend({
     page: '/',
     trigger: true,

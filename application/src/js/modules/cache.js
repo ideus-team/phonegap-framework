@@ -3,6 +3,7 @@ export default {
   storage: localStorage || window.localStorage,
 
   getData(key){
+    if ( !key ) { return }
     var str = this.storage.getItem(key);
     let result = str ? true : false;
     let data = str && JSON.parse(str);
@@ -14,6 +15,7 @@ export default {
   },
 
   setData(key, obj){
+    if ( !key && !obj ) { return }
     var _obj = {
       stamp: new Date().getTime(),
       params: obj

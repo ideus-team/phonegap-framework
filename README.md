@@ -10,6 +10,7 @@ New:
 - [Installation] (/docs/install.md)
 - [Config.xml settings] (/docs/config.md)
 - [Used plugins] (/docs/plugins.md)
+- [API] (/docs/api.md)
 - [CSS Media Queries for iPads & iPhones] (/docs/appleMediaQueries.md)
 
 Old:

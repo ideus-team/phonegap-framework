@@ -8,6 +8,7 @@ This is a Cordova boilerplate for building HTML5 mobile apps with a native look 
 
 New:
 - [Installation] (/docs/install.md)
+--asd as
 - [Config.xml settings] (/docs/config.md)
 - [Used plugins] (/docs/plugins.md)
 - [CSS Media Queries for iPads & iPhones] (/docs/appleMediaQueries.md)

@@ -20,7 +20,7 @@ Register.view('alert', {
   },
 
   init(){
-    console.log(this);
+    
   }
 
 });

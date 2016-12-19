@@ -4,13 +4,16 @@ import Collections from '../collections/mainCollections';
 import Views from '../views/mainViews';
 import createView from '../../modules/createView';
 import createPopup from '../../modules/createPopup';
+import log from '../../modules/log';
 /**
  * Main router of the application
  */
 export default Router.extend({
 
   initialize(options){
-    console.log('Router initialized with options:', options ? options : 'NO OPTIONS');
+    let isOptionsText = options ? options : 'NO OPTIONS';
+    let logtext = 'Router was initialized with options: '+isOptionsText;
+    log(logtext, 'black');
   },
 
   /**
@@ -40,15 +43,23 @@ export default Router.extend({
   },
 
   renderView(view, el) {
-    App.popup.close().then(() => {
-      return createView.create(view, $(el));
-    });
+    if ( App.isPopupOpen ){
+      App.popup.close().then(() => {
+        return createView.create(view, $(el));
+      });
+    } else {
+      createView.create(view, $(el));
+    }
   },
 
   renderPopup(view, el) {
-    App.popup.close().then(() => {
-      return createPopup.create(view, $(el));
-    });
+    if ( App.isPopupOpen ){
+      App.popup.close().then(() => {
+        return createPopup.create(view, $(el));
+      });
+    } else {
+      createPopup.create(view, $(el));
+    }
   }
 
 });

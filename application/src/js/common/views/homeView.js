@@ -31,15 +31,15 @@ Register.view('home', {
   },
 
   init(){
-    console.log('Home init');
+    
   },
 
   beforeRender(){
-    console.log('before Render');
+    
   },
 
   afterRender(){
-    console.log('after Render');
+    
   },
 
   addUser(e){

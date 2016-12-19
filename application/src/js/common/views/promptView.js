@@ -29,7 +29,7 @@ Register.view('prompt', {
   },
 
   init(){
-    console.log(this);
+    
   }
 
 });

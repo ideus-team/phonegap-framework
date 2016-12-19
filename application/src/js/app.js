@@ -11,16 +11,22 @@ import navigate from './modules/navigate';
 import MainRouter from './common/routers/router';
 import AppError from './modules/error';
 import Popup from './modules/popup';
+import cache from './modules/cache';
 
 let App = {
 
   firstStart: true,
 
+  logger: window.logger,
+
   /* define Application templates */
   templates,
+  
+  /* define Application cache */
+  cache,
 
   /* define Application Navigator */
-  navigate: navigate,
+  navigate,
 
   error: AppError,
 
@@ -34,6 +40,8 @@ let App = {
     this.defineModules();
     this.extendOptions(_options);
     this.bindEvents();
+
+    log('Application was inited', 'black');
 
     return this;
   },
@@ -51,6 +59,7 @@ let App = {
    */
   startApplication(){
     Backbone.history.start();
+    log('Application history was inited', 'black');
   },
 
   defineModules(){

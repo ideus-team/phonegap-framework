@@ -24,7 +24,7 @@ export default request = {
           request.logCommand(params, res);
 
           //init success callback if defined and is function
-          checkCallback(successFn, res);
+          //checkCallback(successFn, res);
         },
         error: function(error){
           //throw Error('Server error. Please try again later;');
@@ -55,42 +55,3 @@ export default request = {
   }
 
 }
-/*
-
-var params = [
-{
-  command: 'command #1',
-  params: {}
-},
-{
-  command: 'command #2',
-  params: {}
-},
-{
-  command: 'command #3',
-  params: {}
-}
-];
-
-var response = [
-{
-  code: 200,
-  data: {
-    param: '1'
-  }
-},
-{
-  code: 200,
-  data: {
-    param: '2'
-  }
-},
-{
-  code: 200,
-  data: {
-    param: '3'
-  }
-}
-]
-
-*/

@@ -193,10 +193,11 @@ class Register {
           let data = response.data;
           let modelName = this.name;
 
-          console.log('------');
-          console.log('Получили данные для модели с ID:', modelName, 'и записали их в модель. ');
-          console.log('Данные: ', data, ' для модели ', modelName, ' записали в кеш.');
-          console.log('------');
+          log([
+            `Получили данные для модели с ID: ${modelName} и записали их в модель.`,
+            'Данные записаны в кэш',
+            data
+          ], 'black', `successFetch:${modelName}`);
 
           cache.setData(modelName, data);
           this.set(data);

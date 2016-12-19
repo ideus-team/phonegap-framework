@@ -14,7 +14,7 @@ export default class Popup {
     Open popup function
     id: popup id, name of the template
   */
-  open(id, settings){
+  open(id, settings = {}){
     
     if ( !id ) {
       throw Error('Popup id is not defined');
@@ -23,6 +23,8 @@ export default class Popup {
     
     return new Promise((resolve, reject) => {
       this.view = new Views[id]();
+      App.isPopupOpen = true;
+      log([`Popup id: ${id}`, settings], 'black', `Popup:open`);
       resolve(this.view);
     });
 
@@ -32,14 +34,20 @@ export default class Popup {
 
     return new Promise((resolve, reject) => {
       let popup = this;
-      $(App.options.popupsWrapper)
+      if ( App.isPopupOpen ){
+        $(App.options.popupsWrapper)
         .fadeOut(App.options.popupOptions.fadeDuration, () => {
           $(App.options.popupsWrapper)
             .removeClass(App.options.popupOptions.openClass)
             .removeAttr('style');
 
+          log(['Close all popups'], 'black', `Popup:close`);
           resolve(popup);
         });
+      } else {
+        App.isPopupOpen = false;
+        resolve(popup);
+      }
     });
 
   }
@@ -56,6 +64,10 @@ export default class Popup {
         message: message,
         callback: callback
       });
+
+      App.isPopupOpen = true;
+
+      log([`Message: ${message}`, `Title: ${title}`, `Button: ${button}`, callback], 'black', `Popup:alert`);
       resolve(this.view);
     });
   }
@@ -73,6 +85,20 @@ export default class Popup {
       });
       popup.view.resolve = resolve;
       popup.view.reject = reject;
+
+      App.isPopupOpen = true;
+
+      log(
+        [
+          `DefaultInput: ${popup.view.initData.defaultInput}`,
+          `Title: ${popup.view.initData.title}`,
+          `Button Ok: ${popup.view.initData.buttonOk}`,
+          `Button cancel: ${popup.view.initData.buttonCancel}`,
+          callback
+        ],
+        'black',
+        `Popup:prompt`
+      );
     });
   }
 

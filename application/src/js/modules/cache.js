@@ -6,7 +6,7 @@ export default {
     var str = this.storage.getItem(key);
     let result = str ? true : false;
     let data = str && JSON.parse(str);
-    log([`Result: ${result}`, `Stamp: ${data.stamp}`], null, 'Cache:getData');
+    log([`Result: ${result}`, `Stamp: ${data.stamp}`, `Key:${key}`], null, `Cache:getData::${key}`);
     return {
       result: result,
       data
@@ -19,8 +19,9 @@ export default {
       params: obj
     };
     var str = JSON.stringify(_obj);
+    console.log(str);
     this.storage.setItem(key, str);
-    log([`Stamp: ${_obj.stamp}`, `String: ${str}`], null, 'Cache:setData');
+    log([`Stamp: ${_obj.stamp}`, `String: ${str}`, `Key:${key}`], null, `Cache:setData::${key}`);
     return true;
   },
 

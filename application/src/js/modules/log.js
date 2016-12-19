@@ -19,14 +19,36 @@ window.logger = {
     this.logs.forEach((fn, i) => {
       fn();
     });
-    console.groupEnd(title);
+    console.groupEnd(_title);
   },
 
   clear(){
     this.logs = [];
   },
 
-  logs: []
+  save(key){
+    if ( !key ){ return }
+    this.cached[key] = this.logs.concat();
+    return true;
+  },
+
+  get(key){
+    if ( !key || !this.cached[key] ){ return }
+    let _cached = this.cached[key];
+    let _title = `Logger:${key}`;
+    console.groupCollapsed(_title);
+    _cached.forEach((fn, i) => {
+      fn();
+    });
+    console.groupEnd(_title);
+  },
+
+  del(key){
+    return key ? delete this.cached[key] : this.cached = {};
+  },
+
+  logs: [],
+  cached: {}
 
 };
 
@@ -36,7 +58,7 @@ export default (_message, _type, __title) => {
     if ( settings.debug ){
       let css, text;
       if ( Array.isArray(message) ){
-        let _title = __title ? __title : 'Simple console group';
+        let _title = title ? title : 'Simple console group';
         console.groupCollapsed(_title);
         message.forEach( function(element, index) {
           let _type = Array.isArray(type) ? type[index] : type;

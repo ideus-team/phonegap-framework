@@ -2,10 +2,10 @@
 
 ##Menu:
 
-1. [DexException](#DexException)
-1. [Server forever](#Server-forever)
-1. [WebSocket and socket.io](#WebSocket-and-socket.io)
-1. [Hide status bar in iOS](#Hide-status-bar-in-iOS)
+1. [DexException](#dexexception)
+1. [Server forever](#server-forever)
+1. [WebSocket and socket.io](#websocket-and-socketio)
+1. [Hide status bar in iOS](#hide-status-bar-in-ios)
 
 ###DexException
 To solve the DexException must be imported via terminal this plugin:
@@ -30,4 +30,4 @@ npm start forever
 
 ###Hide status bar in iOS
 1. Go to tab Info in xCode
-   [xcode!](http://joxi.ru/lbrRDg4TdegM21.jpg)
+   ![xcode](http://joxi.ru/lbrRDg4TdegM21.jpg)

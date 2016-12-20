@@ -1,5 +1,7 @@
 #How to generate icons and splashes for Application
 
+> !!! Look at file [config.xml](../application/config.xml) and structured your icons and splashes folders in that case.
+
 #Icons
 
 To create icons for all devices you must have one icon with resolution 1024px X 1024px.

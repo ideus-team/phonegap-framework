@@ -31,20 +31,26 @@
   <preference name="android-windowSoftInputMode" value="stateVisible" />
   
   <platform name="android">
-    <icon src="../resources/icons/android/drawable-ldpi/ic_launcher.png" density="ldpi" />
-    <icon src="../resources/icons/android/drawable-mdpi/ic_launcher.png" density="mdpi" />
-    <icon src="../resources/icons/android/drawable-hdpi/ic_launcher.png" density="hdpi" />
-    <icon src="../resources/icons/android/drawable-xhdpi/ic_launcher.png" density="xhdpi" />
+    <icon src="../resources/icons/android/drawable-ldpi/icon.png" density="ldpi" />
+    <icon src="../resources/icons/android/drawable-mdpi/icon.png" density="mdpi" />
+    <icon src="../resources/icons/android/drawable-hdpi/icon.png" density="hdpi" />
+    <icon src="../resources/icons/android/drawable-xhdpi/icon.png" density="xhdpi" />
+    <icon src="../resources/icons/android/drawable-xxhdpi/icon.png" density="xxhdpi" />
+    <icon src="../resources/icons/android/drawable-xxxhdpi/icon.png" density="xxxhdpi" />
 
-    <splash src="../resources/splashes/android/splashscreen_h.png" density="land-hdpi"/>
-    <splash src="../resources/splashes/android/splashscreen_h.png" density="land-ldpi"/>
-    <splash src="../resources/splashes/android/splashscreen_h.png" density="land-mdpi"/>
-    <splash src="../resources/splashes/android/splashscreen_h.png" density="land-xhdpi"/>
+    <splash src="../resources/splashes/android/drawable-land-ldpi/screen.png" density="land-ldpi"/>
+    <splash src="../resources/splashes/android/drawable-land-mdpi/screen.png" density="land-mdpi"/>
+    <splash src="../resources/splashes/android/drawable-land-hdpi/screen.png" density="land-hdpi"/>
+    <splash src="../resources/splashes/android/drawable-land-xhdpi/screen.png" density="land-xhdpi"/>
+    <splash src="../resources/splashes/android/drawable-land-xxhdpi/screen.png" density="land-xxhdpi"/>
+    <splash src="../resources/splashes/android/drawable-land-xxxhdpi/screen.png" density="land-xxxhdpi"/>
     
-    <splash src="../resources/splashes/android/splashscreen_v.png" density="port-hdpi"/>
-    <splash src="../resources/splashes/android/splashscreen_v.png" density="port-ldpi"/>
-    <splash src="../resources/splashes/android/splashscreen_v.png" density="port-mdpi"/>
-    <splash src="../resources/splashes/android/splashscreen_v.png" density="port-xhdpi"/>
+    <splash src="../resources/splashes/android/drawable-port-ldpi/screen.png" density="port-ldpi"/>
+    <splash src="../resources/splashes/android/drawable-port-mdpi/screen.png" density="port-mdpi"/>
+    <splash src="../resources/splashes/android/drawable-port-hdpi/screen.png" density="port-hdpi"/>
+    <splash src="../resources/splashes/android/drawable-port-xhdpi/screen.png" density="port-xhdpi"/>
+    <splash src="../resources/splashes/android/drawable-port-xxhdpi/screen.png" density="port-xxhdpi"/>
+    <splash src="../resources/splashes/android/drawable-port-xxxhdpi/screen.png" density="port-xxxhdpi"/>
     
     <preference name="AndroidPersistentFileLocation" value="Compatibility" />
     

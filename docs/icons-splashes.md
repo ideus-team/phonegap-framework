@@ -25,7 +25,7 @@ Default-Landscape-736h@3x.png | width="2208" height="1242"
 ##For Android
 
 > Please, locate all images to folder based in it's dpi:
-> Exapmle: ldpi splashscreen must be in `drawable-ldpi` folder and with name screen.png
+> *Exapmle:* ldpi splashscreen must be in `drawable-ldpi` folder and with name screen.png
 
 Name    | Resolution | Folder name
 ------------ | ------------- | -------------

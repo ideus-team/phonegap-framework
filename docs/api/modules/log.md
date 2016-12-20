@@ -22,8 +22,8 @@ function plus(a, b){
 plus(5, 8)
 ```
 
-![Example]{http://joxi.ru/L4Ak3LbI4ObpAq.jpg}
+![Example](http://joxi.ru/L4Ak3LbI4ObpAq.jpg)
 
 Сейчас мы видим, что функция вернула правильный результат. Но при этом не видим логов никаких. Для этого нужно запросить логи
 
-![Show logger]{http://joxi.ru/NDrlaKnT1ae5mP.jpg}
+![Show logger](http://joxi.ru/NDrlaKnT1ae5mP.jpg)

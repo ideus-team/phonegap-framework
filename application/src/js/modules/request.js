@@ -43,13 +43,14 @@ export default request = {
   },
 
   logCommand(params, response){
+    if ( !params.command ) { return }
     let _params = Array.isArray(params) ? params : [params];
     let _response = Array.isArray(response) ? response : [response];
     _params.forEach((param, index) => {
       console.groupCollapsed(param.command);
-      log('----- '+param.command+' -----', 'green');
+      log('----- '+param.command+' -----', 'black');
       console.log(_response[index].data);
-      log('----- '+param.command+' -----', 'green');
+      log('----- '+param.command+' -----', 'black');
       console.groupEnd();
     });
   }

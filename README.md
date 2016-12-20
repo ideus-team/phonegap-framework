@@ -4,6 +4,8 @@
 
 This is a Cordova boilerplate for building HTML5 mobile apps with a native look and feel based on Backbone.js framework.
 
+Be attantion! ==> [BEM only](https://github.com/ideus-team/guidelines/blob/master/frontend/bem.md)
+
 ## Menu
 
 New:

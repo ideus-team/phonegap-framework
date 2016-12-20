@@ -8,7 +8,7 @@
 
 ##Example
 
-Если рассмотреть часный случай, когда нам нужно изолироваться от App и достать шаблон прям из template.js, то мы можем сделать так:
+Если рассмотреть частный случай, когда нам нужно изолироваться от App и достать шаблон прям из template.js, то мы можем сделать так:
 
 ```javascript
 
@@ -25,7 +25,7 @@ Register.view('home', {
 
 ```javascript
 function myFn(template, element, someData){
-  let tpl = template(data);
+  let tpl = template(someData);
   $(htmlNode).html(tpl);
 }
 ```

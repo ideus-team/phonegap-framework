@@ -39,13 +39,13 @@ What is the two-letter country code for this unit? :  xxx
 
 Then the Key store has been generated with name as APPLICATION_KEYSTORE_TITLE.keystore.
 
-> !!! You must save generated keytool, alias and password in project or git repository. Keytool created once and linked with application in Google Play store !!!
+> !!! You must save generated keystore file, alias and password in project or git repository. Keystore file created once and linked with application in Google Play store !!!
   
 ##Step 3:
 
 To sign the unsigned APK, run the jarsigner tool which is also included in the JDK:
 
-> keytool is located "C:\Program Files\Java\jdk[LATEST_VERSION]\bin\jarsigner.exe"
+> jarsigner is located "C:\Program Files\Java\jdk[LATEST_VERSION]\bin\jarsigner.exe"
 
 ```
 jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore APPLICATION_KEYSTORE_TITLE.keystore android-release-unsigned.apk KEYSTORE_ALIAS
@@ -97,8 +97,8 @@ keytool -exportcert -alias KEYSTORE_ALIAS key -keystore APPLICATION_KEYSTORE_TIT
 1. You must be sure, that application version in config.xml is higher, than previose one.
 2. [Open account](https://play.google.com/apps/publish/)
 3. Upload your APPLICATION_TITLE_FOR_RELEASE.apk
-   [GooglePlayStore!](http://joxi.ru/WKAxepOIoJvnr8.jpg)
-   [GooglePlayStore2!](http://joxi.ru/812M1gMiJewK2J.jpg)
+   ![GooglePlayStore](http://joxi.ru/WKAxepOIoJvnr8.jpg)
+   ![GooglePlayStore2](http://joxi.ru/812M1gMiJewK2J.jpg)
 4. Wait for uploading, then submit new version
 
 Your application will be updated\approved in 5 hours.

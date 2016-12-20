@@ -34,3 +34,7 @@ git clone https://github.com/ideus-team/phonegap-framework.git
 ###Styles
 
 Все стили пишутся в папке `src/sass`. Пишем и верстаем по [BEM](https://github.com/ideus-team/guidelines/blob/master/frontend/bem.md)
+
+##А куда же в итоге все собирается?
+
+Ответ прост. Gulp собирает весь проект в `application/public`.

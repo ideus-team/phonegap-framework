@@ -9,7 +9,9 @@
 
 ###DexException
 To solve the DexException must be imported via terminal this plugin:
+```
 cordova plugin add https://github.com/jwall149/cordova-multidex
+```
 
 ###Server forever
 
@@ -25,7 +27,7 @@ npm start forever
 
 
 ###WebSocket and socket.io
-1. If you have error with ws:// - change socket.connect settings to ``transports: ['polling']``
+1. If you have error with `ws://` - change socket.connect settings to `transports: ['polling']`
 
 
 ###Hide status bar in iOS

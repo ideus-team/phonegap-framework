@@ -16,5 +16,5 @@ This is a Cordova boilerplate for building HTML5 mobile apps with a native look 
 - [How to build Android production release] (/docs/android-release.md)
 - [CSS Media Queries for iPads & iPhones] (/docs/appleMediaQueries.md)
 - [Notes and some issues] (/docs/notes.md)
-- [Issues and bugs] (/issues)
+- [Issues and bugs] (https://github.com/ideus-team/phonegap-framework/issues)
 - [ChangeLog] (/docs/changelog.md)

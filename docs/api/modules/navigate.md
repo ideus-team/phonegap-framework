@@ -8,7 +8,7 @@
 
 У модуля есть опции по умолчанию
 
-```
+```javascript
 {
   page: '/',
   trigger: true,

@@ -42,7 +42,7 @@ template     | - | По умолчанию, вьюшка берет шаблон
 
 1. Небольшой пример регистрации представления:
 
-```
+```javascript
 import Register from '../../modules/registrator';
 
 Register.view('home', {
@@ -60,7 +60,7 @@ Register.view('home', {
 
 2. Пример с передачей отдельного шаблона под вьюшку:
 
-```
+```javascript
 import Register from '../../modules/registrator';
 import * as templates from '../templates/templates';
 
@@ -73,4 +73,4 @@ Register.view('home', {
 
 ##Model
 
-```Registrator.view(name, options)```
+```javascriptRegistrator.view(name, options)```

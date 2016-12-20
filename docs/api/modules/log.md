@@ -14,7 +14,7 @@ title      | Передав этот параметр в ```String only```, Logg
 
 Рассмотрим небольшой пример:
 
-```
+```javascript
 function plus(a, b){
   let result = a + b;
   log([`First arg: ${a}`, `Second arg: ${b}`, `Result: ${result}`], 'black', 'Plus');

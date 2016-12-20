@@ -13,7 +13,6 @@
   - [RequireData](/docs/api/modules/requireData.md)
   - [Settings](/docs/api/modules/settings.md)
   - [Utility](/docs/api/modules/utility.md)
-  - [ViewData](/docs/api/modules/viewData.md)
 - [Views] (/docs/api/views.md)
 - [Templates] (/docs/api/templates.md)
 - [Router] (/docs/api/router.md)

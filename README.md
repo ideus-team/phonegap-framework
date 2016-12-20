@@ -1,10 +1,11 @@
 #iDeus Cordova Framework
+version 2.0.0
 
 ##About
 
 This is a Cordova boilerplate for building HTML5 mobile apps with a native look and feel based on Backbone.js framework.
 
-Attention please! ==> [BEM only](https://github.com/ideus-team/guidelines/blob/master/frontend/bem.md)
+> Attention please! ==> [BEM only](https://github.com/ideus-team/guidelines/blob/master/frontend/bem.md)
 
 ## Menu
 - [Installation] (/docs/install.md)
@@ -15,3 +16,5 @@ Attention please! ==> [BEM only](https://github.com/ideus-team/guidelines/blob/m
 - [How to build Android production release] (/docs/android-release.md)
 - [CSS Media Queries for iPads & iPhones] (/docs/appleMediaQueries.md)
 - [Notes and some issues] (/docs/notes.md)
+- [Issues and bugs] (/issues)
+- [ChangeLog] (/docs/changelog.md)

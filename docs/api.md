@@ -5,8 +5,6 @@
   - [Cache](/docs/api/modules/cache.md)
   - [Create Popup](/docs/api/modules/createPopup.md)
   - [Create View](/docs/api/modules/createView.md)
-  - [RenderView](/docs/api/modules/renderView.md)
-  - [Error](/docs/api/modules/error.md)
   - [Loader](/docs/api/modules/loader.md)
   - [Log](/docs/api/modules/log.md)
   - [Navigate](/docs/api/modules/navigate.md)

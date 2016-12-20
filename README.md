@@ -9,7 +9,7 @@ Attention please! ==> [BEM only](https://github.com/ideus-team/guidelines/blob/m
 ## Menu
 - [Installation] (/docs/install.md)
 - [API] (/docs/api.md)
-- [Icons and Splashes] (/docs/icon-splashes.md)
+- [Icons and Splashes] (/docs/icons-splashes.md)
 - [Config.xml settings] (/docs/config.md)
 - [Used plugins] (/docs/plugins.md)
 - [How to build Android production release] (/docs/android-release.md)

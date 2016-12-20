@@ -7,6 +7,8 @@
   - [Video instractions](https://www.youtube.com/watch?v=xWa8Rf9cBps)
 3. Install [Cordova CLI](https://cordova.apache.org/#getstarted)
 4. Install [Phonegap framework](http://phonegap.com/getstarted)
+4. Install [JDK](http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html)
+[JDK!](http://joxi.ru/JMAj0dKcy0vPme.jpg)
 
 ##Установка и запуск фреймворка
 
@@ -21,8 +23,8 @@ git clone https://github.com/ideus-team/phonegap-framework.git
 3. Переходим в папку application.
 4. Открываем консоль и запускаем: `npm i`.
 5. Когда все пакеты установились в этой же папке запускаем одну из команд:
-  - `npm run dev' - для работы в dev режиме.
-  - 'npm run prod' - для работы в продакшн релизе. (отличие dev и prod в том, что на prod все файлы минифицируются)
+  - `npm run dev` - для работы в dev режиме.
+  - `npm run prod` - для работы в продакшн релизе. (отличие dev и prod в том, что на prod все файлы минифицируются)
 6. Переходим в папку src и начинаем ~~говно~~кодить.
 
 ##Что где писать?

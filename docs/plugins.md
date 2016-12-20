@@ -16,3 +16,16 @@
 - [custom-url-scheme] (https://github.com/EddyVerbruggen/Custom-URL-scheme)
 - [cordova-plugin-facebook4] (https://github.com/jeduan/cordova-plugin-facebook4)
 - [cordova-plugin-googleplus] (https://github.com/EddyVerbruggen/cordova-plugin-googleplus)
+
+- iOS game center - [cordova-plugin-game-center] (https://github.com/leecrossley/cordova-plugin-game-center)
+- Android game center - [cordova-plugin-play-games-services] (https://github.com/artberri/cordova-plugin-play-games-services)
+
+For game center plugin we add some methods:
+
+ - getFriends (get all friends in game center)
+ - inviteFriends (send invite to friends)
+
+Files for this two methods you can download here:
+  - [GameCenter.h] (http://clients.ideus.biz/aliashenko/gamecenter/src/ios/GameCenter.h)
+  - [GameCenter.m] (http://clients.ideus.biz/aliashenko/gamecenter/src/ios/GameCenter.m)
+  - [gamecenter.js] (http://clients.ideus.biz/aliashenko/gamecenter/www/gamecenter.js)

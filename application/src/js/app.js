@@ -59,6 +59,7 @@ let App = {
    */
   startApplication(){
     Backbone.history.start();
+    this.hideSplash();
     log('Application history was inited', 'black');
   },
 
@@ -68,6 +69,14 @@ let App = {
 
   extendOptions(_options){
     this.options = $.extend(settings.options, _options)
+  },
+
+  showSplash(){
+    'splashscreen' in navigator && !settings.debug &&navigator.splashscreen.show();
+  },
+  
+  hideSplash(){
+    'splashscreen' in navigator && !settings.debug && navigator.splashscreen.hide();
   }
 }
 

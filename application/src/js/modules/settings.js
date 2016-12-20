@@ -2,7 +2,7 @@ export default {
 
   initEvent: window.cordova ? 'deviceready' : 'DOMContentLoaded',
 
-  platform: window.device && device.platform.toLowerCase() || 'browser',
+  platform: window.cordova && window.device && device.platform && device.platform.toLowerCase() || 'browser',
 
   /*
    * If debug = true - browser verstion

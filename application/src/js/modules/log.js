@@ -55,7 +55,7 @@ window.logger = {
 export default (_message, _type, __title) => {
 
   var _logger = function(message, type, title){
-    if ( settings.debug ){
+    //if ( settings.debug ){
       let css, text;
       if ( Array.isArray(message) ){
         let _title = title ? title : 'Simple console group';
@@ -77,7 +77,7 @@ export default (_message, _type, __title) => {
         text = `%c ${message} `;
         console.log(text, css);
       }
-    } 
+    //} 
   }.bind(null, _message, _type, __title);
 
   logger.logs.push(_logger);

@@ -13,6 +13,7 @@ import AppError from './modules/error';
 import Popup from './modules/popup';
 import cache from './modules/cache';
 import Device from './modules/device';
+import splash from './modules/splash';
 
 let App = {
 
@@ -28,6 +29,9 @@ let App = {
 
   /* define Application Navigator */
   navigate,
+
+  /* define Application Splash */
+  splash,
 
   error: AppError,
 
@@ -61,7 +65,7 @@ let App = {
    * [Initialize application function]
    */
   startApplication(){
-    App.hideSplash();
+    App.splash.hide();
     App.defineModules();
     Backbone.history.start();
     log('Application history was inited', 'black');
@@ -80,13 +84,6 @@ let App = {
     this.options = $.extend(settings.options, _options)
   },
 
-  showSplash(){
-    'splashscreen' in navigator && !settings.debug && navigator.splashscreen.show();
-  },
-  
-  hideSplash(){
-    'splashscreen' in navigator && !settings.debug && navigator.splashscreen.hide();
-  }
 }
 
 export default App;

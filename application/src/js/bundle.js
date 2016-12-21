@@ -13,7 +13,6 @@ import Application from './app';
 import log from './modules/log';
 import loader from './modules/loader';
 
-
 window.log = window.log || log;
 window.loader = window.loader || loader;
 
@@ -22,3 +21,4 @@ window.loader = window.loader || loader;
  * @constructor {Application}
  */
 window.App = Application.init();
+

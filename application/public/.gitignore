@@ -1,4 +1,10 @@
 www
+www/*
+www/
+
+plugins/
+plugins/*
+plugins/*/**
 
 /platforms
 /platforms/*

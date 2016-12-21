@@ -12,6 +12,7 @@ import MainRouter from './common/routers/router';
 import AppError from './modules/error';
 import Popup from './modules/popup';
 import cache from './modules/cache';
+import Device from './modules/device';
 
 let App = {
 
@@ -37,7 +38,6 @@ let App = {
   popup: new Popup(),
 
   init(_options){
-    this.defineModules();
     this.extendOptions(_options);
     this.bindEvents();
 
@@ -58,13 +58,14 @@ let App = {
    * [Initialize application function]
    */
   startApplication(){
+    App.hideSplash();
+    App.defineModules();
     Backbone.history.start();
-    this.hideSplash();
     log('Application history was inited', 'black');
   },
 
   defineModules(){
-
+    new Device();
   },
 
   extendOptions(_options){
@@ -72,7 +73,7 @@ let App = {
   },
 
   showSplash(){
-    'splashscreen' in navigator && !settings.debug &&navigator.splashscreen.show();
+    'splashscreen' in navigator && !settings.debug && navigator.splashscreen.show();
   },
   
   hideSplash(){

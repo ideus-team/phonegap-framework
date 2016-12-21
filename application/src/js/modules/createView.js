@@ -96,7 +96,7 @@ export default module = {
     /* default animation */
     default: {
       class: '-default_animation',
-      duration: 400,
+      duration: 600,
       directions: {
 
         left: {

@@ -1,0 +1,152 @@
+$defaultDuration: 0.6s;
+
+.app-main {
+
+  &.-default_animation {
+    //transition: transform $defaultDuration;
+
+    .-do_animation & {
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000000;
+        opacity: 0;
+        animation: defaultMainOverlay $defaultDuration forwards;
+        will-change: opacity;
+      }
+
+      &.-animate_left {
+        animation: defaultMainLeft $defaultDuration forwards;
+      }
+
+      &.-animate_right {
+        animation: defaultMainRight $defaultDuration forwards;
+      }
+
+      &.-animate_up {
+        animation: defaultMainUp $defaultDuration forwards;
+      }
+
+      &.-animate_down {
+        animation: defaultMainDown $defaultDuration forwards;
+      }
+
+    }
+  }
+
+}
+
+.b-subContainer {
+
+  &.-default_animation {
+    //transition: transform $defaultDuration;
+
+    .-do_animation & {
+      //transform: translate3d(0, 0, 0);
+
+      &.-animate_left {
+        animation: defaultSubLeft $defaultDuration forwards;
+      }
+
+      &.-animate_right {
+        animation: defaultSubRight $defaultDuration forwards;
+      }
+
+      &.-animate_up {
+        animation: defaultSubUp $defaultDuration forwards;
+      }
+
+      &.-animate_down {
+        animation: defaultSubDown $defaultDuration forwards;
+      }
+
+    }
+  }
+
+}
+
+@keyframes defaultMainOverlay {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes defaultMainDown {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 25%, 0);
+  }
+}
+
+@keyframes defaultMainUp {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, -25%, 0);
+  }
+}
+
+@keyframes defaultMainLeft {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-25%, 0, 0);
+  }
+}
+
+@keyframes defaultMainRight {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(25%, 0, 0);
+  }
+}
+
+@keyframes defaultSubDown {
+  0% {
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes defaultSubUp {
+  0% {
+    transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes defaultSubLeft {
+  0% {
+    transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes defaultSubRight {
+  0% {
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}

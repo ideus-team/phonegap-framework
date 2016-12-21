@@ -52,6 +52,9 @@ let App = {
      * @param {string} settings.initEvent [Event that fired when dom is already loaded]
      */
     document.addEventListener(settings.initEvent, this.startApplication, false);
+
+    // android only
+    document.addEventListener('backbutton', this.backButton, false);
   },
 
   /**
@@ -62,6 +65,11 @@ let App = {
     App.defineModules();
     Backbone.history.start();
     log('Application history was inited', 'black');
+  },
+
+  backButton(e){
+    e.preventDefault();
+    App.navigate(App.history[App.history.length-1].previusView.page);
   },
 
   defineModules(){

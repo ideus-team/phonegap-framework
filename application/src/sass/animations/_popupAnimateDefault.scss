@@ -1,0 +1,78 @@
+$defaultDuration: 0.2s;
+
+.b-popups{
+
+  &.-default_animation{
+
+    &.-state_open {
+
+      &:before {
+        animation: popupOverlayShow $defaultDuration forwards;
+      }
+
+      & > div {
+        animation: popupInnerShow $defaultDuration forwards;
+      }
+    }
+
+  &.-state_close {
+
+    &:before {
+      animation: popupOverlayHide $defaultDuration forwards;
+    }
+
+    & > div {
+      animation: popupInnerHide $defaultDuration forwards;
+    }
+  }
+
+  &.-state_reload {
+
+    &:before {
+      opacity: 0.5 !important;
+    }
+
+    & > div {
+      animation: popupInnerHide $defaultDuration forwards;
+    }
+  }
+
+  }
+
+}
+
+@keyframes popupOverlayShow {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes popupOverlayHide {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes popupInnerShow {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes popupInnerHide {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}

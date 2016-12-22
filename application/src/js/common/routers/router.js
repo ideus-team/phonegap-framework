@@ -44,7 +44,7 @@ export default Router.extend({
 
   renderView(view, el) {
     if ( App.isPopupOpen ){
-      App.popup.close().then(() => {
+      App.popup.close(true).then(() => {
         return createView.create(view, $(el));
       });
     } else {
@@ -54,7 +54,7 @@ export default Router.extend({
 
   renderPopup(view, el) {
     if ( App.isPopupOpen ){
-      App.popup.close().then(() => {
+      App.popup.close(true).then(() => {
         return createPopup.create(view, $(el));
       });
     } else {

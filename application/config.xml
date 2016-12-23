@@ -41,13 +41,13 @@
   <preference name="android-windowSoftInputMode" value="stateVisible" />
   
   <platform name="android">
-    <!-- <icon src="../resources/icons/android/drawable-ldpi/icon.png" density="ldpi" />
-    <icon src="../resources/icons/android/drawable-mdpi/icon.png" density="mdpi" />
-    <icon src="../resources/icons/android/drawable-hdpi/icon.png" density="hdpi" />
-    <icon src="../resources/icons/android/drawable-xhdpi/icon.png" density="xhdpi" />
-    <icon src="../resources/icons/android/drawable-xxhdpi/icon.png" density="xxhdpi" />
-    <icon src="../resources/icons/android/drawable-xxxhdpi/icon.png" density="xxxhdpi" />
-
+    <icon src="../resources/icons/android/mipmap-ldpi/ic_launcher.png" density="ldpi" />
+    <icon src="../resources/icons/android/mipmap-mdpi/ic_launcher.png" density="mdpi" />
+    <icon src="../resources/icons/android/mipmap-hdpi/ic_launcher.png" density="hdpi" />
+    <icon src="../resources/icons/android/mipmap-xhdpi/ic_launcher.png" density="xhdpi" />
+    <icon src="../resources/icons/android/mipmap-xxhdpi/ic_launcher.png" density="xxhdpi" />
+    <icon src="../resources/icons/android/mipmap-xxxhdpi/ic_launcher.png" density="xxxhdpi" />
+    
     <splash src="../resources/splashes/android/drawable-land-ldpi/screen.png" density="land-ldpi"/>
     <splash src="../resources/splashes/android/drawable-land-mdpi/screen.png" density="land-mdpi"/>
     <splash src="../resources/splashes/android/drawable-land-hdpi/screen.png" density="land-hdpi"/>
@@ -60,7 +60,7 @@
     <splash src="../resources/splashes/android/drawable-port-hdpi/screen.png" density="port-hdpi"/>
     <splash src="../resources/splashes/android/drawable-port-xhdpi/screen.png" density="port-xhdpi"/>
     <splash src="../resources/splashes/android/drawable-port-xxhdpi/screen.png" density="port-xxhdpi"/>
-    <splash src="../resources/splashes/android/drawable-port-xxxhdpi/screen.png" density="port-xxxhdpi"/> -->
+    <splash src="../resources/splashes/android/drawable-port-xxxhdpi/screen.png" density="port-xxxhdpi"/>
     
     <preference name="AndroidPersistentFileLocation" value="Compatibility" />
     
@@ -83,7 +83,7 @@
     <icon src="../resources/icons/ios/Icon-72@2x.png" width="144" height="144" />
     <icon src="../resources/icons/ios/Icon-76.png" width="76" height="76" />
     <icon src="../resources/icons/ios/Icon-76@2x.png" width="152" height="152" />
-
+    
     <splash src="../resources/splashs/ios/Default~iphone.png" width="320" height="480"/>
     <splash src="../resources/splashs/ios/Default@2x~iphone.png" width="640" height="960"/>
     <splash src="../resources/splashs/ios/Default-Portrait~ipad.png" width="768" height="1024"/>

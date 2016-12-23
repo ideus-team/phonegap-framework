@@ -73,7 +73,13 @@ let App = {
 
   backButton(e){
     e.preventDefault();
-    App.navigate(App.history[App.history.length-1].previusView.page);
+    console.log(App.isPopupOpen);
+    if ( App.isPopupOpen ){
+      console.log('test');
+      App.popup.close();
+    } else {
+      App.navigate(App.history[App.history.length-1].previusView.page);
+    }
   },
 
   defineModules(){

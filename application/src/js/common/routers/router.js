@@ -43,23 +43,16 @@ export default Router.extend({
   },
 
   renderView(view, el) {
-    if ( App.isPopupOpen ){
-      App.popup.close().then(() => {
-        return createView.create(view, $(el));
-      });
-    } else {
-      createView.create(view, $(el));
-    }
+    console.log(App.currentView);
+    App.popup.close().then(() => {
+      return createView.create(view, $(el));
+    });
   },
 
   renderPopup(view, el) {
-    if ( App.isPopupOpen ){
-      App.popup.close().then(() => {
-        return createPopup.create(view, $(el));
-      });
-    } else {
-      createPopup.create(view, $(el));
-    }
+    App.popup.close().then(() => {
+      return createPopup.create(view, $(el));
+    });
   }
 
 });

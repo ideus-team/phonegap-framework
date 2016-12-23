@@ -64,8 +64,10 @@ export default {
     popupsWrapper: '#app-popupWrap',
 
     popupOptions: {
+      animateClass: '-default_animation',
       openClass: '-state_open',
       closeClass: '-state_close',
+      reloadClass: '-state_reload',
       fadeDuration: 200,
 
       alertDefaults: {
@@ -76,6 +78,20 @@ export default {
         template(){
           return App.templates.alert
         }
+      },
+
+      animations: {
+        /* default animation */
+        default: {
+          class: '-default_animation'
+        },
+        /* default animation end */
+
+        /* test animation */
+        test: {
+          class: '-test_animation'
+        }
+        /* test animation end */
       }
     }
   },

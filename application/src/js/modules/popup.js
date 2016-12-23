@@ -23,27 +23,30 @@ export default class Popup {
     
     return new Promise((resolve, reject) => {
       this.view = new Views[id]();
-      App.isPopupOpen = true;
       log([`Popup id: ${id}`, settings], 'black', `Popup:open`);
       resolve(this.view);
     });
 
   }
 
-  close(){
+  close(isPopupInPopup){
 
     return new Promise((resolve, reject) => {
       let popup = this;
       if ( App.isPopupOpen ){
+        let closeClass = isPopupInPopup ? App.options.popupOptions.reloadClass : App.options.popupOptions.closeClass;
         $(App.options.popupsWrapper)
-        .fadeOut(App.options.popupOptions.fadeDuration, () => {
+          .addClass(closeClass);
+        setTimeout( () => {
           $(App.options.popupsWrapper)
+            .removeClass(closeClass)
             .removeClass(App.options.popupOptions.openClass)
+            .removeClass(App.options.popupOptions.animateClass)
             .removeAttr('style');
-
           log(['Close all popups'], 'black', `Popup:close`);
+          App.isPopupOpen = false;
           resolve(popup);
-        });
+        }, App.options.popupOptions.fadeDuration);
       } else {
         App.isPopupOpen = false;
         resolve(popup);

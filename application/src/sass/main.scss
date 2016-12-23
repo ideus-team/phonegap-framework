@@ -24,7 +24,8 @@
 @import 'blocks/g-blocks';
 
 /* Framework Common Libraries */
-@import 'animations/_pageAnimateDefault';
+@import 'animations/pageAnimateDefault';
+@import 'animations/popupAnimateDefault';
 
 /* Project only code */
 @import 'blocks/common';

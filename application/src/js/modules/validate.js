@@ -54,15 +54,15 @@ export default function(attr, validParam) {
 
   let errorList = [];
 
-  _.each(attr, function(attrValue, attrKey){
-    if (validParam[attrKey]) {
-      _.each(validParam[attrKey], function(value, key){
-        let result = validateFunc[key](attrKey, attrValue, value);
+  for (let attrKey in attr) {
+    let param = validParam[attrKey];
+    if (param) {
+      for (let key in param) {
+        let result = validateFunc[key](attrKey, attr[attrKey], param[key]);
         result && errorList.push(result);
-      });
+      }
     }
-
-  });
+  }
 
   if (errorList.length) {
     console.log(errorList);

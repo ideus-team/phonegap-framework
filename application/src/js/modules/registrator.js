@@ -11,6 +11,7 @@ import requireData from './requireData';
 import cache from './cache';
 import request from './request';
 import * as utils from './utility';
+import validate from './validate';
 
 class Register {
 
@@ -146,8 +147,15 @@ class Register {
         template: 'default',
 
         defaults: $.extend(options.defaults, {}),
+
+        validate: function(attributes){
+          return validate(attributes, options.validateParam);
+        },
         
         initialize(data){
+
+          //validate.test();
+
 
           /* save initialization data localy */
           this.initData = data || {};
@@ -186,6 +194,10 @@ class Register {
             } else {
               VIEW.$el.append(App.templates[tpl](changedModel));
             }
+          });
+
+          _model.on('invalid', function(model, error) {
+            console.log(model.get('name') + ' ' + error);
           });
         },
 

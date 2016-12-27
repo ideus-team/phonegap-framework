@@ -1,4 +1,4 @@
-export default function(attr, validParam = {}) {
+export default function(attr, validParam = {}, modelName) {
 
   /**
    *  validate Methods
@@ -66,6 +66,7 @@ export default function(attr, validParam = {}) {
 
   if (errorList.length) {
     console.log(errorList);
+    log(errorList, 'black', `validateModel: ${modelName} `);
     return errorList;
   }
 

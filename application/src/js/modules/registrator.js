@@ -149,7 +149,7 @@ class Register {
         defaults: $.extend(options.defaults, {}),
 
         validate: function(attributes){
-          return validate(attributes, options.validateParam);
+          return validate(attributes, options.validateParam, name);
         },
         
         initialize(data){
@@ -210,6 +210,8 @@ class Register {
             'Данные записаны в кэш',
             data
           ], 'black', `successFetch:${modelName}`);
+
+          console.log('<<<<<<', modelName);
 
           cache.setData(modelName, data);
           this.set(data);

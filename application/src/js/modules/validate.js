@@ -1,4 +1,4 @@
-export default function(attr, validParam) {
+export default function(attr, validParam = {}) {
 
   /**
    *  validate Methods

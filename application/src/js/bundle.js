@@ -22,3 +22,5 @@ window.loader = window.loader || loader;
  * @constructor {Application}
  */
 window.App = new Application();
+
+console.log('Hello');

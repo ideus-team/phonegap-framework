@@ -17,6 +17,7 @@ const streamify     = require('gulp-streamify');
 const del           = require('del');
 const sizereport    = require('gulp-sizereport');
 const duration      = require('gulp-duration');
+const notify        = require('gulp-notify');
 
 const colour        = require('colour');
 
@@ -182,14 +183,11 @@ gulp.task('js:dev', function() {
 });
 
 function log(error) {
-  console.log([
-    '',
-    "----------ERROR MESSAGE START----------".bold.red.underline,
-    ("[" + error.name + "]").red.bold.inverse,
-    error.message,
-    "----------ERROR MESSAGE END----------".bold.red.underline,
-    ''
-  ].join('\n'));
+  notify.onError({
+    title:    'Gulp',
+    message:  "Error: <%= error.message %>",
+    sound:    "Beep"
+  })(error);
   this.emit('end');
 }
 

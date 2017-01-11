@@ -9,18 +9,21 @@ const autoprefixer  = require('gulp-autoprefixer');
 const csscomb       = require('gulp-csscomb');
 
 const browserify    = require('browserify');
+const watchify      = require('watchify');
 const source        = require('vinyl-source-stream');
+const buffer        = require('vinyl-buffer');
 const babelify      = require('babelify');
 const uglify        = require('gulp-uglify');
 const streamify     = require('gulp-streamify');
+const sourcemaps    = require('gulp-sourcemaps');
 
 const del           = require('del');
 const sizereport    = require('gulp-sizereport');
 const duration      = require('gulp-duration');
+const notify        = require('gulp-notify');
 
 const colour        = require('colour');
 
-const template      = require('gulp-template-compile-es6');
 const concat        = require('gulp-concat');
 
 
@@ -36,7 +39,6 @@ const PATH = {
     ALL_JS: SOURCE_DIR + 'js/**/*.js',
     APP_JS: SOURCE_DIR + 'js/bundle.js',
     HTML: SOURCE_DIR + '**/*.html',
-    TEMPLATES: SOURCE_DIR + 'js/common/templates/**/*.html',
     XML: SOURCE_DIR + '**/*.xml',
     SASS: SOURCE_DIR + 'sass/**/*.scss',
     FONTS: SOURCE_DIR + 'fonts/**/*.{eot,svg,ttf,woff,woff2,otf}',
@@ -47,7 +49,6 @@ const PATH = {
   BUILD: {
     APP_JS: BUILD_DIR + 'js/',
     HTML: BUILD_DIR,
-    TEMPLATES: SOURCE_DIR + 'js/common/templates/',
     XML: BUILD_DIR,
     CSS: BUILD_DIR + 'css/',
     FONTS: BUILD_DIR + 'fonts/',
@@ -55,7 +56,6 @@ const PATH = {
     MEDIA: BUILD_DIR + 'media/',
     SIZEREPORT: [
       BUILD_DIR + '/js/bundle.js',
-      SOURCE_DIR + 'js/common/templates/templates.js',
       BUILD_DIR + '/css/main.css',
     ]
   }
@@ -77,24 +77,6 @@ gulp.task('html:common', () => {
 
 const watchHTML = () => {
   gulp.watch(PATH.SRC.HTML, gulp.series('html:common'));
-}
-
-/**
- * TEMPLATES DEV
- */
-gulp.task('templates:common', () => {
-  return gulp.src(PATH.SRC.TEMPLATES)
-    .pipe(template({
-        templateSettings : {
-          variable : 'data'
-        }
-    }))
-    .pipe(concat('templates.js'))
-    .pipe(gulp.dest(PATH.BUILD.TEMPLATES));
-});
-
-const watchTEMPLATES = () => {
-  gulp.watch(PATH.SRC.TEMPLATES, gulp.series('templates:common'));
 }
 
 /**
@@ -195,28 +177,34 @@ const watchStylesDev = () => {
  * JS BUNDLE DEV
  */
 gulp.task('js:dev', function() {
-  return browserify(PATH.SRC.APP_JS)
-    .transform('babelify', { presets: ["es2015"] })
-    .bundle().on('error', log)
-    .pipe(source('bundle.js'))
-    .pipe(duration('----------- Babel time -----------'))
-    .pipe(gulp.dest(PATH.BUILD.APP_JS));
+  const bundler = watchify(browserify(PATH.SRC.APP_JS, {
+    debug: true
+  }))
+    .transform(babelify, {presets: ["es2015"]});
+
+  bundler.on('update', rebundle);
+
+  function rebundle() {
+    return bundler.bundle()
+      .on('error', log)
+      .pipe(source('bundle.js'))
+      .pipe(buffer())
+      .pipe(sourcemaps.init({loadMaps: true}))
+      .pipe(sourcemaps.write('./'))
+      .pipe(sizereport({gzip: true}))
+      .pipe(gulp.dest(PATH.BUILD.APP_JS));
+  }
+
+  return rebundle();
 });
 
 function log(error) {
-  console.log([
-    '',
-    "----------ERROR MESSAGE START----------".bold.red.underline,
-    ("[" + error.name + "]").red.bold.inverse,
-    error.message,
-    "----------ERROR MESSAGE END----------".bold.red.underline,
-    ''
-  ].join('\n'));
+  notify.onError({
+    title:    'Gulp',
+    message:  "Error: <%= error.message %>",
+    sound:    "Beep"
+  })(error);
   this.emit('end');
-}
-
-const watchJsDev = () => {
-  gulp.watch(PATH.SRC.ALL_JS, gulp.series('js:dev', 'sizereport:common'));
 }
 
 /**
@@ -228,9 +216,6 @@ gulp.task('watch:dev', () => {
   watchFONTS();
   watchIMG();
   watchMEDIA();
-  watchTEMPLATES();
-
-  watchJsDev();
   watchStylesDev();
 });
 
@@ -238,7 +223,6 @@ gulp.task('watch:dev', () => {
 gulp.task('dev', 
   gulp.series('clean:build', 
     gulp.parallel(
-      'templates:common',
       'js:dev', 
       'media:common', 
       'html:common', 
@@ -294,7 +278,6 @@ gulp.task('watch:prod', () => {
   watchFONTS();
   watchIMG();
   watchMEDIA();
-  watchTEMPLATES();
 
   watchJsProd()
   watchStylesProd();
@@ -308,7 +291,6 @@ const watchStylesProd = () => {
 gulp.task('prod', 
   gulp.series('clean:build', 
     gulp.parallel(
-      'templates:common',
       'js:prod', 
       'media:common', 
       'html:common', 

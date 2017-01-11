@@ -9,10 +9,13 @@ const autoprefixer  = require('gulp-autoprefixer');
 const csscomb       = require('gulp-csscomb');
 
 const browserify    = require('browserify');
+const watchify      = require('watchify');
 const source        = require('vinyl-source-stream');
+const buffer        = require('vinyl-buffer');
 const babelify      = require('babelify');
 const uglify        = require('gulp-uglify');
 const streamify     = require('gulp-streamify');
+const sourcemaps    = require('gulp-sourcemaps');
 
 const del           = require('del');
 const sizereport    = require('gulp-sizereport');
@@ -174,12 +177,25 @@ const watchStylesDev = () => {
  * JS BUNDLE DEV
  */
 gulp.task('js:dev', function() {
-  return browserify(PATH.SRC.APP_JS)
-    .transform(['babelify', { presets: ["es2015", "react"] }])
-    .bundle().on('error', log)
-    .pipe(source('bundle.js'))
-    .pipe(duration('----------- Babel time -----------'))
-    .pipe(gulp.dest(PATH.BUILD.APP_JS));
+  const bundler = watchify(browserify(PATH.SRC.APP_JS, {
+    debug: true
+  }))
+    .transform(babelify, {presets: ["es2015"]});
+
+  bundler.on('update', rebundle);
+
+  function rebundle() {
+    return bundler.bundle()
+      .on('error', log)
+      .pipe(source('bundle.js'))
+      .pipe(buffer())
+      .pipe(sourcemaps.init({loadMaps: true}))
+      .pipe(sourcemaps.write('./'))
+      .pipe(sizereport({gzip: true}))
+      .pipe(gulp.dest(PATH.BUILD.APP_JS));
+  }
+
+  return rebundle();
 });
 
 function log(error) {
@@ -191,10 +207,6 @@ function log(error) {
   this.emit('end');
 }
 
-const watchJsDev = () => {
-  gulp.watch(PATH.SRC.ALL_JS, gulp.series('js:dev', 'sizereport:common'));
-}
-
 /**
  * WATCH DEV
  */
@@ -204,8 +216,6 @@ gulp.task('watch:dev', () => {
   watchFONTS();
   watchIMG();
   watchMEDIA();
-
-  watchJsDev();
   watchStylesDev();
 });
 

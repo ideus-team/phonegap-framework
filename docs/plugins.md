@@ -16,6 +16,7 @@
 - [custom-url-scheme] (https://github.com/EddyVerbruggen/Custom-URL-scheme)
 - [cordova-plugin-facebook4] (https://github.com/jeduan/cordova-plugin-facebook4)
 - [cordova-plugin-googleplus] (https://github.com/EddyVerbruggen/cordova-plugin-googleplus)
+- [cordova-cookie-master] (https://github.com/kristianhristov/cordova-cookie-master) | [NOTE] (/docs/note/cookie-master.md)
 
 - iOS game center - [cordova-plugin-game-center] (https://github.com/leecrossley/cordova-plugin-game-center)
 - Android game center - [cordova-plugin-play-games-services] (https://github.com/artberri/cordova-plugin-play-games-services)

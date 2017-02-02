@@ -8,7 +8,7 @@
 3. Install [Cordova CLI](https://cordova.apache.org/#getstarted)
 4. Install [Phonegap framework](http://phonegap.com/getstarted)
 4. Install [JDK](http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html)
-[!JDK](http://joxi.ru/JMAj0dKcy0vPme.jpg)
+![JDK](http://joxi.ru/JMAj0dKcy0vPme.jpg)
 
 ##Установка и запуск фреймворка
 

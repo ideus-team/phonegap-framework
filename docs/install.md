@@ -13,7 +13,6 @@
 ##Установка и запуск фреймворка
 
 1. Clone framework from git
-
 ```cli
 git clone https://github.com/ideus-team/phonegap-framework.git
 ```

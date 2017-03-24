@@ -1,7 +1,7 @@
-#iDeus Cordova Framework
+# iDeus Cordova Framework
 version 2.0.0
 
-##About
+## About
 
 This is a Cordova boilerplate for building HTML5 mobile apps with a native look and feel based on Backbone.js framework.
 
